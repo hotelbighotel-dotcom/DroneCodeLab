@@ -1,0 +1,3395 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAFfklEQVR42rVWXWwUVRT+zrkzs7M7u213F7orKYqtYjGBEH0QNaAPGl+Iim9GSaRqMCIa/AmEBJ+MAQMWE0ENvJhIYiRIog+IPPAiCcYoaspfKJWf0lJgC93u7HZndu7xYbbb3f4ZSLyZTWYz537nnnO/c85Hv53sx/+5DKLZDWqf5XY+1Tng//Ig4W8GM2rwNH0ENDO0AGDQLAihzSwWMzkQCIhoyumkMTkhtExJWkOKps8JQUAM0QCEeFoIEkFoprUQTRvI5AgEIBFSKnASVCqKZZHWXCqCefJWrXU0KqzIK0vUUe5o6IZmdSAkgFIAMvu+jF4+r61I7pkXSp1LVMkVZogAABFpHThO7GxP+qcD7JVL89tzq1bDUBRoUEOgTITaA4BJJOZk9n2RdYzm7d3JrlcX7N9rX+6TiE1agxVYkdYSse3+Cwu+25Nc09W8vTsbt7Lf7JaowyQA6jGZicKHAEWEiG1eudhSHPHeWP/6urcPu75a3eUcPYRojEzTKJfMcpFME9FY7Ogh9fIrP4/p195c7619q6U0avVfQMRWRATUYJnqFxMRiAgiBJhWhJnJNGOOo3WgieZ9svmubZs1oHUQcxwyTWayrAgAEcEESAMkQjYyExGx5wXz78k3pc3Pu3dv3/q0Y5zfsvF4S2umNdrWdzohQQK6re90pjX6a7K1d8ump2zevWObtWtnPpEM7l7AXpmImAm1LJ27eAOAFglLWkTADOaWg/vM3lORzLyPes7s+eXY5vc3QktgmCAo3yfmj3ds7Xr0sQ+XLCoPDfgdi26tegki0DpkTQ2Qei/lQtzwg0AIAFHgNGGsRJYVUeqdNS/++MPBeFOTrgQA2FCF/OjKlc9+9vW3XqDF82BHlZuHiIxXdQ2w1uzG6SogZogY+ZukVCVfjM+Z237/A0483tLcHAQagFIsWrcv7Ewolbs5bJqm5MegFJih9STAiTqo1QOFbCUFEBlKAM8rB5VKMjXHceIAXLdw4/oNrzwmABkKRDAUEYU9cRKgwdwQkVRbEMJgZZxqADU3p2zbFoFhWCAQTVA8RAbVbRdMjaDxRWS8k4W1Q24hHzYq1x2twlUvDCRTtmPyHaD+RUSUUoZp+J4fd9i0LM8rX7r4jxYJq98rly3TjDvsFgzTMit+RUuVP5MAqX9opJYiqfIUpmGMjZWvXh1Kp9Nnz5xct7YrlUpHIpFABwAUq3K5nMvldn21t3PR4lwul8222rbtVyo0HkIt53TlWn4clmpnz+WG+86fn9+WDTTt7P6USW/b3u15fq2FWZa56YN3KwE2bHhPKVzuH2zv6EinU0EQEJHIRIpo4Hq+2kirPklE/vj9xOOPLC0WC+l0qud0XyTqtLXNGyuNETMAEW3b9pUrgyW3sPjB9lxuOOYkjh0/8dDDS5lYILXjh/msW4BhqKJbjMdjyWTTihVP7t9/oHPhfYODg1prQCAaoiGitR4YGOhc2PH9gYPLlz+RbE4k4jHXLSpDUZWr1TUx9IVIRETrRMIpuMWRkcKRI4ezmczfJ8+kUsmwCdZzPJ1K9Zw68/yq55YtWzaSL4y6xaZEXLSmejuArg0XJsaNQEQsy7w6dK33XF/HvfNzw7c8v7J06WKt9aSBxsx//tVjGSqdaum7cLmjoz2bbfU8vwEeoOs33YaRKQKBaZmuWxwauhaNRjOZuVrrsPAaRyuYeWjoerFUymZaHSfmez4Ik4Ym3bhVnDL1RUSUoUzD0Fp835eZRZlpmszkVypBJaDaXJxdVYBIhHSgy9ojEFfHvUwRLQSgUqkIBALm6SXc9LooZLCI1P+dqnvChkMgYroTZTdekjPrVppWnN2GNpVQOdYkYuMFUMON35G6pungZjObuv4FXZB4tZ9Q3tAAAAAASUVORK5CYII=">
+<title>DroneCode Lab</title>
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f5f5f7; --bg3:#fafafc;
+  --text:#1d1d1f; --text2:#6e6e73; --text3:#8e8e93;
+  --line:rgba(0,0,0,.08); --line2:rgba(0,0,0,.14);
+  --accent:#0071e3; --accent-soft:#e8f1fd;
+  --green:#34c759; --green-soft:#e7f8ec; --red:#ff3b30; --red-soft:#ffecea; --orange:#ff9500;
+  --r-lg:18px; --r-md:12px; --r-sm:9px; --pill:980px;
+  --mono:ui-monospace,'SF Mono','SFMono-Regular',Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue','Sukhumvit Set','Thonburi','Noto Sans Thai','Leelawadee UI',Arial,sans-serif;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg2); color:var(--text); overflow:hidden;
+  font-family:var(--sans); font-size:14px; line-height:1.5;
+  -webkit-font-smoothing:antialiased; letter-spacing:-.01em;
+}
+button,select,input{font-family:inherit; font-size:14px; color:inherit}
+svg{flex:none; display:block}
+#app{height:100%; display:flex; flex-direction:column; background:var(--bg2)}
+
+/* ---------------- top bar ---------------- */
+#topbar{
+  flex:none; height:50px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:0 16px; background:rgba(255,255,255,.82); backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:10px; min-width:0}
+.brand .mark{width:26px; height:26px; border-radius:7px; background:var(--text); display:grid; place-items:center; flex:none}
+.brand h1{margin:0; font-size:15px; font-weight:600; letter-spacing:-.02em; white-space:nowrap}
+.top-actions{display:flex; align-items:center; gap:8px}
+
+/* ---------------- controls ---------------- */
+#controlbar{
+  flex:none; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:10px 16px; background:rgba(255,255,255,.82); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.btn{
+  height:34px; padding:0 16px; border-radius:var(--pill); border:0; cursor:pointer;
+  font-size:14px; font-weight:500; display:inline-flex; align-items:center; gap:7px;
+  background:var(--bg2); color:var(--text); white-space:nowrap; transition:background .15s, opacity .15s;
+}
+.btn:hover{background:#ebebef}
+.btn.primary{background:var(--accent); color:#fff}
+.btn.primary:hover{background:#0064cc}
+.btn.quiet{background:transparent; color:var(--text2)}
+.btn.quiet:hover{background:var(--bg2)}
+.btn.stop{color:var(--red)}
+.btn:disabled{opacity:.35; cursor:default; background:var(--bg2); color:var(--text2)}
+.btn:disabled:hover{background:var(--bg2)}
+.icon-btn{
+  width:34px; height:34px; border-radius:var(--pill); border:0; background:transparent; color:var(--text2);
+  display:inline-grid; place-items:center; cursor:pointer; transition:background .15s;
+}
+.icon-btn:hover{background:var(--bg2); color:var(--text)}
+.icon-btn.on{background:var(--accent-soft); color:var(--accent)}
+select.sel{
+  height:34px; padding:0 30px 0 12px; border:0; border-radius:var(--r-sm); background:var(--bg2);
+  color:var(--text); cursor:pointer; appearance:none; -webkit-appearance:none; max-width:250px;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 8px center; background-size:16px;
+}
+select.sel:focus{outline:2px solid var(--accent-soft)}
+.seg{display:inline-flex; background:#f0f0f2; border-radius:var(--r-sm); padding:2px; gap:2px}
+.seg button{
+  border:0; background:transparent; color:var(--text2); height:28px; padding:0 12px;
+  border-radius:7px; cursor:pointer; font-size:13px; font-weight:500; display:inline-flex; align-items:center; gap:6px;
+}
+.seg button.on{background:#fff; color:var(--text); box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ctl-label{font-size:13px; color:var(--text3); white-space:nowrap}
+.spacer{flex:1}
+.divider{width:1px; height:22px; background:var(--line2); margin:0 2px}
+
+/* ---------------- layout ---------------- */
+#layout{
+  flex:1; min-height:0; display:grid; gap:0; padding:14px;
+  --lesson-w:320px; --code-fr:1fr; --arena-fr:1.06fr;
+}
+body.mode-wide  #layout{grid-template-columns:var(--lesson-w) 14px var(--code-fr) 14px var(--arena-fr); grid-template-rows:minmax(0,1fr)}
+body.mode-split #layout{grid-template-columns:var(--code-fr) 14px var(--arena-fr); grid-template-rows:minmax(0,1fr)}
+body.mode-single #layout{grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); gap:14px}
+.split-handle{
+  position:relative; width:14px; cursor:col-resize; touch-action:none;
+  display:flex; align-items:center; justify-content:center;
+}
+.split-handle::after{
+  content:''; width:4px; height:44px; border-radius:3px; background:var(--line2);
+  transition:background .12s, width .12s;
+}
+.split-handle:hover::after, .split-handle.active::after{ background:var(--accent); width:5px; }
+body.mode-single .split-handle{ display:none }
+body.mode-split [data-handle="lesson-code"]{ display:none }
+.panel{
+  background:var(--bg); border-radius:var(--r-lg); box-shadow:var(--shadow);
+  display:flex; flex-direction:column; min-height:0; min-width:0; overflow:hidden;
+}
+.panel-head{
+  flex:none; min-height:46px; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  padding:8px 10px 8px 16px; border-bottom:1px solid var(--line);
+}
+.head-title{display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; letter-spacing:-.01em}
+.head-title svg{color:var(--text3)}
+.head-actions{display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+.panel-body{padding:18px; overflow:auto}
+#blocklyDiv{flex:1; min-height:200px; width:100%}
+.mini{
+  height:28px; padding:0 11px; border:0; border-radius:var(--pill); background:var(--bg2);
+  color:var(--text2); font-size:12.5px; font-weight:500; cursor:pointer; display:inline-flex; align-items:center; gap:5px;
+}
+.mini:hover{background:#ebebef; color:var(--text)}
+.mini.on{background:var(--text); color:#fff}
+.mini:disabled{opacity:.4; cursor:default}
+.badge{font-size:12px; font-weight:500; padding:4px 10px; border-radius:var(--pill); background:var(--bg2); color:var(--text2); white-space:nowrap}
+.badge.pass{background:var(--green-soft); color:#1e7f3c}
+.badge.fail{background:var(--red-soft); color:#c62317}
+
+/* ---------------- lesson ---------------- */
+#lessonBody h3{margin:0 0 10px; font-size:19px; font-weight:600; letter-spacing:-.02em}
+#lessonBody p{margin:0 0 14px; color:var(--text2)}
+#lessonBody ol,#lessonBody ul{margin:0 0 14px; padding-inline-start:20px; color:var(--text2)}
+#lessonBody li{margin-bottom:7px}
+#lessonBody code,.ref code{font-family:var(--mono); font-size:12.5px; background:var(--bg2); border-radius:6px; padding:2px 6px; color:var(--text)}
+.note{background:var(--bg2); color:var(--text2); padding:13px 15px; border-radius:var(--r-md); font-size:13px; margin-bottom:14px}
+.note b{color:var(--text); font-weight:600}
+.chipline{display:flex; flex-wrap:wrap; gap:7px; margin:14px 0}
+.chip{font-size:12px; padding:5px 11px; border-radius:var(--pill); background:var(--bg2); color:var(--text2)}
+.ref{font-size:13px}
+.ref-item{padding:12px 0; border-bottom:1px solid var(--line)}
+.ref-item:last-child{border-bottom:0}
+.ref-name{font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--text)}
+.ref-dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; vertical-align:1px}
+.ref-desc{color:var(--text3); margin-top:3px; font-size:12.5px}
+.ref-cmd{margin-top:6px; display:flex; gap:8px; flex-wrap:wrap}
+.ref-cmd span{font-family:var(--mono); font-size:11.5px; background:var(--bg2); border-radius:6px; padding:3px 8px; color:var(--text2)}
+.ref-group{font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--text3); margin:18px 0 2px}
+.ref-group:first-child{margin-top:0}
+
+/* ---------------- stage ---------------- */
+#stageBody{position:relative; flex:1; min-height:220px; overflow:hidden}
+#view3d{position:absolute; inset:0; background:#f2f2f5; cursor:grab; overflow:hidden}
+#view3d:active{cursor:grabbing}
+#view3d canvas{display:block}
+.hud-toggle{
+  position:absolute; top:12px; left:12px; width:36px; height:36px; border-radius:50%; border:0; z-index:3;
+  background:rgba(255,255,255,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 4px rgba(0,0,0,.14); color:var(--text2); display:grid; place-items:center; cursor:pointer;
+  transition:background .18s, color .18s;
+}
+.hud-toggle:hover{background:#fff; color:var(--text)}
+.hud-toggle.on{background:var(--text); color:#fff}
+#hud{
+  position:absolute; top:56px; left:12px; padding:10px 13px; border-radius:var(--r-md); z-index:2;
+  transition:opacity .18s ease, transform .18s ease;
+  background:rgba(255,255,255,.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  font-size:12px; line-height:1.75; pointer-events:none; min-width:170px; box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+.hud-row{display:flex; justify-content:space-between; gap:18px}
+.hud-row b{color:var(--text3); font-weight:400}
+.hud-row span{font-family:var(--mono); font-size:11.5px; color:var(--text)}
+#hudStatus{color:var(--accent)!important}
+#hud.collapsed{opacity:0; transform:translateY(-8px) scale(.97); pointer-events:none}
+#viewHint{position:absolute; right:12px; bottom:56px; font-size:11px; color:var(--text3); pointer-events:none}
+#viewFallback{position:absolute; inset:0; display:none; place-items:center; text-align:center; padding:26px; font-size:13px; color:var(--text2); background:var(--bg2)}
+#dataSheet{
+  position:absolute; left:0; right:0; bottom:0; height:74%; min-height:230px; z-index:4;
+  background:rgba(255,255,255,.97); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:blur(20px);
+  border-radius:18px 18px 0 0; box-shadow:0 -6px 28px rgba(0,0,0,.10);
+  display:flex; flex-direction:column; touch-action:none; will-change:transform;
+  transition:transform .32s cubic-bezier(.32,.72,0,1);
+}
+#dataSheet[data-state="closed"]{transform:translateY(calc(100% - 46px))}
+#dataSheet[data-state="peek"]{transform:translateY(calc(100% - 158px))}
+#dataSheet[data-state="open"]{transform:translateY(0)}
+#sheetHandle{
+  flex:none; padding:8px 14px 9px; cursor:grab; user-select:none; -webkit-user-select:none;
+  display:flex; flex-direction:column; align-items:center; gap:6px; position:relative;
+}
+#sheetHandle:active{cursor:grabbing}
+#sheetHandle .grip{width:40px; height:5px; border-radius:3px; background:#d2d2d8}
+.sheet-title{display:flex; align-items:center; gap:9px; font-size:12.5px; font-weight:500; color:var(--text2)}
+#sheetPeek{font-family:var(--mono); font-size:11.5px; color:var(--text3)}
+#sheetChevron{position:absolute; right:14px; top:16px; color:var(--text3); transition:transform .28s ease}
+#sheetContent{flex:1; min-height:0; display:flex; flex-direction:column; overflow:hidden}
+#telemetry{display:flex; gap:7px; padding:4px 12px 10px; overflow-x:auto; flex:none}
+.tele{flex:none; min-width:76px; padding:6px 11px; border-radius:var(--r-md); background:var(--bg2)}
+.tele small{display:block; font-size:11px; color:var(--text3)}
+.tele span{font-family:var(--mono); font-size:14px; color:var(--text)}
+.tabs{display:flex; gap:8px; padding:8px 12px; flex:none; align-items:center; justify-content:space-between; flex-wrap:wrap; border-top:1px solid var(--line)}
+#consoleBox{flex:1; min-height:70px; overflow:auto; padding:2px 14px 14px; font-family:var(--mono); font-size:12px; line-height:1.8}
+.ln{display:flex; gap:10px; padding:1px 0}
+.ln .t{color:#c7c7cc; flex:none}
+.ln .m{flex:1; word-break:break-word; color:var(--text2)}
+.ln.cmd .m{color:var(--accent)}
+.ln.warn .m{color:#b25000}
+.ln.err .m{color:var(--red)}
+.ln.sys .m{color:var(--text3)}
+.pycode{color:var(--text)}
+.pykw{color:#af52de}
+.pyfn{color:var(--accent)}
+.pynum{color:#c7254e}
+.pycom{color:var(--text3)}
+
+/* ---------------- bottom tab bar ---------------- */
+#tabbar{
+  flex:none; display:none; align-items:stretch; justify-content:space-around;
+  background:rgba(255,255,255,.86); backdrop-filter:blur(20px); border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+#tabbar button{
+  flex:1; border:0; background:transparent; color:var(--text3); cursor:pointer;
+  padding:8px 4px 9px; display:flex; flex-direction:column; align-items:center; gap:3px; font-size:11px; font-weight:500;
+}
+#tabbar button.on{color:var(--accent)}
+body.mode-single #tabbar{display:flex}
+body.mode-single .panel{display:none}
+body.mode-single.view-lesson #lessonPanel{display:flex}
+body.mode-single.view-code #editorPanel{display:flex}
+body.mode-single.view-flight #stagePanel{display:flex}
+body.mode-wide #btnLesson{display:none}
+body.mode-single #btnLesson{display:none}
+body.mode-split #lessonPanel{display:none}
+body.mode-split.sheet-open #lessonPanel{
+  display:flex; position:fixed; z-index:60; top:12px; bottom:12px; left:12px;
+  width:min(380px,86vw); box-shadow:0 24px 70px rgba(0,0,0,.22);
+}
+#sheetBackdrop{position:fixed; inset:0; background:rgba(0,0,0,.18); z-index:55; display:none}
+body.sheet-open #sheetBackdrop{display:block}
+
+/* ---------------- landscape rotation fallback ---------------- */
+body.rotated #app{
+  position:fixed; top:0; left:0; width:100vh; height:100vw;
+  transform-origin:0 0; transform:rotate(90deg) translateY(-100vh);
+}
+body.rotated #sheetBackdrop{display:none!important}
+
+/* ---------------- overlay / toast ---------------- */
+#overlay{position:fixed; inset:0; z-index:80; display:grid; place-items:center; background:var(--bg); text-align:center; padding:24px}
+.spinner{width:34px; height:34px; border-radius:50%; margin:0 auto 18px; border:2.5px solid var(--line2); border-top-color:var(--text); animation:spin 800ms linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#overlayText{font-size:17px; font-weight:600; letter-spacing:-.02em}
+#overlaySub{font-size:13px; color:var(--text2); margin-top:8px; max-width:430px}
+#overlayRetry{display:none; margin-top:18px}
+#toast{
+  position:fixed; left:50%; bottom:28px; transform:translate(-50%,14px); z-index:90;
+  background:rgba(30,30,32,.94); backdrop-filter:blur(20px); color:#fff; padding:12px 18px;
+  border-radius:var(--pill); font-size:13.5px; opacity:0; transition:.22s; pointer-events:none; max-width:86vw; text-align:center;
+}
+#toast.show{opacity:1; transform:translate(-50%,0)}
+#toast.good{background:rgba(30,90,50,.94)}
+#toast.bad{background:rgba(120,32,26,.94)}
+
+@media (max-width:760px){
+  #topbar{padding:0 12px}
+  #controlbar{padding:8px 12px; gap:8px}
+  #layout{padding:10px; gap:10px}
+  .panel-body{padding:15px}
+  #dataSheet{height:80%}
+}
+</style>
+</head>
+<body class="mode-wide view-code">
+
+<div id="app">
+
+<header id="topbar">
+  <div class="brand">
+    <div class="mark">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/>
+        <rect x="9.4" y="9.4" width="5.2" height="5.2" rx="1.3"/><path d="M8 8 7.2 7.2M16 8l.8-.8M8 16l-.8.8M16 16l.8.8"/>
+      </svg>
+    </div>
+    <h1>DroneCode Lab</h1>
+  </div>
+  <div class="top-actions">
+    <button id="btnLesson" class="icon-btn" title="lesson">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M9 7h6M9 11h6"/></svg>
+    </button>
+    <div class="seg" id="langSeg">
+      <button data-lang="th">ไทย</button><button data-lang="en">EN</button>
+    </div>
+    <button id="btnLandscape" class="icon-btn" title="landscape">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="11" rx="2.5"/><path d="M16 3.2 18.8 6 16 8.8"/></svg>
+    </button>
+  </div>
+</header>
+
+<div id="controlbar">
+  <select id="missionSelect" class="sel"></select>
+  <button id="btnRun" class="btn primary">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>
+    <span data-i18n="btn.run"></span>
+  </button>
+  <button id="btnPause" class="btn quiet" disabled>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z"/></svg>
+    <span id="pauseLabel" data-i18n="btn.pause"></span>
+  </button>
+  <button id="btnStop" class="btn quiet stop" disabled>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2.5"/></svg>
+    <span data-i18n="btn.stop"></span>
+  </button>
+  <button id="btnReset" class="btn quiet">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4.5V10H9"/></svg>
+    <span data-i18n="btn.reset"></span>
+  </button>
+  <span class="spacer"></span>
+  <span class="ctl-label" data-i18n="speed.label"></span>
+  <select id="speedSelect" class="sel">
+    <option value="0.5" data-i18n="speed.slow"></option>
+    <option value="1" selected data-i18n="speed.normal"></option>
+    <option value="2" data-i18n="speed.fast"></option>
+    <option value="4" data-i18n="speed.vfast"></option>
+  </select>
+</div>
+
+<main id="layout">
+
+  <aside id="lessonPanel" class="panel">
+    <div class="panel-head">
+      <div class="seg" id="lessonTabs">
+        <button class="on" data-lpanel="lesson" data-i18n="tab.lesson"></button>
+        <button data-lpanel="reference" data-i18n="tab.reference"></button>
+      </div>
+      <span id="lessonBadge" class="badge"></span>
+    </div>
+    <div class="panel-body" id="lessonBody"></div>
+    <div class="panel-body ref" id="referenceBody" style="display:none"></div>
+  </aside>
+
+  <div class="split-handle" data-handle="lesson-code" role="separator" aria-orientation="vertical"></div>
+
+  <section id="editorPanel" class="panel">
+    <div class="panel-head">
+      <span class="head-title">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5 5 12l4.5-4.5M14.5 7.5 19 12l-4.5 4.5"/></svg>
+        <span data-i18n="panel.editor"></span>
+      </span>
+      <div class="head-actions">
+        <span id="blockCount" class="badge">0</span>
+        <button id="btnExample" class="mini" data-i18n="editor.example"></button>
+        <button id="btnTidy" class="mini" data-i18n="editor.tidy"></button>
+        <button id="btnClear" class="mini" data-i18n="editor.clear"></button>
+        <button id="btnSave" class="mini" data-i18n="editor.save"></button>
+        <button id="btnLoad" class="mini" data-i18n="editor.load"></button>
+        <input id="fileInput" type="file" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <div id="blocklyDiv"></div>
+  </section>
+
+  <div class="split-handle" data-handle="code-arena" role="separator" aria-orientation="vertical"></div>
+
+  <section id="stagePanel" class="panel">
+    <div class="panel-head">
+      <span class="head-title">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+        <span data-i18n="panel.stage"></span>
+      </span>
+      <div class="head-actions">
+        <button class="mini on" data-cam="orbit" data-i18n="cam.orbit"></button>
+        <button class="mini" data-cam="follow" data-i18n="cam.follow"></button>
+        <button class="mini" data-cam="fpv" data-i18n="cam.fpv"></button>
+        <button class="mini" data-cam="top" data-i18n="cam.top"></button>
+      </div>
+    </div>
+
+    <div id="stageBody">
+    <div id="view3d">
+      <button id="hudToggle" class="hud-toggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></svg>
+      </button>
+      <div id="hud" class="collapsed">
+        <div class="hud-row"><b data-i18n="hud.status"></b><span id="hudStatus"></span></div>
+        <div class="hud-row"><b data-i18n="hud.alt"></b><span id="hudAlt">0</span></div>
+        <div class="hud-row"><b data-i18n="hud.yaw"></b><span id="hudYaw">0</span></div>
+        <div class="hud-row"><b data-i18n="hud.front"></b><span id="hudFront">--</span></div>
+        <div class="hud-row"><b data-i18n="hud.rings"></b><span id="hudRings">0/0</span></div>
+      </div>
+      <div id="viewHint" data-i18n="view.hint"></div>
+      <div id="viewFallback"></div>
+    </div>
+
+    <div id="dataSheet" data-state="closed">
+      <div id="sheetHandle">
+        <div class="grip"></div>
+        <div class="sheet-title"><span data-i18n="sheet.title"></span><span id="sheetPeek"></span></div>
+        <svg id="sheetChevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14l5-5 5 5"/></svg>
+      </div>
+      <div id="sheetContent">
+
+    <div id="telemetry">
+      <div class="tele"><small data-i18n="tele.x"></small><span id="tX">0</span></div>
+      <div class="tele"><small data-i18n="tele.y"></small><span id="tY">0</span></div>
+      <div class="tele"><small data-i18n="tele.z"></small><span id="tZ">0</span></div>
+      <div class="tele"><small data-i18n="tele.speed"></small><span id="tSpeed">50</span></div>
+      <div class="tele"><small data-i18n="tele.led"></small><span id="tLed">off</span></div>
+      <div class="tele"><small data-i18n="tele.battery"></small><span id="tBat">100%</span></div>
+      <div class="tele"><small data-i18n="tele.time"></small><span id="tTime">0s</span></div>
+    </div>
+
+    <div class="tabs">
+      <div class="seg" id="consoleTabs">
+        <button class="on" data-tab="log" data-i18n="tab.log"></button>
+        <button data-tab="cmd" data-i18n="tab.cmd"></button>
+        <button data-tab="py" data-i18n="tab.py"></button>
+      </div>
+      <div class="head-actions">
+        <button id="btnExportCmd" class="mini" data-i18n="btn.exportCmd"></button>
+        <button id="btnExportPy" class="mini" data-i18n="btn.exportPy"></button>
+      </div>
+    </div>
+    <div id="consoleBox"></div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+</main>
+
+<nav id="tabbar">
+  <button data-view="lesson">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M9 7h6M9 11h6"/></svg>
+    <span data-i18n="view.lesson"></span>
+  </button>
+  <button data-view="code" class="on">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5 5 12l4.5-4.5M14.5 7.5 19 12l-4.5 4.5"/></svg>
+    <span data-i18n="view.code"></span>
+  </button>
+  <button data-view="flight">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+    <span data-i18n="view.flight"></span>
+  </button>
+</nav>
+
+<div id="sheetBackdrop"></div>
+<div id="toast"></div>
+
+</div>
+
+<div id="overlay">
+  <div>
+    <div class="spinner"></div>
+    <div id="overlayText">Loading</div>
+    <div id="overlaySub"></div>
+    <button id="overlayRetry" class="btn" data-i18n="btn.retry"></button>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   DroneCode Lab v2
+   ส่วนที่ 1 : ค่าคงที่ / ภาษา / ตรรกะบริสุทธิ์ / บทเรียน / ตัวช่วย
+   ===================================================================== */
+
+var BLOCKLY_URLS = [
+  'blockly.min.js',
+  'lib/blockly.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/blockly/10.4.3/blockly.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/blockly/10.2.2/blockly.min.js',
+  'https://cdn.jsdelivr.net/npm/blockly@10.4.3/blockly.min.js',
+  'https://unpkg.com/blockly@10.4.3/blockly.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/blockly/9.3.3/blockly.min.js'
+];
+var THREE_URLS = [
+  'three.min.js',
+  'lib/three.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
+  'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js',
+  'https://unpkg.com/three@0.128.0/build/three.min.js'
+];
+
+var LANG = 'th';
+
+/* ---------------------- ตารางข้อความสองภาษา ---------------------- */
+var I18N = {
+  'app.sub':            { th:'ห้องเรียนเขียนโปรแกรมโดรนด้วยบล็อกคำสั่ง พร้อมสนามบินจำลอง 3 มิติ', en:'Learn drone programming with blocks in a live 3D flight simulator' },
+  'btn.run':            { th:'รันโปรแกรม', en:'Run' },
+  'btn.stop':           { th:'หยุด', en:'Stop' },
+  'btn.reset':          { th:'รีเซ็ต', en:'Reset' },
+  'btn.retry':          { th:'ลองโหลดใหม่', en:'Reload' },
+  'speed.label':        { th:'ความเร็ว', en:'Speed' },
+  'btn.pause':          { th:'พัก', en:'Pause' },
+  'btn.resume':         { th:'ไปต่อ', en:'Resume' },
+  'btn.landscape':      { th:'โหมดแนวนอน', en:'Landscape mode' },
+  'btn.portrait':       { th:'กลับแนวตั้ง', en:'Back to portrait' },
+  'btn.lesson':         { th:'เปิดบทเรียน', en:'Open lesson' },
+  'sheet.title':        { th:'ข้อมูลการบินและคอนโซล', en:'Flight data and console' },
+  'hud.toggle':         { th:'สถานะการบิน', en:'Flight status' },
+  'view.lesson':        { th:'บทเรียน', en:'Lesson' },
+  'view.code':          { th:'เขียนโค้ด', en:'Code' },
+  'view.flight':        { th:'สนามบิน', en:'Arena' },
+  'tab.lesson':         { th:'บทเรียน', en:'Lesson' },
+  'tab.reference':      { th:'คู่มือคำสั่ง', en:'Reference' },
+  'ref.intro':          { th:'บล็อกทั้งหมดที่ใช้ได้ พร้อมคำสั่งจริงของโดรนและโค้ด Python ที่ระบบสร้างให้', en:'Every block, with the real drone command and the Python it generates.' },
+  'ref.flight':         { th:'การบินพื้นฐาน', en:'Flight' },
+  'ref.move':           { th:'การเคลื่อนที่', en:'Movement' },
+  'ref.turn':           { th:'การหมุน', en:'Rotation' },
+  'ref.light':          { th:'ไฟและการแสดงผล', en:'Lights and output' },
+  'ref.sense':          { th:'เซ็นเซอร์และเงื่อนไข', en:'Sensors and conditions' },
+  'ref.logic':          { th:'ตรรกะ ลูป และตัวแปร', en:'Logic, loops and variables' },
+  'toast.landscapeOn':  { th:'เข้าสู่โหมดแนวนอนแล้ว', en:'Landscape mode on' },
+  'toast.landscapeOff': { th:'กลับสู่โหมดแนวตั้งแล้ว', en:'Back to portrait' },
+  'toast.landscapeCss': { th:'อุปกรณ์นี้ล็อกการหมุนจอไม่ได้ ระบบจึงหมุนหน้าจอให้แทน', en:'This device cannot lock rotation, so the screen was rotated instead' },
+  'log.paused':         { th:'พักการทำงานชั่วคราว', en:'Program paused.' },
+  'log.resumed':        { th:'ทำงานต่อ', en:'Program resumed.' },
+  'log.blockWarn':      { th:'ทำเครื่องหมายบล็อกที่มีปัญหาไว้ในพื้นที่เขียนโปรแกรมแล้ว', en:'The block that failed is marked in the editor.' },
+  'btn.exportCmd':      { th:'ส่งออกคำสั่ง', en:'Export commands' },
+  'btn.exportPy':       { th:'ส่งออก Python', en:'Export Python' },
+  'speed.slow':         { th:'0.5x ช้า', en:'0.5x slow' },
+  'speed.normal':       { th:'1x ปกติ', en:'1x normal' },
+  'speed.fast':         { th:'2x เร็ว', en:'2x fast' },
+  'speed.vfast':        { th:'4x เร็วมาก', en:'4x fastest' },
+  'panel.lesson':       { th:'บทเรียนและภารกิจ', en:'Lesson and mission' },
+  'panel.editor':       { th:'พื้นที่เขียนโปรแกรม', en:'Block editor' },
+  'panel.stage':        { th:'สนามบินจำลอง 3 มิติ', en:'3D flight arena' },
+  'editor.example':     { th:'ตัวอย่างเฉลย', en:'Example' },
+  'editor.tidy':        { th:'จัดเรียง', en:'Tidy' },
+  'editor.clear':       { th:'ล้าง', en:'Clear' },
+  'editor.save':        { th:'บันทึก', en:'Save' },
+  'editor.load':        { th:'เปิดไฟล์', en:'Open' },
+  'editor.blocks':      { th:'{0} บล็อก', en:'{0} blocks' },
+  'cam.orbit':          { th:'มุมอิสระ', en:'Orbit' },
+  'cam.follow':         { th:'กล้องตาม', en:'Follow' },
+  'cam.fpv':            { th:'มุมนักบิน', en:'FPV' },
+  'cam.top':            { th:'มุมสูง', en:'Top' },
+  'hud.status':         { th:'สถานะ', en:'Status' },
+  'hud.alt':            { th:'ความสูง', en:'Altitude' },
+  'hud.yaw':            { th:'หัวโดรน', en:'Heading' },
+  'hud.front':          { th:'สิ่งกีดขวางหน้า', en:'Front sensor' },
+  'hud.rings':          { th:'ห่วง', en:'Gates' },
+  'tele.x':             { th:'ตำแหน่ง X', en:'Position X' },
+  'tele.y':             { th:'ความสูง Y', en:'Altitude Y' },
+  'tele.z':             { th:'ตำแหน่ง Z', en:'Position Z' },
+  'tele.speed':         { th:'ความเร็ว', en:'Speed' },
+  'tele.led':           { th:'ไฟ LED', en:'LED' },
+  'tele.battery':       { th:'แบตเตอรี่', en:'Battery' },
+  'tele.time':          { th:'เวลาบิน', en:'Flight time' },
+  'tab.log':            { th:'บันทึกการทำงาน', en:'Console' },
+  'tab.cmd':            { th:'คำสั่งจริง (Tello SDK)', en:'Tello SDK commands' },
+  'tab.py':             { th:'โค้ด Python', en:'Python code' },
+  'view.hint':          { th:'ลากเพื่อหมุนมุมมอง เลื่อนล้อเมาส์หรือหนีบนิ้วเพื่อซูม', en:'Drag to orbit, scroll or pinch to zoom' },
+  'badge.notyet':       { th:'ยังไม่ผ่าน', en:'Not passed' },
+  'badge.pass':         { th:'ผ่านภารกิจ', en:'Mission passed' },
+  'badge.fail':         { th:'ยังไม่ผ่าน', en:'Not passed' },
+  'badge.flying':       { th:'กำลังบิน', en:'Flying' },
+  'lesson.goal':        { th:'เป้าหมาย: {0}', en:'Goal: {0}' },
+  'lesson.rings':       { th:'ห่วง {0} วง', en:'{0} gates' },
+  'lesson.obstacles':   { th:'สิ่งกีดขวาง {0} ชิ้น', en:'{0} obstacles' },
+  'lesson.tip':         { th:'กดปุ่มรันโปรแกรมเพื่อให้โดรนทำงานตามบล็อก ดูคำสั่งจริงและโค้ด Python ได้ที่แท็บด้านล่างของสนามจำลอง', en:'Press Run to fly the program. The tabs under the arena show the real Tello commands and the generated Python code.' },
+  'overlay.blockly':    { th:'กำลังโหลดเอนจิ้นบล็อก Blockly', en:'Loading the Blockly engine' },
+  'overlay.blockly.sub':{ th:'มองหาไฟล์ blockly.min.js ที่อยู่ข้างไฟล์นี้ก่อน ถ้าไม่พบจึงค่อยโหลดจากอินเทอร์เน็ต', en:'Looks for blockly.min.js next to this file first, and only then falls back to the internet' },
+  'overlay.three':      { th:'กำลังโหลดเอนจิ้น 3 มิติ Three.js', en:'Loading the Three.js 3D engine' },
+  'overlay.three.sub':  { th:'เตรียมสนามบินจำลองและตัวโดรน', en:'Preparing the arena and the drone' },
+  'overlay.setup':      { th:'กำลังจัดห้องเรียน', en:'Setting up the workspace' },
+  'overlay.errBlockly': { th:'โหลดเอนจิ้นบล็อกไม่สำเร็จ', en:'Could not load the block engine' },
+  'overlay.errOffline': { th:'วางไฟล์ blockly.min.js และ three.min.js ไว้โฟลเดอร์เดียวกับไฟล์นี้ แล้วเปิดใหม่', en:'Put blockly.min.js and three.min.js in the same folder as this file, then reload' },
+  'overlay.errInject':  { th:'เปิดพื้นที่เขียนบล็อกไม่สำเร็จ', en:'Could not open the block editor' },
+  'fallback.3d':        { th:'เปิดสนามจำลอง 3 มิติไม่ได้ อุปกรณ์นี้อาจปิด WebGL หรือโหลด Three.js ไม่สำเร็จ ส่วนเขียนบล็อกยังใช้งานได้ตามปกติ', en:'The 3D arena could not start. WebGL may be disabled or Three.js failed to load. The block editor still works.' },
+
+  'status.ready':       { th:'พร้อมบิน', en:'Ready' },
+  'status.takeoff':     { th:'กำลังบินขึ้น', en:'Taking off' },
+  'status.hover':       { th:'ลอยนิ่ง', en:'Hovering' },
+  'status.landing':     { th:'กำลังลงจอด', en:'Landing' },
+  'status.landed':      { th:'ลงจอดแล้ว', en:'Landed' },
+  'status.move':        { th:'กำลังบิน', en:'Flying' },
+  'status.rotate':      { th:'กำลังหมุนตัว', en:'Rotating' },
+  'status.flip':        { th:'กำลังตีลังกา', en:'Flipping' },
+  'status.goto':        { th:'บินไปยังพิกัด', en:'Going to point' },
+  'status.curve':       { th:'บินเป็นเส้นโค้ง', en:'Flying a curve' },
+  'status.stopped':     { th:'หยุดกลางคัน', en:'Stopped' },
+  'status.emergency':   { th:'หยุดฉุกเฉิน', en:'Emergency stop' },
+  'status.waiting':     { th:'รอเงื่อนไข', en:'Waiting' },
+
+  'log.ready':          { th:'ระบบพร้อมใช้งาน เลือกบทเรียนแล้วลากบล็อกมาต่อกันได้เลย', en:'System ready. Pick a lesson and start dragging blocks.' },
+  'log.start':          { th:'เริ่มรันโปรแกรม ภารกิจ {0}', en:'Running program. Mission: {0}' },
+  'log.done':           { th:'รันโปรแกรมครบทุกคำสั่งแล้ว', en:'Program finished.' },
+  'log.aborted':        { th:'ผู้ใช้สั่งหยุดการทำงาน', en:'Stopped by the user.' },
+  'log.reset':          { th:'รีเซ็ตโดรนกลับจุดเริ่มต้น', en:'Drone reset to the start pad.' },
+  'log.mission':        { th:'เปลี่ยนบทเรียนเป็น {0}', en:'Lesson changed to {0}' },
+  'log.takeoff':        { th:'บินขึ้นสู่ความสูง 100 ซม.', en:'Taking off to 100 cm.' },
+  'log.land':           { th:'กำลังลดระดับลงจอด', en:'Descending to land.' },
+  'log.landed':         { th:'ลงจอดเรียบร้อย มอเตอร์หยุดทำงาน', en:'Landed, motors stopped.' },
+  'log.emergency':      { th:'หยุดมอเตอร์ฉุกเฉิน โดรนร่วงลงพื้น', en:'Emergency stop, the drone drops.' },
+  'log.stop':           { th:'หยุดเคลื่อนที่และลอยนิ่งอยู่กับที่', en:'Stopping and hovering in place.' },
+  'log.hover':          { th:'ลอยนิ่ง {0} วินาที', en:'Hovering for {0} s.' },
+  'log.move':           { th:'บิน{0} {1} ซม. ที่ความเร็ว {2} ซม./วิ', en:'Flying {0} {1} cm at {2} cm/s.' },
+  'log.rotate':         { th:'หมุน{0} {1} องศา', en:'Rotating {0} {1} degrees.' },
+  'log.flip':           { th:'ตีลังกาไปทาง{0}', en:'Flipping {0}.' },
+  'log.led':            { th:'ตั้งไฟ LED เป็นสี {0}', en:'LED set to {0}.' },
+  'log.blink':          { th:'กะพริบไฟ LED สี {0} จำนวน {1} ครั้ง', en:'Blink LED {0} x{1}.' },
+  'log.ledrgb':         { th:'ตั้งไฟ LED เป็นค่า RGB ({0}, {1}, {2})', en:'LED set to RGB ({0}, {1}, {2}).' },
+  'log.speed':          { th:'ตั้งความเร็วเป็น {0} ซม./วินาที', en:'Speed set to {0} cm/s.' },
+  'log.goto':           { th:'บินไปพิกัด ({0}, {1}, {2})', en:'Going to ({0}, {1}, {2}).' },
+  'log.curve':          { th:'บินโค้งผ่านจุด ({0}, {1}, {2}) ไปยัง ({3}, {4}, {5})', en:'Curving through ({0}, {1}, {2}) to ({3}, {4}, {5}).' },
+  'log.print':          { th:'พิมพ์ข้อความ: {0}', en:'print: {0}' },
+  'log.loop':           { th:'เริ่มทำซ้ำ {0} รอบ', en:'Loop starts, {0} rounds.' },
+  'log.loopEmpty':      { th:'บล็อกวนซ้ำยังว่างอยู่ ไม่มีคำสั่งข้างใน', en:'The loop body is empty.' },
+  'log.ring':           { th:'ผ่านห่วงที่ {0} แล้ว', en:'Gate {0} cleared.' },
+  'log.crash':          { th:'โดรนชนสิ่งกีดขวาง ภารกิจถือว่าล้มเหลว', en:'The drone hit an obstacle. Mission failed.' },
+  'log.lowbat':         { th:'แบตเตอรี่เหลือน้อยกว่า 20% โดรนจริงจะเริ่มบังคับลงจอด', en:'Battery below 20%. A real drone would force a landing.' },
+  'log.errNotFlying':   { th:'{0} ไม่สำเร็จ โดรนยังไม่ได้บินขึ้น (ต้องใช้บล็อก take off ก่อน)', en:'{0} failed: the drone has not taken off yet (use "take off" first).' },
+  'log.errFlipLow':     { th:'ตีลังกาไม่ได้ ต้องสูงอย่างน้อย 80 ซม. ตอนนี้ {0} ซม.', en:'Flip refused: altitude must be at least 80 cm, now {0} cm.' },
+  'log.warnFloor':      { th:'บินต่ำกว่า 20 ซม. ไม่ได้ ระบบปรับความสูงไว้ที่ 20 ซม.', en:'Cannot fly below 20 cm, clamped to 20 cm.' },
+  'log.warnCeiling':    { th:'เพดานบินสูงสุด 500 ซม. ระบบตัดความสูงไว้ที่ 500 ซม.', en:'Ceiling is 500 cm, clamped to 500 cm.' },
+  'log.warnFlying':     { th:'โดรนบินอยู่แล้ว ข้ามคำสั่งบินขึ้น', en:'Already flying, take off skipped.' },
+  'log.warnGround':     { th:'โดรนอยู่บนพื้นแล้ว ข้ามคำสั่งลงจอด', en:'Already on the ground, land skipped.' },
+  'log.unknown':        { th:'ยังไม่รองรับบล็อก {0} จึงข้ามไป', en:'Block {0} is not supported and was skipped.' },
+  'log.waitUntil':      { th:'รอจนกว่าเงื่อนไขจะเป็นจริง', en:'Waiting until the condition becomes true.' },
+  'log.waitTimeout':    { th:'รอเงื่อนไขนานเกิน 20 วินาที ระบบข้ามคำสั่งนี้', en:'Waited over 20 s, the block was skipped.' },
+  'log.limit':          { th:'วนซ้ำเกิน {0} รอบ ระบบหยุดลูปเพื่อความปลอดภัย', en:'Loop exceeded {0} rounds and was stopped.' },
+  'log.callProc':       { th:'เรียกใช้ฟังก์ชัน {0}', en:'Calling function {0}.' },
+  'log.procMissing':    { th:'ไม่พบฟังก์ชัน {0}', en:'Function {0} was not found.' },
+  'log.varSet':         { th:'ตั้งค่าตัวแปร {0} = {1}', en:'Variable {0} = {1}' },
+
+  'toast.noProgram':    { th:'ยังไม่มีคำสั่ง ลากบล็อกมาต่อใต้บล็อก when program starts ก่อน', en:'No commands yet. Attach blocks under "when program starts".' },
+  'toast.saved':        { th:'บันทึกไฟล์โปรเจกต์แล้ว', en:'Project saved.' },
+  'toast.loaded':       { th:'เปิดไฟล์โปรเจกต์เรียบร้อย', en:'Project opened.' },
+  'toast.loadErr':      { th:'เปิดไฟล์ไม่สำเร็จ: {0}', en:'Could not open the file: {0}' },
+  'toast.saveErr':      { th:'บันทึกไม่สำเร็จ: {0}', en:'Could not save: {0}' },
+  'toast.cleared':      { th:'ล้างพื้นที่ทำงานแล้ว', en:'Workspace cleared.' },
+  'toast.example':      { th:'โหลดตัวอย่างเฉลยของบทนี้แล้ว ลองกดรันดู', en:'Example program loaded. Press Run.' },
+  'toast.noExample':    { th:'บทนี้ยังไม่มีตัวอย่างเฉลย', en:'No example for this lesson.' },
+  'toast.noCmd':        { th:'ยังไม่มีคำสั่ง ลองรันโปรแกรมก่อน', en:'No commands yet, run the program first.' },
+  'toast.exported':     { th:'ส่งออกไฟล์แล้ว', en:'File exported.' },
+
+  'chk.pass':           { th:'ทำภารกิจสำเร็จ', en:'Mission accomplished.' },
+  'chk.noTakeoff':      { th:'ยังไม่มีคำสั่งบินขึ้น', en:'The drone never took off.' },
+  'chk.noLand':         { th:'โดรนยังไม่ได้ลงจอด', en:'The drone has not landed.' },
+  'chk.hasErrors':      { th:'มีคำสั่งที่ทำงานผิดพลาด ลองอ่านบันทึกการทำงาน', en:'Some commands failed, check the console.' },
+  'chk.tooShort':       { th:'บินออกไปได้แค่ {0} ซม. ยังไม่ถึง 90 ซม.', en:'Flew only {0} cm, at least 90 cm is required.' },
+  'chk.notBack':        { th:'ลงจอดห่างจุดเดิม {0} ซม.', en:'Landed {0} cm away from the start pad.' },
+  'chk.rings':          { th:'ผ่านห่วงแล้ว {0} จาก {1} วง', en:'Cleared {0} of {1} gates.' },
+  'chk.noLoop':         { th:'ยังไม่ได้ใช้บล็อกวนซ้ำ repeat', en:'The repeat loop block was not used.' },
+  'chk.noWhile':        { th:'ยังไม่ได้ใช้บล็อกเงื่อนไข repeat until หรือ if', en:'A repeat until or if block was not used.' },
+  'chk.noFor':          { th:'ยังไม่ได้ใช้บล็อก count with i', en:'The count-with-i loop was not used.' },
+  'chk.noFlip':         { th:'ยังไม่มีการตีลังกาสำเร็จ', en:'No successful flip.' },
+  'chk.noLed':          { th:'ยังไม่ได้เปลี่ยนสีไฟ LED', en:'The LED colour was never changed.' },
+  'chk.crashed':        { th:'โดรนชนสิ่งกีดขวาง', en:'The drone crashed into an obstacle.' },
+  'chk.stopFar':        { th:'หยุดห่างกำแพง {0} ซม. ต้องอยู่ในช่วง 60 ถึง 140 ซม.', en:'Stopped {0} cm from the wall, it must be between 60 and 140 cm.' },
+  'chk.lowAlt':         { th:'ขึ้นได้สูงสุด {0} ซม. ต้องถึง 250 ซม.', en:'Reached only {0} cm, 250 cm is required.' }
+};
+
+function t(key, args){
+  var row = I18N[key];
+  var s = row ? (row[LANG] || row.en) : key;
+  if (args) for (var i=0;i<args.length;i++) s = s.split('{'+i+'}').join(String(args[i]));
+  return s;
+}
+
+/* ========================= PURE-LOGIC-START ========================= */
+
+function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+function easeInOutCubic(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2; }
+function normDeg(d){ var x = d % 360; if (x > 180) x -= 360; if (x < -180) x += 360; return x; }
+function distXZ(x, z){ return Math.sqrt(x*x + z*z); }
+function round1(v){ return Math.round(v*10)/10; }
+
+/* yaw 0 = หัวโดรนชี้ไปทาง -Z, หมุนตามเข็มนาฬิกาทำให้ yaw ลดลง */
+function dirVector(dir, yawDeg){
+  var y = yawDeg * Math.PI / 180;
+  var f = { x:-Math.sin(y), y:0, z:-Math.cos(y) };
+  var r = { x: Math.cos(y), y:0, z:-Math.sin(y) };
+  switch(dir){
+    case 'forward': return f;
+    case 'back':    return { x:-f.x, y:0, z:-f.z };
+    case 'right':   return r;
+    case 'left':    return { x:-r.x, y:0, z:-r.z };
+    case 'up':      return { x:0, y: 1, z:0 };
+    case 'down':    return { x:0, y:-1, z:0 };
+    default:        return { x:0, y:0, z:0 };
+  }
+}
+
+function ledRGB(name){
+  var map = { off:[0,0,0], red:[255,0,0], green:[0,255,0], blue:[0,0,255], cyan:[0,255,255],
+              yellow:[255,255,0], purple:[160,0,255], white:[255,255,255], orange:[255,120,0], pink:[255,60,160] };
+  return map[name] || map.off;
+}
+
+/* ---- เรขาคณิตของเซ็นเซอร์: ระยะจากโดรนถึงสิ่งกีดขวางตามแนวที่หันหน้าไป ---- */
+function rayObstacleDistance(px, py, pz, dx, dz, obstacles, maxRange){
+  var best = maxRange;
+  for (var i=0;i<obstacles.length;i++){
+    var o = obstacles[i];
+    if (py > o.h) continue;
+    var minX = o.x - o.w/2, maxX = o.x + o.w/2;
+    var minZ = o.z - o.d/2, maxZ = o.z + o.d/2;
+    var t0 = 0, t1 = maxRange, ta, tb, tmp;
+    if (Math.abs(dx) < 1e-9){
+      if (px < minX || px > maxX) continue;
+    } else {
+      ta = (minX - px)/dx; tb = (maxX - px)/dx;
+      if (ta > tb){ tmp = ta; ta = tb; tb = tmp; }
+      t0 = Math.max(t0, ta); t1 = Math.min(t1, tb);
+    }
+    if (Math.abs(dz) < 1e-9){
+      if (pz < minZ || pz > maxZ) continue;
+    } else {
+      ta = (minZ - pz)/dz; tb = (maxZ - pz)/dz;
+      if (ta > tb){ tmp = ta; ta = tb; tb = tmp; }
+      t0 = Math.max(t0, ta); t1 = Math.min(t1, tb);
+    }
+    if (t0 <= t1 && t1 > 0) best = Math.min(best, Math.max(0, t0));
+  }
+  return best;
+}
+
+function pointInObstacle(px, py, pz, obstacles, margin){
+  margin = margin || 0;
+  for (var i=0;i<obstacles.length;i++){
+    var o = obstacles[i];
+    if (py > o.h + margin) continue;
+    if (Math.abs(px - o.x) <= o.w/2 + margin && Math.abs(pz - o.z) <= o.d/2 + margin) return true;
+  }
+  return false;
+}
+
+/* ---- คำสั่งจริงของโดรน (Tello SDK 2.0 / RoboMaster TT) ---- */
+function telloCommand(type, p){
+  p = p || {};
+  switch(type){
+    case 'takeoff':   return 'takeoff';
+    case 'land':      return 'land';
+    case 'emergency': return 'emergency';
+    case 'stop':      return 'stop';
+    case 'move':      return p.dir + ' ' + Math.round(p.dist);
+    case 'rotate':    return (p.way === 'cw' ? 'cw ' : 'ccw ') + Math.round(p.deg);
+    case 'flip':      return 'flip ' + p.way;
+    case 'hover':     return 'delay ' + p.sec;
+    case 'speed':     return 'speed ' + Math.round(p.value);
+    case 'goto':      return 'go ' + Math.round(p.x) + ' ' + Math.round(p.y) + ' ' + Math.round(p.z) + ' ' + Math.round(p.speed);
+    case 'curve':     return 'curve ' + [p.x1,p.y1,p.z1,p.x2,p.y2,p.z2].map(Math.round).join(' ') + ' ' + Math.round(p.speed);
+    case 'led':       return 'EXT led ' + ledRGB(p.color).join(' ');
+    case 'led_rgb':   return 'EXT led ' + Math.round(p.r) + ' ' + Math.round(p.g) + ' ' + Math.round(p.b);
+    default:          return '# ' + type;
+  }
+}
+
+/* ---- โค้ด Python ตามไลบรารี djitellopy ---- */
+function pyCommand(type, p){
+  p = p || {};
+  switch(type){
+    case 'takeoff':   return 'tello.takeoff()';
+    case 'land':      return 'tello.land()';
+    case 'emergency': return 'tello.emergency()';
+    case 'stop':      return 'tello.send_control_command("stop")';
+    case 'hover':     return 'time.sleep(' + p.sec + ')';
+    case 'speed':     return 'tello.set_speed(' + p.value + ')';
+    case 'flip':      return 'tello.flip_' + ({ f:'forward', b:'back', l:'left', r:'right' }[p.way] || 'forward') + '()';
+    case 'rotate':    return 'tello.rotate_' + (p.way === 'cw' ? 'clockwise' : 'counter_clockwise') + '(' + p.deg + ')';
+    case 'move':      return 'tello.move_' + p.dir + '(' + p.dist + ')';
+    case 'goto':      return 'tello.go_xyz_speed(' + [p.x,p.y,p.z,p.speed].join(', ') + ')';
+    case 'curve':     return 'tello.curve_xyz_speed(' + [p.x1,p.y1,p.z1,p.x2,p.y2,p.z2,p.speed].join(', ') + ')';
+    case 'led':       return 'tello.send_expansion_command("led ' + ledRGB(p.color).join(' ') + '")';
+    default:          return '# ' + type;
+  }
+}
+
+var PY_SENSOR = {
+  height:'tello.get_height()', battery:'tello.get_battery()', time:'tello.get_flight_time()',
+  temp:'tello.get_temperature()', tof:'tello.get_distance_tof()', yaw:'tello.get_yaw()',
+  pitch:'tello.get_pitch()', roll:'tello.get_roll()', speed:'tello.get_speed_x()',
+  pos_x:'position_x', pos_y:'position_y', pos_z:'position_z',
+  dist_home:'distance_from_home', front:'front_distance'
+};
+
+/* ------------------------- บทเรียนและภารกิจ ------------------------- */
+var MISSIONS = [
+  {
+    id:'basic',
+    name:{ th:'บทที่ 1 · บินขึ้นและลงจอด', en:'Lesson 1 - Take off and land' },
+    goal:{ th:'สั่งให้โดรนบินขึ้น ลอยนิ่ง แล้วลงจอด', en:'Take off, hover, then land safely' },
+    rings:[], obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 1 · บินขึ้นและลงจอด</h3><p>ทุกโปรแกรมเริ่มจากบล็อก <code>when program starts</code> แล้วต่อคำสั่งลงมาเป็นลำดับจากบนลงล่าง</p><ol><li>ลาก <code>take off</code> จากหมวด Flight มาต่อใต้บล็อกเริ่มโปรแกรม</li><li>ต่อด้วย <code>hover for 2 seconds</code></li><li>ปิดท้ายด้วย <code>land</code> แล้วกดรันโปรแกรม</li></ol><div class="note"><b>รู้ไหม</b> คำสั่ง takeoff ของโดรนจริงจะยกตัวขึ้นราว 1 เมตรแล้วลอยรอคำสั่งถัดไป ถ้าสั่งบินทั้งที่ยังไม่ takeoff โดรนจะขึ้นสถานะ error</div>',
+      en:'<h3>Lesson 1 - Take off and land</h3><p>Every program starts from the <code>when program starts</code> block and runs top to bottom.</p><ol><li>Drag <code>take off</code> from the Flight category under the start block</li><li>Add <code>hover for 2 seconds</code></li><li>Finish with <code>land</code> and press Run</li></ol><div class="note"><b>Did you know</b> a real Tello climbs to about 1 m on takeoff and waits there. Commanding a move before takeoff returns an error.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' }, { type:'drone_hover', fields:{ SEC:2 } }, { type:'drone_land' }
+    ],
+    check:function(log){
+      if (!log.tookOff) return { ok:false, key:'chk.noTakeoff' };
+      if (!log.landed)  return { ok:false, key:'chk.noLand' };
+      if (log.errors>0) return { ok:false, key:'chk.hasErrors' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'line',
+    name:{ th:'บทที่ 2 · บินไปและกลับที่เดิม', en:'Lesson 2 - Out and back' },
+    goal:{ th:'บินไปข้างหน้า 1 เมตรแล้วกลับมาลงจอดจุดเดิม', en:'Fly 1 m forward and return to the pad' },
+    rings:[], obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 2 · บินไปและกลับที่เดิม</h3><p>บล็อก <code>fly forward 100 cm</code> มีเมนูเลือกทิศ 6 ทิศ และช่องระยะทางหน่วยเซนติเมตร (20 ถึง 500 เท่าโดรนจริง)</p><ol><li>take off</li><li>fly forward 100 cm</li><li>fly back 100 cm</li><li>land</li></ol><div class="note"><b>เกณฑ์ผ่าน</b> ต้องบินห่างจุดเริ่มอย่างน้อย 90 ซม. และกลับมาลงจอดห่างจุดเดิมไม่เกิน 40 ซม.</div>',
+      en:'<h3>Lesson 2 - Out and back</h3><p>The <code>fly</code> block has six directions and a distance in centimetres (20 to 500, same as the real drone).</p><ol><li>take off</li><li>fly forward 100 cm</li><li>fly back 100 cm</li><li>land</li></ol><div class="note"><b>To pass</b> fly at least 90 cm away and land within 40 cm of the pad.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'drone_move', fields:{ DIR:'forward', DIST:100 } },
+      { type:'drone_move', fields:{ DIR:'back', DIST:100 } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      if (!log.tookOff)     return { ok:false, key:'chk.noTakeoff' };
+      if (log.maxDist < 90) return { ok:false, key:'chk.tooShort', args:[Math.round(log.maxDist)] };
+      if (log.endDist > 40) return { ok:false, key:'chk.notBack', args:[Math.round(log.endDist)] };
+      if (!log.landed)      return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'square',
+    name:{ th:'บทที่ 3 · บินสี่เหลี่ยมด้วยลูป', en:'Lesson 3 - Square with a loop' },
+    goal:{ th:'ใช้บล็อก repeat บินเป็นสี่เหลี่ยมผ่านห่วงครบ 4 วง', en:'Use a repeat loop to fly a square through all 4 gates' },
+    rings:[
+      { x:0, y:100, z:-75, rotY:0 }, { x:75, y:100, z:-150, rotY:90 },
+      { x:150, y:100, z:-75, rotY:0 }, { x:75, y:100, z:0, rotY:90 }
+    ],
+    obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 3 · บินสี่เหลี่ยมด้วยลูป</h3><p>แทนที่จะเขียนคำสั่งซ้ำ 4 ชุด ใช้ <code>repeat 4 times</code> จากหมวด Loops ครอบคำสั่งไว้ข้างใน</p><ol><li>take off</li><li>repeat 4 times { fly forward 150 cm, rotate clockwise 90 degrees }</li><li>land</li></ol><div class="note"><b>เกณฑ์ผ่าน</b> ผ่านห่วงครบ 4 วง ใช้บล็อก repeat และลงจอด</div>',
+      en:'<h3>Lesson 3 - Square with a loop</h3><p>Instead of repeating four sets of blocks, wrap them in <code>repeat 4 times</code> from the Loops category.</p><ol><li>take off</li><li>repeat 4 times { fly forward 150 cm, rotate clockwise 90 degrees }</li><li>land</li></ol><div class="note"><b>To pass</b> clear all 4 gates, use the repeat block and land.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'controls_repeat_ext', values:{ TIMES:{ type:'math_number', fields:{ NUM:4 } } },
+        statements:{ DO:[ { type:'drone_move', fields:{ DIR:'forward', DIST:150 } },
+                          { type:'drone_rotate', fields:{ WAY:'cw', DEG:90 } } ] } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      var got = log.rings.filter(function(v){ return v; }).length;
+      if (got < 4) return { ok:false, key:'chk.rings', args:[got, 4] };
+      if (log.blocks.indexOf('controls_repeat_ext') < 0) return { ok:false, key:'chk.noLoop' };
+      if (!log.landed) return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'course',
+    name:{ th:'บทที่ 4 · สนามห่วง 3 ระดับ', en:'Lesson 4 - Three level gate course' },
+    goal:{ th:'ผสมคำสั่งขึ้น ลง และหมุน ให้ผ่านห่วงทั้ง 3 วง', en:'Mix up, down and turn commands to clear 3 gates' },
+    rings:[
+      { x:0, y:60, z:-120, rotY:0 }, { x:0, y:160, z:-240, rotY:0 }, { x:-120, y:160, z:-240, rotY:90 }
+    ],
+    obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 4 · สนามห่วง 3 ระดับ</h3><p>ห่วงอยู่คนละความสูงและคนละทิศ ต้องผสมคำสั่งขึ้นลงกับการหมุนตัว</p><ol><li>take off</li><li>fly down 40 cm แล้ว fly forward 120 cm</li><li>fly up 100 cm แล้ว fly forward 120 cm</li><li>rotate counter-clockwise 90 แล้ว fly forward 120 cm</li><li>land</li></ol><div class="note"><b>เคล็ดลับ</b> ดูค่าความสูง Y และตำแหน่ง X/Z ในแถบเทเลเมทรีเพื่อตรวจว่าโดรนอยู่ตรงไหน</div>',
+      en:'<h3>Lesson 4 - Three level gate course</h3><p>The gates sit at different heights and headings, so combine altitude changes with turns.</p><ol><li>take off</li><li>fly down 40 cm then fly forward 120 cm</li><li>fly up 100 cm then fly forward 120 cm</li><li>rotate counter-clockwise 90 then fly forward 120 cm</li><li>land</li></ol><div class="note"><b>Tip</b> watch the X, Y and Z telemetry to know exactly where the drone is.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'drone_move', fields:{ DIR:'down', DIST:40 } },
+      { type:'drone_move', fields:{ DIR:'forward', DIST:120 } },
+      { type:'drone_move', fields:{ DIR:'up', DIST:100 } },
+      { type:'drone_move', fields:{ DIR:'forward', DIST:120 } },
+      { type:'drone_rotate', fields:{ WAY:'ccw', DEG:90 } },
+      { type:'drone_move', fields:{ DIR:'forward', DIST:120 } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      var got = log.rings.filter(function(v){ return v; }).length;
+      if (got < 3) return { ok:false, key:'chk.rings', args:[got, 3] };
+      if (!log.landed) return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'show',
+    name:{ th:'บทที่ 5 · โชว์ตีลังกาและไฟ LED', en:'Lesson 5 - Flip and LED show' },
+    goal:{ th:'ตั้งไฟ LED และตีลังกาอย่างน้อย 1 ครั้ง', en:'Set the LED and perform at least one flip' },
+    rings:[], obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 5 · โชว์ตีลังกาและไฟ LED</h3><p>โดรนรุ่นการศึกษาอย่าง Tello EDU และ RoboMaster TT มีไฟ LED และคำสั่ง flip ในตัว</p><ol><li>take off แล้ว fly up 50 cm เผื่อระยะปลอดภัย</li><li>set LED to purple</li><li>flip forward</li><li>land</li></ol><div class="note"><b>ข้อควรรู้</b> โดรนจริงจะไม่ยอมตีลังกาถ้าแบตต่ำหรือความสูงไม่พอ ในห้องเรียนนี้จำลองเงื่อนไขความสูงไว้ที่ 80 ซม.</div>',
+      en:'<h3>Lesson 5 - Flip and LED show</h3><p>Education drones such as the Tello EDU and RoboMaster TT have an LED and a built in flip command.</p><ol><li>take off then fly up 50 cm for clearance</li><li>set LED to purple</li><li>flip forward</li><li>land</li></ol><div class="note"><b>Note</b> a real drone refuses to flip on a low battery or without clearance. Here the altitude limit is simulated at 80 cm.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'drone_move', fields:{ DIR:'up', DIST:50 } },
+      { type:'drone_led', fields:{ COLOR:'purple' } },
+      { type:'drone_flip', fields:{ WAY:'f' } },
+      { type:'drone_hover', fields:{ SEC:1 } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      if (log.flips < 1) return { ok:false, key:'chk.noFlip' };
+      if (!log.ledUsed)  return { ok:false, key:'chk.noLed' };
+      if (!log.landed)   return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'sensor',
+    name:{ th:'บทที่ 6 · เซ็นเซอร์และเงื่อนไข', en:'Lesson 6 - Sensors and conditions' },
+    goal:{ th:'บินเข้าหากำแพงแล้วหยุดก่อนชนด้วยเงื่อนไข', en:'Fly toward the wall and stop before hitting it' },
+    rings:[],
+    obstacles:[
+      { x:0, z:-300, w:420, d:20, h:260 },
+      { x:-260, z:-140, w:20, d:320, h:200 },
+      { x:260, z:-140, w:20, d:320, h:200 }
+    ],
+    brief:{
+      th:'<h3>บทที่ 6 · เซ็นเซอร์และเงื่อนไข</h3><p>บล็อก <code>obstacle within 100 cm ahead</code> และ <code>get front distance</code> จำลองเซ็นเซอร์วัดระยะด้านหน้า ใช้คู่กับ <code>repeat until</code> หรือ <code>if</code> ได้</p><ol><li>take off</li><li>repeat until (obstacle within 100 cm ahead) { fly forward 20 cm }</li><li>rotate clockwise 90 degrees แล้ว land</li></ol><div class="note"><b>เกณฑ์ผ่าน</b> ต้องหยุดห่างกำแพง 60 ถึง 140 ซม. ห้ามชน และต้องใช้บล็อกเงื่อนไข</div>',
+      en:'<h3>Lesson 6 - Sensors and conditions</h3><p>The blocks <code>obstacle within 100 cm ahead</code> and <code>get front distance</code> simulate a forward range sensor. Combine them with <code>repeat until</code> or <code>if</code>.</p><ol><li>take off</li><li>repeat until (obstacle within 100 cm ahead) { fly forward 20 cm }</li><li>rotate clockwise 90 degrees then land</li></ol><div class="note"><b>To pass</b> stop between 60 and 140 cm from the wall without crashing, using a condition block.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'controls_whileUntil', fields:{ MODE:'UNTIL' },
+        values:{ BOOL:{ type:'drone_obstacle_ahead', values:{ DIST:{ type:'math_number', fields:{ NUM:100 } } } } },
+        statements:{ DO:[ { type:'drone_move', fields:{ DIR:'forward', DIST:20 } } ] } },
+      { type:'drone_print', values:{ TEXT:{ type:'text', fields:{ TEXT:'wall detected' } } } },
+      { type:'drone_rotate', fields:{ WAY:'cw', DEG:90 } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      if (log.crashed) return { ok:false, key:'chk.crashed' };
+      if (!log.tookOff) return { ok:false, key:'chk.noTakeoff' };
+      var usedCond = log.blocks.indexOf('controls_whileUntil') >= 0 || log.blocks.indexOf('controls_if') >= 0 || log.blocks.indexOf('drone_wait_until') >= 0;
+      if (!usedCond) return { ok:false, key:'chk.noWhile' };
+      if (log.minFront < 60 || log.minFront > 140) return { ok:false, key:'chk.stopFar', args:[Math.round(log.minFront)] };
+      if (!log.landed) return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'variables',
+    name:{ th:'บทที่ 7 · ตัวแปรและลูปนับรอบ', en:'Lesson 7 - Variables and counting loops' },
+    goal:{ th:'ใช้ count with i และตัวแปรไต่ระดับให้สูงถึง 250 ซม.', en:'Use a counting loop and a variable to climb past 250 cm' },
+    rings:[], obstacles:[],
+    brief:{
+      th:'<h3>บทที่ 7 · ตัวแปรและลูปนับรอบ</h3><p>บล็อก <code>count with i from 1 to 4 by 1</code> จะเก็บรอบปัจจุบันไว้ในตัวแปร <code>i</code> ดึงค่ามาใช้ด้วยบล็อก <code>i</code> จากหมวด Variables</p><ol><li>take off</li><li>count with i from 1 to 4 by 1 { fly up (i x 20) cm }</li><li>hover for 1 second แล้ว land</li></ol><div class="note"><b>เกณฑ์ผ่าน</b> ใช้บล็อก count with i และไต่ระดับได้สูงอย่างน้อย 250 ซม. แล้วลงจอด</div>',
+      en:'<h3>Lesson 7 - Variables and counting loops</h3><p>The <code>count with i from 1 to 4 by 1</code> block stores the current round in the variable <code>i</code>. Read it with the <code>i</code> block from the Variables category.</p><ol><li>take off</li><li>count with i from 1 to 4 by 1 { fly up (i x 20) cm }</li><li>hover for 1 second then land</li></ol><div class="note"><b>To pass</b> use the counting loop, climb to at least 250 cm and land.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'controls_for', varName:'i',
+        values:{ FROM:{ type:'math_number', fields:{ NUM:1 } },
+                 TO:{ type:'math_number', fields:{ NUM:4 } },
+                 BY:{ type:'math_number', fields:{ NUM:1 } } },
+        statements:{ DO:[
+          { type:'drone_move_by', fields:{ DIR:'up' },
+            values:{ DISTANCE:{ type:'math_arithmetic', fields:{ OP:'MULTIPLY' },
+              values:{ A:{ type:'variables_get', varName:'i' }, B:{ type:'math_number', fields:{ NUM:20 } } } } } }
+        ] } },
+      { type:'drone_hover', fields:{ SEC:1 } },
+      { type:'drone_land' }
+    ],
+    check:function(log){
+      if (log.blocks.indexOf('controls_for') < 0) return { ok:false, key:'chk.noFor' };
+      if (log.maxAlt < 250) return { ok:false, key:'chk.lowAlt', args:[Math.round(log.maxAlt)] };
+      if (!log.landed) return { ok:false, key:'chk.noLand' };
+      return { ok:true, key:'chk.pass' };
+    }
+  },
+  {
+    id:'free',
+    name:{ th:'โหมดอิสระ · สนามซ้อมเปล่า', en:'Free mode - open arena' },
+    goal:{ th:'ทดลองบล็อกทุกแบบได้ตามใจ ไม่มีเงื่อนไขผ่าน', en:'Try every block, no pass condition' },
+    rings:[], obstacles:[],
+    brief:{
+      th:'<h3>โหมดอิสระ · สนามซ้อมเปล่า</h3><p>ไม่มีภารกิจบังคับ เหมาะกับการทดสอบโปรแกรมก่อนนำไปใช้กับโดรนจริง</p><ul><li><code>go to x y z</code> บินตรงไปยังพิกัดในคำสั่งเดียว</li><li><code>fly curve</code> บินโค้งผ่านจุดกลางไปยังปลายทาง</li><li><code>define function</code> ในหมวด Functions ใช้รวมท่าบินเป็นชุด</li><li>กดส่งออก Python เพื่อนำโค้ดไปรันกับ djitellopy จริง</li></ul><div class="note"><b>ข้อจำกัดที่จำลองไว้</b> ระยะบินต่อคำสั่ง 20 ถึง 500 ซม. ความเร็ว 10 ถึง 100 ซม./วิ เพดานบิน 500 ซม. ตรงตามสเปกโดรนจริง</div>',
+      en:'<h3>Free mode - open arena</h3><p>No mission here, this is the sandbox for testing a program before flying it for real.</p><ul><li><code>go to x y z</code> flies straight to a point in one command</li><li><code>fly curve</code> arcs through a middle point</li><li><code>define function</code> in the Functions category groups manoeuvres</li><li>Export Python to run the same logic with djitellopy</li></ul><div class="note"><b>Simulated limits</b> 20 to 500 cm per move, 10 to 100 cm/s, 500 cm ceiling, matching the real drone.</div>'
+    },
+    example:[
+      { type:'drone_takeoff' },
+      { type:'drone_speed', fields:{ VALUE:80 } },
+      { type:'drone_led', fields:{ COLOR:'cyan' } },
+      { type:'drone_goto', fields:{ X:120, Y:180, Z:-140, SPEED:70 } },
+      { type:'drone_curve', fields:{ X1:0, Y1:180, Z1:-260, X2:-120, Y2:140, Z2:-120, SPEED:60 } },
+      { type:'drone_rotate', fields:{ WAY:'ccw', DEG:180 } },
+      { type:'drone_land' }
+    ],
+    check:function(){ return { ok:true, key:'chk.pass' }; }
+  }
+];
+
+function findMission(id){
+  for (var i=0;i<MISSIONS.length;i++) if (MISSIONS[i].id === id) return MISSIONS[i];
+  return MISSIONS[0];
+}
+
+/* ========================== PURE-LOGIC-END ========================== */
+
+/* ------------------------------ ตัวช่วย ------------------------------ */
+function $(id){ return document.getElementById(id); }
+
+var toastTimer = null;
+function toast(msg, kind){
+  var el = $('toast');
+  el.textContent = msg;
+  el.className = 'show' + (kind ? ' ' + kind : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.className = ''; }, 2800);
+}
+
+var logLines = [];
+var cmdLines = [];
+var pyLines = [];
+var activeTab = 'log';
+
+function stamp(){
+  var d = new Date();
+  return ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2) + ':' + ('0'+d.getSeconds()).slice(-2);
+}
+
+function logLine(key, args, kind){
+  logLines.push({ t:stamp(), key:key, args:args || null, kind:kind || 'ok' });
+  if (logLines.length > 500) logLines.shift();
+  if (activeTab === 'log') renderConsole();
+}
+
+function pushCmd(cmd){
+  cmdLines.push(cmd);
+  if (activeTab === 'cmd') renderConsole();
+}
+
+function escapeHTML(s){
+  return String(s).replace(/[&<>"]/g, function(c){ return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[c]; });
+}
+
+function highlightPython(line){
+  var s = escapeHTML(line);
+  if (/^\s*#/.test(s)) return '<span class="pycom">' + s + '</span>';
+  s = s.replace(/\b(for|while|if|elif|else|in|range|def|break|continue|not|and|or|True|False|import|from|as)\b/g, '<span class="pykw">$1</span>');
+  s = s.replace(/\b(tello\.[a-z_]+)/g, '<span class="pyfn">$1</span>');
+  s = s.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="pynum">$1</span>');
+  return '<span class="pycode">' + s + '</span>';
+}
+
+function renderConsole(){
+  var box = $('consoleBox'), html = '', i;
+  if (activeTab === 'log'){
+    for (i=0;i<logLines.length;i++){
+      var l = logLines[i];
+      html += '<div class="ln ' + l.kind + '"><span class="t">' + l.t + '</span><span class="m">' + escapeHTML(t(l.key, l.args)) + '</span></div>';
+    }
+  } else if (activeTab === 'cmd'){
+    for (i=0;i<cmdLines.length;i++){
+      html += '<div class="ln cmd"><span class="t">' + (i+1) + '</span><span class="m">' + escapeHTML(cmdLines[i]) + '</span></div>';
+    }
+  } else {
+    for (i=0;i<pyLines.length;i++){
+      html += '<div class="ln"><span class="t">' + (i+1) + '</span><span class="m">' + highlightPython(pyLines[i]) + '</span></div>';
+    }
+  }
+  box.innerHTML = html;
+  box.scrollTop = box.scrollHeight;
+}
+
+function loadScript(urls, ready){
+  return new Promise(function(resolve, reject){
+    var i = 0;
+    (function next(){
+      if (ready()) return resolve();
+      if (i >= urls.length) return reject(new Error('library load failed'));
+      var s = document.createElement('script');
+      s.src = urls[i++];
+      s.async = false;
+      s.onload = function(){ ready() ? resolve() : next(); };
+      s.onerror = function(){ next(); };
+      document.head.appendChild(s);
+    })();
+  });
+}
+
+/* =====================================================================
+   ส่วนที่ 2 : สนามบินจำลอง 3 มิติ
+   ===================================================================== */
+
+var CM = 0.01;
+var THREE_OK = false;
+var scene, camera, renderer, droneGroup, droneInner, ledMesh, ledLight;
+var propGroups = [], ringMeshes = [], ringGroup, obstacleGroup;
+var trailLine, trailPos, trailCount = 0, trailMax = 8000;
+var lastFrame = 0, propAngle = 0;
+
+var camState = {
+  mode:'orbit', theta:0.9, phi:1.05, radius:6.4,
+  target:{ x:0, y:0.5, z:-0.8 }, curTarget:{ x:0, y:0.5, z:-0.8 }
+};
+
+var sim = {
+  x:0, y:0, z:0, yaw:0, speed:50, led:'off', ledRGBv:[0,0,0],
+  flying:false, battery:100, flightTime:0,
+  pitch:0, roll:0, flipPitch:0, flipRoll:0,
+  moving:false, statusKey:'status.ready'
+};
+
+function initThree(){
+  var host = $('view3d');
+  try { renderer = new THREE.WebGLRenderer({ antialias:true }); }
+  catch(e){ return false; }
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(host.clientWidth || 480, host.clientHeight || 320);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  if (THREE.sRGBEncoding) renderer.outputEncoding = THREE.sRGBEncoding;
+  host.insertBefore(renderer.domElement, host.firstChild);
+  THREE_OK = true;
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf2f2f5);
+  scene.fog = new THREE.Fog(0xf2f2f5, 16, 44);
+  camera = new THREE.PerspectiveCamera(54, (host.clientWidth||480)/(host.clientHeight||320), 0.03, 240);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xc9ced6, 0.95));
+  var sun = new THREE.DirectionalLight(0xffffff, 0.75);
+  sun.position.set(5, 10, 6);
+  sun.castShadow = true;
+  sun.shadow.mapSize.width = 1024; sun.shadow.mapSize.height = 1024;
+  sun.shadow.camera.near = 1; sun.shadow.camera.far = 34;
+  sun.shadow.camera.left = -9; sun.shadow.camera.right = 9;
+  sun.shadow.camera.top = 9; sun.shadow.camera.bottom = -9;
+  scene.add(sun);
+  var rim = new THREE.DirectionalLight(0xffffff, 0.25);
+  rim.position.set(-7, 4, -7);
+  scene.add(rim);
+
+  var floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(44, 44),
+    new THREE.MeshStandardMaterial({ color:0xebebef, roughness:0.96, metalness:0.02 })
+  );
+  floor.rotation.x = -Math.PI/2; floor.receiveShadow = true;
+  scene.add(floor);
+
+  var grid = new THREE.GridHelper(40, 40, 0xb0b0b8, 0xe2e2e6);
+  grid.position.y = 0.002;
+  if (grid.material){
+    if (grid.material.length) grid.material.forEach(function(m){ m.transparent = true; m.opacity = 0.9; });
+    else { grid.material.transparent = true; grid.material.opacity = 0.9; }
+  }
+  scene.add(grid);
+
+  var pad = new THREE.Mesh(new THREE.CircleGeometry(0.46, 48), new THREE.MeshStandardMaterial({ color:0xe4e4e8, roughness:0.85 }));
+  pad.rotation.x = -Math.PI/2; pad.position.y = 0.004; pad.receiveShadow = true;
+  scene.add(pad);
+  var padRing = new THREE.Mesh(new THREE.TorusGeometry(0.46, 0.012, 8, 60), new THREE.MeshBasicMaterial({ color:0x0071e3 }));
+  padRing.rotation.x = -Math.PI/2; padRing.position.y = 0.006;
+  scene.add(padRing);
+  var padInner = new THREE.Mesh(new THREE.RingGeometry(0.15, 0.175, 32), new THREE.MeshBasicMaterial({ color:0x0071e3, transparent:true, opacity:0.7 }));
+  padInner.rotation.x = -Math.PI/2; padInner.position.y = 0.006;
+  scene.add(padInner);
+
+  scene.add(axisLine(0x0071e3, [0,0.012,0, 0,0.012,-3.2]));
+  scene.add(axisLine(0xff3b30, [0,0.012,0, 3.2,0.012,0]));
+
+  for (var c=0;c<4;c++){
+    var bx = (c % 2 ? 1 : -1) * 4, bz = (c < 2 ? 1 : -1) * 4;
+    var beacon = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.035, 0.05, 0.5, 10),
+      new THREE.MeshStandardMaterial({ color:0xd8d8dd, emissive:0x000000, roughness:0.6 })
+    );
+    beacon.position.set(bx, 0.25, bz); beacon.castShadow = true;
+    scene.add(beacon);
+  }
+
+  buildDrone();
+  buildGroundGuides();
+
+  var tg = new THREE.BufferGeometry();
+  trailPos = new Float32Array(trailMax*3);
+  tg.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
+  tg.setDrawRange(0, 0);
+  trailLine = new THREE.Line(tg, new THREE.LineBasicMaterial({ color:0x0071e3, transparent:true, opacity:0.95 }));
+  trailLine.frustumCulled = false;
+  scene.add(trailLine);
+
+  ringGroup = new THREE.Group(); scene.add(ringGroup);
+  obstacleGroup = new THREE.Group(); scene.add(obstacleGroup);
+
+  bindCameraControls(host);
+  window.addEventListener('resize', onResize);
+  if (window.ResizeObserver){ try { new ResizeObserver(onResize).observe(host); } catch(e){} }
+  onResize();
+  lastFrame = performance.now();
+  requestAnimationFrame(animate);
+  return true;
+}
+
+function axisLine(color, pts){
+  var g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts), 3));
+  return new THREE.Line(g, new THREE.LineBasicMaterial({ color:color, transparent:true, opacity:0.7 }));
+}
+
+function buildDrone(){
+  droneGroup = new THREE.Group(); droneGroup.rotation.order = 'YXZ';
+  droneInner = new THREE.Group(); droneInner.rotation.order = 'YXZ';
+  droneGroup.add(droneInner); scene.add(droneGroup);
+
+  var shell = new THREE.MeshStandardMaterial({ color:0x1d1d1f, metalness:0.35, roughness:0.42 });
+  var dark  = new THREE.MeshStandardMaterial({ color:0x0a0a0c, metalness:0.4, roughness:0.6 });
+  var trim  = new THREE.MeshStandardMaterial({ color:0xff3b30, metalness:0.2, roughness:0.4, emissive:0x4a0b06, emissiveIntensity:0.45 });
+  var pale  = new THREE.MeshStandardMaterial({ color:0xd1d1d6, metalness:0.2, roughness:0.5 });
+
+  var body = new THREE.Mesh(new THREE.BoxGeometry(0.20, 0.062, 0.28), shell);
+  body.castShadow = true; body.position.y = 0.005; droneInner.add(body);
+
+  var canopy = new THREE.Mesh(new THREE.SphereGeometry(0.072, 20, 14, 0, Math.PI*2, 0, Math.PI/2), dark);
+  canopy.position.set(0, 0.032, -0.02); canopy.scale.set(1, 0.72, 1.35); canopy.castShadow = true;
+  droneInner.add(canopy);
+
+  var stripe = new THREE.Mesh(new THREE.BoxGeometry(0.205, 0.008, 0.06), pale);
+  stripe.position.set(0, 0.014, 0.09);
+  droneInner.add(stripe);
+
+  var nose = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.036, 0.05, 16), dark);
+  nose.rotation.x = Math.PI/2; nose.position.set(0, -0.004, -0.145); droneInner.add(nose);
+  var lens = new THREE.Mesh(new THREE.SphereGeometry(0.021, 16, 12),
+    new THREE.MeshStandardMaterial({ color:0x04080f, metalness:0.92, roughness:0.12 }));
+  lens.position.set(0, -0.004, -0.168); droneInner.add(lens);
+
+  var legGeo = new THREE.BoxGeometry(0.012, 0.045, 0.05);
+  [[-0.07,0.09],[0.07,0.09],[-0.07,-0.09],[0.07,-0.09]].forEach(function(p){
+    var leg = new THREE.Mesh(legGeo, dark);
+    leg.position.set(p[0], -0.05, p[1]); leg.castShadow = true;
+    droneInner.add(leg);
+  });
+
+  var arms = [[0.135,0.115],[-0.135,0.115],[0.135,-0.115],[-0.135,-0.115]];
+  propGroups = [];
+  for (var i=0;i<arms.length;i++){
+    var ax = arms[i][0], az = arms[i][1];
+    var arm = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.017, 0.026), shell);
+    arm.position.set(ax*0.55, 0, az*0.62);
+    arm.rotation.y = Math.atan2(ax, az) - Math.PI/2;
+    arm.castShadow = true; droneInner.add(arm);
+
+    var motor = new THREE.Mesh(new THREE.CylinderGeometry(0.026, 0.03, 0.045, 14), dark);
+    motor.position.set(ax, 0.012, az); motor.castShadow = true; droneInner.add(motor);
+
+    var guard = new THREE.Mesh(new THREE.TorusGeometry(0.073, 0.007, 6, 28), i >= 2 ? trim : pale);
+    guard.rotation.x = -Math.PI/2; guard.position.set(ax, 0.036, az); droneInner.add(guard);
+
+    var prop = new THREE.Group();
+    prop.position.set(ax, 0.04, az);
+    var bladeMat = new THREE.MeshStandardMaterial({ color: i >= 2 ? 0xff453a : 0xb8b8bf, metalness:0.2, roughness:0.5, transparent:true, opacity:0.9 });
+    for (var b=0;b<2;b++){
+      var blade = new THREE.Mesh(new THREE.BoxGeometry(0.118, 0.004, 0.017), bladeMat);
+      blade.rotation.y = b * Math.PI/2; blade.castShadow = true;
+      prop.add(blade);
+    }
+    droneInner.add(prop);
+    propGroups.push(prop);
+  }
+
+  ledMesh = new THREE.Mesh(new THREE.SphereGeometry(0.027, 16, 12),
+    new THREE.MeshStandardMaterial({ color:0xd1d1d6, emissive:0x000000, emissiveIntensity:1.6, roughness:0.4 }));
+  ledMesh.position.set(0, -0.036, 0.03); droneInner.add(ledMesh);
+  ledLight = new THREE.PointLight(0xffffff, 0, 1.8);
+  ledLight.position.set(0, -0.08, 0.03); droneInner.add(ledLight);
+
+  updateDroneTransform(0);
+}
+
+function disposeGroup(g){
+  while (g.children.length){
+    var c = g.children.pop();
+    if (c.geometry) c.geometry.dispose();
+    if (c.material) c.material.dispose();
+  }
+}
+
+function setRings(list){
+  if (!THREE_OK) return;
+  disposeGroup(ringGroup);
+  ringMeshes = [];
+  for (var i=0;i<list.length;i++){
+    var r = list[i];
+    var m = new THREE.Mesh(new THREE.TorusGeometry(0.42, 0.028, 10, 44),
+      new THREE.MeshStandardMaterial({ color:0xff9f0a, emissive:0x5c3a00, emissiveIntensity:0.55, roughness:0.4 }));
+    m.position.set(r.x*CM, r.y*CM, r.z*CM);
+    m.rotation.y = (r.rotY || 0) * Math.PI/180;
+    m.castShadow = true;
+    ringGroup.add(m); ringMeshes.push(m);
+  }
+}
+
+function setObstacles(list){
+  if (!THREE_OK) return;
+  disposeGroup(obstacleGroup);
+  for (var i=0;i<list.length;i++){
+    var o = list[i];
+    var box = new THREE.Mesh(
+      new THREE.BoxGeometry(o.w*CM, o.h*CM, o.d*CM),
+      new THREE.MeshStandardMaterial({ color:0xd8d8de, roughness:0.9, metalness:0.05 })
+    );
+    box.position.set(o.x*CM, o.h*CM/2, o.z*CM);
+    box.castShadow = true; box.receiveShadow = true;
+    obstacleGroup.add(box);
+    var edge = new THREE.Mesh(
+      new THREE.BoxGeometry(o.w*CM*1.004, 0.02, o.d*CM*1.004),
+      new THREE.MeshBasicMaterial({ color:0xff3b30, transparent:true, opacity:0.85 })
+    );
+    edge.position.set(o.x*CM, o.h*CM, o.z*CM);
+    obstacleGroup.add(edge);
+  }
+}
+
+function markRingPassed(i){
+  if (!THREE_OK || !ringMeshes[i]) return;
+  ringMeshes[i].material.color.setHex(0x34c759);
+  ringMeshes[i].material.emissive.setHex(0x14532d);
+}
+
+function resetRingVisual(){
+  for (var i=0;i<ringMeshes.length;i++){
+    ringMeshes[i].material.color.setHex(0xff9f0a);
+    ringMeshes[i].material.emissive.setHex(0x5c3a00);
+  }
+}
+
+function clearTrail(){
+  trailCount = 0;
+  if (trailLine) trailLine.geometry.setDrawRange(0, 0);
+}
+
+function addTrailPoint(){
+  if (!THREE_OK || trailCount >= trailMax) return;
+  var i = trailCount*3;
+  trailPos[i] = sim.x*CM; trailPos[i+1] = sim.y*CM; trailPos[i+2] = sim.z*CM;
+  trailCount++;
+  trailLine.geometry.setDrawRange(0, trailCount);
+  trailLine.geometry.attributes.position.needsUpdate = true;
+  trailLine.geometry.computeBoundingSphere();
+}
+
+function updateLEDVisual(){
+  if (!THREE_OK) return;
+  var rgb = sim.ledRGBv;
+  var hex = (Math.round(rgb[0])<<16) | (Math.round(rgb[1])<<8) | Math.round(rgb[2]);
+  ledMesh.material.emissive.setHex(hex);
+  ledLight.color.setHex(hex || 0xffffff);
+  ledLight.intensity = hex === 0 ? 0 : 1.2;
+}
+
+function updateDroneTransform(dt){
+  if (!THREE_OK) return;
+  droneGroup.position.set(sim.x*CM, sim.y*CM, sim.z*CM);
+  droneGroup.rotation.y = sim.yaw * Math.PI/180;
+  droneInner.rotation.x = sim.pitch + sim.flipPitch;
+  droneInner.rotation.z = sim.roll + sim.flipRoll;
+  droneInner.position.y = sim.flying ? Math.sin(performance.now()/430)*0.011 : 0;
+  if (dt){
+    propAngle += (sim.flying ? (sim.moving ? 48 : 31) : 0) * dt;
+    for (var i=0;i<propGroups.length;i++) propGroups[i].rotation.y = (i % 2 === 0 ? 1 : -1) * propAngle;
+  }
+}
+
+function bindCameraControls(host){
+  var dragging = false, lx = 0, ly = 0, pinch = 0;
+  host.addEventListener('mousedown', function(e){ dragging = true; lx = e.clientX; ly = e.clientY; });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+  window.addEventListener('mousemove', function(e){
+    if (!dragging) return;
+    var d = viewDelta(e.clientX - lx, e.clientY - ly);
+    camState.theta -= d.x*0.006;
+    camState.phi = clamp(camState.phi - d.y*0.005, 0.12, 1.5);
+    lx = e.clientX; ly = e.clientY;
+  });
+  host.addEventListener('wheel', function(e){
+    e.preventDefault();
+    camState.radius = clamp(camState.radius + e.deltaY*0.004, 1.4, 22);
+  }, { passive:false });
+  host.addEventListener('touchstart', function(e){
+    if (e.touches.length === 1){ dragging = true; lx = e.touches[0].clientX; ly = e.touches[0].clientY; }
+    else if (e.touches.length === 2){ dragging = false; pinch = touchDist(e); }
+  }, { passive:true });
+  host.addEventListener('touchmove', function(e){
+    if (e.touches.length === 1 && dragging){
+      var td = viewDelta(e.touches[0].clientX - lx, e.touches[0].clientY - ly);
+      camState.theta -= td.x*0.008;
+      camState.phi = clamp(camState.phi - td.y*0.006, 0.12, 1.5);
+      lx = e.touches[0].clientX; ly = e.touches[0].clientY;
+      e.preventDefault();
+    } else if (e.touches.length === 2){
+      var d = touchDist(e);
+      camState.radius = clamp(camState.radius + (pinch - d)*0.012, 1.4, 22);
+      pinch = d; e.preventDefault();
+    }
+  }, { passive:false });
+  host.addEventListener('touchend', function(){ dragging = false; }, { passive:true });
+}
+
+function touchDist(e){
+  var dx = e.touches[0].clientX - e.touches[1].clientX;
+  var dy = e.touches[0].clientY - e.touches[1].clientY;
+  return Math.sqrt(dx*dx + dy*dy);
+}
+
+function setCameraMode(mode){
+  camState.mode = mode;
+  if (mode === 'top'){ camState.phi = 0.2; camState.radius = 8; }
+  if (mode === 'orbit'){ camState.phi = 1.05; camState.radius = 6.4; camState.theta = 0.9; }
+  if (mode === 'follow'){ camState.phi = 1.0; camState.radius = 3.3; }
+}
+
+function onResize(){
+  if (!THREE_OK) return;
+  var host = $('view3d');
+  var w = host.clientWidth || 480, h = host.clientHeight || 320;
+  renderer.setSize(w, h);
+  camera.aspect = w / Math.max(1, h);
+  camera.updateProjectionMatrix();
+}
+
+function animate(now){
+  requestAnimationFrame(animate);
+  if (!THREE_OK) return;
+  var dt = Math.min(0.05, (now - lastFrame)/1000);
+  lastFrame = now;
+  updateDroneTransform(dt);
+  updateGroundGuides();
+
+  if (camState.mode === 'fpv'){
+    var yr = sim.yaw*Math.PI/180;
+    var fx = -Math.sin(yr), fz = -Math.cos(yr);
+    camera.position.set(sim.x*CM + fx*0.16, sim.y*CM + 0.03, sim.z*CM + fz*0.16);
+    camera.lookAt(sim.x*CM + fx*4, sim.y*CM + 0.03 - sim.pitch*3, sim.z*CM + fz*4);
+  } else {
+    if (camState.mode === 'follow'){
+      camState.target.x = sim.x*CM; camState.target.y = sim.y*CM + 0.25; camState.target.z = sim.z*CM;
+      var yr2 = sim.yaw*Math.PI/180;
+      var want = Math.atan2(Math.cos(yr2), Math.sin(yr2));
+      var diff = Math.atan2(Math.sin(want - camState.theta), Math.cos(want - camState.theta));
+      camState.theta += diff*Math.min(1, dt*2.2);
+    } else {
+      camState.target.x = 0; camState.target.y = 0.5; camState.target.z = -0.8;
+    }
+    var k = Math.min(1, dt*4.5);
+    camState.curTarget.x += (camState.target.x - camState.curTarget.x)*k;
+    camState.curTarget.y += (camState.target.y - camState.curTarget.y)*k;
+    camState.curTarget.z += (camState.target.z - camState.curTarget.z)*k;
+    var r = camState.radius, p = camState.phi, th = camState.theta;
+    camera.position.set(
+      camState.curTarget.x + r*Math.sin(p)*Math.cos(th),
+      camState.curTarget.y + r*Math.cos(p),
+      camState.curTarget.z + r*Math.sin(p)*Math.sin(th)
+    );
+    camera.lookAt(camState.curTarget.x, camState.curTarget.y, camState.curTarget.z);
+  }
+
+  for (var i=0;i<ringMeshes.length;i++) ringMeshes[i].rotation.z += dt*0.35;
+  renderer.render(scene, camera);
+}
+
+/* =====================================================================
+   ส่วนที่ 3 : บล็อกคำสั่ง (ข้อความอังกฤษล้วน) และกล่องเครื่องมือ
+   ===================================================================== */
+
+var workspace = null;
+var LOOP_LIMIT = 500, CMD_LIMIT = 4000, PROC_DEPTH = 12;
+
+/* BLOCK-DEFS-START */
+var DIR_OPTIONS = [
+  ['forward','forward'], ['back','back'], ['left','left'], ['right','right'], ['up','up'], ['down','down']
+];
+var WAY_OPTIONS  = [['clockwise','cw'], ['counter-clockwise','ccw']];
+var FLIP_OPTIONS = [['forward','f'], ['back','b'], ['left','l'], ['right','r']];
+var COLOR_OPTIONS = [
+  ['red','red'], ['green','green'], ['blue','blue'], ['cyan','cyan'], ['yellow','yellow'],
+  ['purple','purple'], ['orange','orange'], ['pink','pink'], ['white','white'], ['off','off']
+];
+var SENSOR_OPTIONS = [
+  ['height (cm)','height'], ['battery (%)','battery'], ['flight time (s)','time'],
+  ['temperature (C)','temp'], ['tof distance (cm)','tof'], ['yaw (deg)','yaw'],
+  ['pitch (deg)','pitch'], ['roll (deg)','roll'], ['speed (cm/s)','speed'],
+  ['position x (cm)','pos_x'], ['position y (cm)','pos_y'], ['position z (cm)','pos_z'],
+  ['distance from start (cm)','dist_home'], ['front distance (cm)','front']
+];
+
+var C_FLIGHT = '#34c759', C_MOVE = '#007aff', C_TURN = '#5856d6', C_LIGHT = '#ff9500', C_SENSE = '#30b0c7';
+
+var BLOCK_DEFS = [
+  { type:'drone_start', message0:'when program starts', nextStatement:null, colour:'#8e8e93', hat:'cap',
+    tooltip:'Program entry point. Attach command blocks below.' },
+
+  { type:'drone_takeoff', message0:'take off', previousStatement:null, nextStatement:null, colour:C_FLIGHT,
+    tooltip:'Tello SDK: takeoff' },
+  { type:'drone_land', message0:'land', previousStatement:null, nextStatement:null, colour:C_FLIGHT,
+    tooltip:'Tello SDK: land' },
+  { type:'drone_stop', message0:'stop and hover', previousStatement:null, nextStatement:null, colour:C_FLIGHT,
+    tooltip:'Tello SDK: stop' },
+  { type:'drone_emergency', message0:'emergency stop', previousStatement:null, nextStatement:null, colour:'#ff3b30',
+    tooltip:'Tello SDK: emergency (motors cut immediately)' },
+  { type:'drone_hover', message0:'hover for %1 seconds',
+    args0:[{ type:'field_number', name:'SEC', value:2, min:0.1, max:60, precision:0.1 }],
+    previousStatement:null, nextStatement:null, colour:C_FLIGHT, tooltip:'Stay in place for a number of seconds' },
+  { type:'drone_speed', message0:'set speed to %1 cm/s',
+    args0:[{ type:'field_number', name:'VALUE', value:50, min:10, max:100, precision:1 }],
+    previousStatement:null, nextStatement:null, colour:C_FLIGHT, tooltip:'Tello SDK: speed 10-100' },
+
+  { type:'drone_move', message0:'fly %1 %2 cm',
+    args0:[{ type:'field_dropdown', name:'DIR', options:DIR_OPTIONS },
+           { type:'field_number', name:'DIST', value:100, min:20, max:500, precision:1 }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_MOVE,
+    tooltip:'Tello SDK: forward / back / left / right / up / down (20-500 cm)' },
+  { type:'drone_move_by', message0:'fly %1 by %2 cm',
+    args0:[{ type:'field_dropdown', name:'DIR', options:DIR_OPTIONS },
+           { type:'input_value', name:'DISTANCE', check:'Number' }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_MOVE,
+    tooltip:'Same as fly, but the distance comes from a value block or a variable' },
+  { type:'drone_goto', message0:'go to x %1 y %2 z %3 at speed %4 cm/s',
+    args0:[{ type:'field_number', name:'X', value:100, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'Y', value:100, min:20, max:500, precision:1 },
+           { type:'field_number', name:'Z', value:-100, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'SPEED', value:60, min:10, max:100, precision:1 }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_MOVE,
+    tooltip:'Tello SDK: go x y z speed' },
+  { type:'drone_curve', message0:'fly curve via x %1 y %2 z %3 to x %4 y %5 z %6 at %7 cm/s',
+    args0:[{ type:'field_number', name:'X1', value:80, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'Y1', value:120, min:20, max:500, precision:1 },
+           { type:'field_number', name:'Z1', value:-80, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'X2', value:0, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'Y2', value:120, min:20, max:500, precision:1 },
+           { type:'field_number', name:'Z2', value:-160, min:-500, max:500, precision:1 },
+           { type:'field_number', name:'SPEED', value:60, min:10, max:60, precision:1 }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_MOVE,
+    tooltip:'Tello SDK: curve x1 y1 z1 x2 y2 z2 speed' },
+
+  { type:'drone_rotate', message0:'rotate %1 %2 degrees',
+    args0:[{ type:'field_dropdown', name:'WAY', options:WAY_OPTIONS },
+           { type:'field_number', name:'DEG', value:90, min:1, max:360, precision:1 }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_TURN,
+    tooltip:'Tello SDK: cw / ccw' },
+  { type:'drone_rotate_by', message0:'rotate %1 by %2 degrees',
+    args0:[{ type:'field_dropdown', name:'WAY', options:WAY_OPTIONS },
+           { type:'input_value', name:'DEGREES', check:'Number' }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_TURN,
+    tooltip:'Rotate by a value that can come from a variable or a sensor' },
+  { type:'drone_flip', message0:'flip %1',
+    args0:[{ type:'field_dropdown', name:'WAY', options:FLIP_OPTIONS }],
+    previousStatement:null, nextStatement:null, colour:C_TURN,
+    tooltip:'Tello SDK: flip f / b / l / r (needs at least 80 cm of altitude)' },
+  { type:'drone_flip_random', message0:'flip in a random direction',
+    previousStatement:null, nextStatement:null, colour:C_TURN,
+    tooltip:'Flip forward, back, left or right, picked at random each time' },
+
+  { type:'drone_go_home', message0:'return to start point (keep altitude)',
+    previousStatement:null, nextStatement:null, colour:C_MOVE,
+    tooltip:'Fly straight back to x 0 z 0, the point where the program started' },
+
+  { type:'drone_led', message0:'set LED to %1',
+    args0:[{ type:'field_dropdown', name:'COLOR', options:COLOR_OPTIONS }],
+    previousStatement:null, nextStatement:null, colour:C_LIGHT, tooltip:'RoboMaster TT: EXT led r g b' },
+  { type:'drone_led_rgb', message0:'set LED to red %1 green %2 blue %3',
+    args0:[{ type:'input_value', name:'R', check:'Number' },
+           { type:'input_value', name:'G', check:'Number' },
+           { type:'input_value', name:'B', check:'Number' }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_LIGHT,
+    tooltip:'Set the LED from three colour values (0-255)' },
+  { type:'drone_led_blink', message0:'blink LED %1 %2 times',
+    args0:[{ type:'field_dropdown', name:'COLOR', options:COLOR_OPTIONS },
+           { type:'field_number', name:'TIMES', value:3, min:1, max:10, precision:1 }],
+    inputsInline:true, previousStatement:null, nextStatement:null, colour:C_LIGHT,
+    tooltip:'Flash the LED on and off a number of times' },
+
+  { type:'drone_print', message0:'print %1',
+    args0:[{ type:'input_value', name:'TEXT' }],
+    previousStatement:null, nextStatement:null, colour:C_SENSE, tooltip:'Write a message to the console' },
+  { type:'drone_wait_until', message0:'wait until %1',
+    args0:[{ type:'input_value', name:'COND', check:'Boolean' }],
+    previousStatement:null, nextStatement:null, colour:C_SENSE,
+    tooltip:'Hover until the condition becomes true (max 20 s)' },
+
+  { type:'drone_get', message0:'get %1',
+    args0:[{ type:'field_dropdown', name:'SENSOR', options:SENSOR_OPTIONS }],
+    output:'Number', colour:C_SENSE, tooltip:'Read a value from the drone sensors' },
+  { type:'drone_is_flying', message0:'is flying', output:'Boolean', colour:C_SENSE,
+    tooltip:'True while the motors are running' },
+  { type:'drone_obstacle_ahead', message0:'obstacle within %1 cm ahead',
+    args0:[{ type:'input_value', name:'DIST', check:'Number' }],
+    inputsInline:true, output:'Boolean', colour:C_SENSE,
+    tooltip:'True when the forward range sensor reads less than this distance' },
+  { type:'drone_battery_low', message0:'battery is low (below 20%)',
+    output:'Boolean', colour:C_SENSE,
+    tooltip:'True once the battery has dropped under 20 percent' }
+];
+
+/* BLOCK-DEFS-END */
+function shadowNum(n){ return { shadow:{ type:'math_number', fields:{ NUM:n } } }; }
+
+var TOOLBOX = {
+  kind:'categoryToolbox',
+  contents:[
+    { kind:'category', name:'Flight', colour:C_FLIGHT, contents:[
+      { kind:'block', type:'drone_takeoff' },
+      { kind:'block', type:'drone_land' },
+      { kind:'block', type:'drone_hover' },
+      { kind:'block', type:'drone_stop' },
+      { kind:'block', type:'drone_speed' },
+      { kind:'block', type:'drone_emergency' },
+      { kind:'block', type:'drone_start' }
+    ]},
+    { kind:'category', name:'Movement', colour:C_MOVE, contents:[
+      { kind:'block', type:'drone_move' },
+      { kind:'block', type:'drone_move', fields:{ DIR:'back', DIST:100 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'left', DIST:80 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'right', DIST:80 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'up', DIST:50 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'down', DIST:50 } },
+      { kind:'block', type:'drone_move_by', inputs:{ DISTANCE:shadowNum(50) } },
+      { kind:'block', type:'drone_goto' },
+      { kind:'block', type:'drone_curve' },
+      { kind:'block', type:'drone_go_home' }
+    ]},
+    { kind:'category', name:'Rotation', colour:C_TURN, contents:[
+      { kind:'block', type:'drone_rotate' },
+      { kind:'block', type:'drone_rotate', fields:{ WAY:'ccw', DEG:90 } },
+      { kind:'block', type:'drone_rotate_by', inputs:{ DEGREES:shadowNum(45) } },
+      { kind:'block', type:'drone_flip' },
+      { kind:'block', type:'drone_flip_random' }
+    ]},
+    { kind:'category', name:'Lights', colour:C_LIGHT, contents:[
+      { kind:'block', type:'drone_led' },
+      { kind:'block', type:'drone_led_rgb', inputs:{ R:shadowNum(255), G:shadowNum(120), B:shadowNum(0) } },
+      { kind:'block', type:'drone_led_blink' }
+    ]},
+    { kind:'category', name:'Sensors', colour:C_SENSE, contents:[
+      { kind:'block', type:'drone_get' },
+      { kind:'block', type:'drone_get', fields:{ SENSOR:'battery' } },
+      { kind:'block', type:'drone_get', fields:{ SENSOR:'front' } },
+      { kind:'block', type:'drone_is_flying' },
+      { kind:'block', type:'drone_battery_low' },
+      { kind:'block', type:'drone_obstacle_ahead', inputs:{ DIST:shadowNum(100) } },
+      { kind:'block', type:'drone_wait_until' },
+      { kind:'block', type:'drone_print', inputs:{ TEXT:{ shadow:{ type:'text', fields:{ TEXT:'hello' } } } } }
+    ]},
+    { kind:'category', name:'Logic', colour:'#636366', contents:[
+      { kind:'block', type:'controls_if' },
+      { kind:'block', type:'controls_if', extraState:{ elseIfCount:0, hasElse:true } },
+      { kind:'block', type:'logic_compare' },
+      { kind:'block', type:'logic_operation' },
+      { kind:'block', type:'logic_negate' },
+      { kind:'block', type:'logic_boolean' }
+    ]},
+    { kind:'category', name:'Loops', colour:'#af52de', contents:[
+      { kind:'block', type:'controls_repeat_ext', inputs:{ TIMES:shadowNum(4) } },
+      { kind:'block', type:'controls_whileUntil' },
+      { kind:'block', type:'controls_for', inputs:{ FROM:shadowNum(1), TO:shadowNum(4), BY:shadowNum(1) } },
+      { kind:'block', type:'controls_flow_statements' }
+    ]},
+    { kind:'category', name:'Math', colour:'#ff2d55', contents:[
+      { kind:'block', type:'math_number', fields:{ NUM:100 } },
+      { kind:'block', type:'math_arithmetic', inputs:{ A:shadowNum(1), B:shadowNum(1) } },
+      { kind:'block', type:'math_single', inputs:{ NUM:shadowNum(9) } },
+      { kind:'block', type:'math_round', inputs:{ NUM:shadowNum(3.1) } },
+      { kind:'block', type:'math_modulo', inputs:{ DIVIDEND:shadowNum(64), DIVISOR:shadowNum(10) } },
+      { kind:'block', type:'math_random_int', inputs:{ FROM:shadowNum(20), TO:shadowNum(100) } }
+    ]},
+    { kind:'category', name:'Text', colour:'#a2845e', contents:[
+      { kind:'block', type:'text' },
+      { kind:'block', type:'text_join' }
+    ]},
+    { kind:'category', name:'Variables', colour:'#5ac8fa', custom:'VARIABLE' },
+    { kind:'category', name:'Functions', colour:'#8e8e93', custom:'PROCEDURE' }
+  ]
+};
+
+/* -------- ตัวสร้างโปรแกรมตัวอย่างจากสเปก -------- */
+function buildBlockFromSpec(spec){
+  var b = workspace.newBlock(spec.type);
+  if (spec.varName && b.getField('VAR')){
+    var v = workspace.getVariable(spec.varName) || workspace.createVariable(spec.varName);
+    b.getField('VAR').setValue(v.getId());
+  }
+  if (spec.fields){
+    for (var f in spec.fields) if (b.getField(f)) b.setFieldValue(String(spec.fields[f]), f);
+  }
+  if (b.initSvg) b.initSvg();
+  if (spec.values){
+    for (var vn in spec.values){
+      var input = b.getInput(vn);
+      if (!input || !input.connection) continue;
+      var child = buildBlockFromSpec(spec.values[vn]);
+      if (child.outputConnection) input.connection.connect(child.outputConnection);
+    }
+  }
+  if (spec.statements){
+    for (var sn in spec.statements){
+      var sInput = b.getInput(sn);
+      if (!sInput || !sInput.connection) continue;
+      var first = buildChainFromSpec(spec.statements[sn]);
+      if (first && first.previousConnection) sInput.connection.connect(first.previousConnection);
+    }
+  }
+  return b;
+}
+
+function buildChainFromSpec(list){
+  var first = null, prev = null;
+  for (var i=0;i<list.length;i++){
+    var b = buildBlockFromSpec(list[i]);
+    if (!first) first = b;
+    else if (prev && prev.nextConnection && b.previousConnection) prev.nextConnection.connect(b.previousConnection);
+    prev = b;
+  }
+  return first;
+}
+
+function loadExample(){
+  if (runState.running) return;
+  var mission = currentMission;
+  if (!mission.example || !mission.example.length){ toast(t('toast.noExample'), 'bad'); return; }
+  suppressBlockSound = true;
+  workspace.clear();
+  seedStart();
+  var start = findStartBlock();
+  var chain = buildChainFromSpec(mission.example);
+  if (start && chain && chain.previousConnection) start.nextConnection.connect(chain.previousConnection);
+  workspace.render();
+  suppressBlockSound = false;
+  setTimeout(function(){ workspace.cleanUp(); refreshPython(); }, 30);
+  toast(t('toast.example'), 'good');
+}
+
+/* =====================================================================
+   ส่วนที่ 4 : ตัวแปลคำสั่งและการจำลองการบิน
+   ===================================================================== */
+
+/* ---------------- เสียงตอบสนอง แยกตามหมวดการใช้งานชัดเจน 4 หมวด ---------------- */
+var audioCtx = null;
+function getAudioCtx(){
+  if (!audioCtx){
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+    catch(e){ return null; }
+  }
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+function beep(freq, ms, type, gain){
+  var ctx = getAudioCtx();
+  if (!ctx) return;
+  var osc = ctx.createOscillator();
+  var g = ctx.createGain();
+  osc.type = type || 'sine';
+  osc.frequency.value = freq;
+  var t0 = ctx.currentTime;
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(gain || 0.14, t0 + 0.008);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + ms/1000);
+  osc.connect(g); g.connect(ctx.destination);
+  osc.start(t0); osc.stop(t0 + ms/1000 + 0.02);
+}
+var UISound = {
+  blockPickUp: function(){ beep(880, 70, 'triangle', 0.12); },
+  blockDrop:   function(){ beep(660, 90, 'triangle', 0.13); },
+  blockDelete: function(){ beep(320, 140, 'sawtooth', 0.11); },
+  controlTap:  function(){ beep(520, 60, 'square', 0.09); },
+  cameraTap:   function(){ beep(1040, 55, 'sine', 0.10); },
+  navTap:      function(){ beep(740, 65, 'sine', 0.10); }
+};
+
+var suppressBlockSound = false;
+var runState = { running:false, abort:false, paused:false, rate:1, commands:0 };
+var curBlock = null;
+var currentMission = MISSIONS[0];
+var flight = newFlightLog();
+var lastTrail = { x:0, y:0, z:0 };
+var vars = {};
+
+function newFlightLog(){
+  return { tookOff:false, landed:false, errors:0, flips:0, ledUsed:false, crashed:false,
+           maxAlt:0, maxDist:0, endDist:0, minFront:9999, rings:[], blocks:[], lowWarned:false };
+}
+
+function FlowSignal(kind){ this.kind = kind; }
+
+function scaled(ms){ return Math.max(70, ms / runState.rate); }
+function tick(){
+  return new Promise(function(r){
+    (function wait(){
+      if (runState.abort || !runState.paused) return requestAnimationFrame(function(){ r(); });
+      requestAnimationFrame(wait);
+    })();
+  });
+}
+
+function tween(ms, fn){
+  return new Promise(function(resolve){
+    var t0 = performance.now(), last = t0;
+    function step(now){
+      if (runState.abort) return resolve();
+      if (runState.paused){ t0 += (now - last); last = now; requestAnimationFrame(step); return; }
+      last = now;
+      var p = Math.min(1, (now - t0)/ms);
+      fn(easeInOutCubic(p), p);
+      updateTelemetry();
+      if (p < 1) requestAnimationFrame(step); else resolve();
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+function frontDistance(){
+  var y = sim.yaw*Math.PI/180;
+  return rayObstacleDistance(sim.x, sim.y, sim.z, -Math.sin(y), -Math.cos(y), currentMission.obstacles, 500);
+}
+
+function sampleFlight(){
+  if (sim.y > flight.maxAlt) flight.maxAlt = sim.y;
+  var d = distXZ(sim.x, sim.z);
+  if (d > flight.maxDist) flight.maxDist = d;
+
+  if (currentMission.obstacles.length){
+    var fd = frontDistance();
+    if (sim.flying && fd < flight.minFront) flight.minFront = fd;
+    if (!flight.crashed && pointInObstacle(sim.x, sim.y, sim.z, currentMission.obstacles, 12)){
+      flight.crashed = true;
+      flight.errors++;
+      logLine('log.crash', null, 'err');
+    }
+  }
+
+  if (Math.abs(sim.x-lastTrail.x) + Math.abs(sim.y-lastTrail.y) + Math.abs(sim.z-lastTrail.z) > 1.5){
+    lastTrail = { x:sim.x, y:sim.y, z:sim.z };
+    addTrailPoint();
+  }
+
+  for (var i=0;i<currentMission.rings.length;i++){
+    if (flight.rings[i]) continue;
+    var r = currentMission.rings[i];
+    var dx = sim.x-r.x, dy = sim.y-r.y, dz = sim.z-r.z;
+    if (Math.sqrt(dx*dx + dy*dy + dz*dz) < 45){
+      flight.rings[i] = true;
+      markRingPassed(i);
+      logLine('log.ring', [i+1], 'sys');
+    }
+  }
+}
+
+function useBattery(seconds, extra){
+  sim.flightTime += seconds;
+  sim.battery = clamp(sim.battery - seconds*0.35 - (extra||0), 0, 100);
+  if (sim.battery < 20 && !flight.lowWarned){
+    flight.lowWarned = true;
+    logLine('log.lowbat', null, 'warn');
+  }
+}
+
+function requireFlying(what){
+  if (!sim.flying){
+    logLine('log.errNotFlying', [what], 'err');
+    flagCurrent(t('log.errNotFlying', [what]));
+    flight.errors++;
+    return false;
+  }
+  return true;
+}
+
+function localFrame(vec){
+  var y = sim.yaw*Math.PI/180;
+  var f = { x:-Math.sin(y), z:-Math.cos(y) };
+  var r = { x: Math.cos(y), z:-Math.sin(y) };
+  return { fwd: vec.x*f.x + vec.z*f.z, right: vec.x*r.x + vec.z*r.z };
+}
+
+function moveTo(tx, ty, tz, ms){
+  var sx = sim.x, sy = sim.y, sz = sim.z;
+  var dxz = Math.sqrt((tx-sx)*(tx-sx) + (tz-sz)*(tz-sz));
+  var tilt = dxz > 0.01 ? localFrame({ x:(tx-sx)/dxz, z:(tz-sz)/dxz }) : { fwd:0, right:0 };
+  var mag = Math.min(1, dxz/60);
+  sim.moving = true;
+  useBattery(ms/1000);
+  return tween(ms, function(e){
+    sim.x = sx + (tx-sx)*e; sim.y = sy + (ty-sy)*e; sim.z = sz + (tz-sz)*e;
+    var s = Math.sin(e*Math.PI)*0.3*mag;
+    sim.pitch = -tilt.fwd*s; sim.roll = -tilt.right*s;
+    sampleFlight();
+  }).then(function(){
+    if (!runState.abort){ sim.x = tx; sim.y = ty; sim.z = tz; }
+    sim.pitch = 0; sim.roll = 0; sim.moving = false;
+    sampleFlight();
+  });
+}
+
+function curveTo(p1, p2, ms){
+  var s = { x:sim.x, y:sim.y, z:sim.z };
+  sim.moving = true;
+  useBattery(ms/1000);
+  return tween(ms, function(e){
+    var u = 1 - e;
+    sim.x = u*u*s.x + 2*u*e*p1.x + e*e*p2.x;
+    sim.y = u*u*s.y + 2*u*e*p1.y + e*e*p2.y;
+    sim.z = u*u*s.z + 2*u*e*p1.z + e*e*p2.z;
+    sim.roll = Math.sin(e*Math.PI)*0.22;
+    sampleFlight();
+  }).then(function(){
+    if (!runState.abort){ sim.x = p2.x; sim.y = p2.y; sim.z = p2.z; }
+    sim.roll = 0; sim.moving = false;
+    sampleFlight();
+  });
+}
+
+async function cmdTakeoff(){
+  if (sim.flying){ logLine('log.warnFlying', null, 'warn'); return; }
+  pushCmd(telloCommand('takeoff'));
+  logLine('log.takeoff', null, 'ok');
+  sim.flying = true; sim.statusKey = 'status.takeoff'; flight.tookOff = true;
+  await moveTo(sim.x, 100, sim.z, scaled(1700));
+  sim.statusKey = 'status.hover';
+}
+
+async function cmdLand(){
+  if (!sim.flying){ logLine('log.warnGround', null, 'warn'); return; }
+  pushCmd(telloCommand('land'));
+  logLine('log.land', null, 'ok');
+  sim.statusKey = 'status.landing';
+  await moveTo(sim.x, 0, sim.z, scaled(Math.max(900, sim.y*13)));
+  sim.flying = false; flight.landed = true; sim.statusKey = 'status.landed';
+  logLine('log.landed', null, 'ok');
+}
+
+async function cmdEmergency(){
+  pushCmd(telloCommand('emergency'));
+  logLine('log.emergency', null, 'err');
+  sim.statusKey = 'status.emergency';
+  await moveTo(sim.x, 0, sim.z, scaled(420));
+  sim.flying = false;
+}
+
+async function cmdStop(){
+  if (!requireFlying('stop')) return;
+  pushCmd(telloCommand('stop'));
+  logLine('log.stop', null, 'ok');
+  sim.statusKey = 'status.hover';
+  await tween(scaled(350), function(){ sampleFlight(); });
+}
+
+async function cmdHover(sec){
+  sec = clamp(sec, 0.1, 60);
+  pushCmd(telloCommand('hover', { sec:sec }));
+  logLine('log.hover', [sec], 'ok');
+  sim.statusKey = 'status.hover';
+  useBattery(sec);
+  await tween(scaled(sec*1000), function(){ sampleFlight(); });
+}
+
+async function cmdMove(dir, dist){
+  if (!requireFlying('fly ' + dir)) return;
+  dist = clamp(dist, 20, 500);
+  var v = dirVector(dir, sim.yaw);
+  var tx = sim.x + v.x*dist, ty = sim.y + v.y*dist, tz = sim.z + v.z*dist;
+  if (ty < 20){ logLine('log.warnFloor', null, 'warn'); ty = 20; }
+  if (ty > 500){ logLine('log.warnCeiling', null, 'warn'); ty = 500; }
+  pushCmd(telloCommand('move', { dir:dir, dist:dist }));
+  logLine('log.move', [dir, Math.round(dist), sim.speed], 'ok');
+  sim.statusKey = 'status.move';
+  await moveTo(tx, ty, tz, scaled(Math.max(0.35, dist/Math.max(10, sim.speed))*1000));
+  sim.statusKey = 'status.hover';
+}
+
+async function cmdGoto(x, y, z, speed){
+  if (!requireFlying('go to')) return;
+  y = clamp(y, 20, 500);
+  speed = clamp(speed, 10, 100);
+  var dx = x - sim.x, dy = y - sim.y, dz = z - sim.z;
+  var lf = localFrame({ x:dx, z:dz });
+  pushCmd(telloCommand('goto', { x:lf.fwd, y:-lf.right, z:dy, speed:speed }));
+  logLine('log.goto', [Math.round(x), Math.round(y), Math.round(z)], 'ok');
+  sim.statusKey = 'status.goto';
+  var dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+  await moveTo(x, y, z, scaled(Math.max(420, dist/speed*1000)));
+  sim.statusKey = 'status.hover';
+}
+
+async function cmdCurve(x1, y1, z1, x2, y2, z2, speed){
+  if (!requireFlying('fly curve')) return;
+  speed = clamp(speed, 10, 60);
+  var lf1 = localFrame({ x:x1-sim.x, z:z1-sim.z });
+  var lf2 = localFrame({ x:x2-sim.x, z:z2-sim.z });
+  pushCmd(telloCommand('curve', { x1:lf1.fwd, y1:-lf1.right, z1:y1-sim.y, x2:lf2.fwd, y2:-lf2.right, z2:y2-sim.y, speed:speed }));
+  logLine('log.curve', [Math.round(x1), Math.round(y1), Math.round(z1), Math.round(x2), Math.round(y2), Math.round(z2)], 'ok');
+  sim.statusKey = 'status.curve';
+  var len = Math.sqrt(Math.pow(x2-sim.x,2) + Math.pow(y2-sim.y,2) + Math.pow(z2-sim.z,2)) * 1.3;
+  await curveTo({ x:x1, y:clamp(y1,20,500), z:z1 }, { x:x2, y:clamp(y2,20,500), z:z2 }, scaled(Math.max(700, len/speed*1000)));
+  sim.statusKey = 'status.hover';
+}
+
+async function cmdRotate(way, deg){
+  if (!requireFlying('rotate')) return;
+  deg = clamp(deg, 1, 360);
+  pushCmd(telloCommand('rotate', { way:way, deg:deg }));
+  logLine('log.rotate', [way === 'cw' ? 'clockwise' : 'counter-clockwise', Math.round(deg)], 'ok');
+  sim.statusKey = 'status.rotate';
+  var s = sim.yaw, target = sim.yaw + (way === 'cw' ? -deg : deg);
+  useBattery(deg/120);
+  await tween(scaled(Math.max(320, deg/90*850)), function(e){
+    sim.yaw = s + (target - s)*e;
+    sim.roll = (way === 'cw' ? -1 : 1)*Math.sin(e*Math.PI)*0.12;
+    sampleFlight();
+  });
+  if (!runState.abort) sim.yaw = target;
+  sim.roll = 0; sim.statusKey = 'status.hover';
+}
+
+async function cmdFlip(way){
+  if (!requireFlying('flip')) return;
+  if (sim.y < 80){
+    logLine('log.errFlipLow', [Math.round(sim.y)], 'err');
+    flagCurrent(t('log.errFlipLow', [Math.round(sim.y)]));
+    flight.errors++;
+    return;
+  }
+  pushCmd(telloCommand('flip', { way:way }));
+  logLine('log.flip', [({ f:'forward', b:'back', l:'left', r:'right' })[way] || way], 'ok');
+  sim.statusKey = 'status.flip';
+  var y0 = sim.y;
+  useBattery(1, 1.5);
+  await tween(scaled(950), function(e){
+    var a = e*Math.PI*2;
+    sim.flipPitch = (way === 'f' ? -a : (way === 'b' ? a : 0));
+    sim.flipRoll  = (way === 'l' ? a : (way === 'r' ? -a : 0));
+    sim.y = y0 + Math.sin(e*Math.PI)*18;
+    sampleFlight();
+  });
+  sim.flipPitch = 0; sim.flipRoll = 0;
+  if (!runState.abort) sim.y = y0;
+  flight.flips++;
+  sim.statusKey = 'status.hover';
+}
+
+function cmdSpeed(v){
+  sim.speed = clamp(v, 10, 100);
+  pushCmd(telloCommand('speed', { value:sim.speed }));
+  logLine('log.speed', [sim.speed], 'ok');
+  updateTelemetry();
+}
+
+async function cmdGoHome(){
+  if (!requireFlying('go home')) return;
+  await cmdGoto(0, sim.y, 0, 60);
+}
+
+async function cmdLedBlink(color, times){
+  times = clamp(Math.round(times), 1, 10);
+  logLine('log.blink', [color, times], 'sys');
+  for (var i=0;i<times;i++){
+    if (runState.abort) return;
+    cmdLed(color);
+    await tween(scaled(180), function(){});
+    if (runState.abort) return;
+    cmdLed('off');
+    await tween(scaled(140), function(){});
+  }
+}
+
+function cmdLed(color){
+  sim.led = color;
+  sim.ledRGBv = ledRGB(color);
+  pushCmd(telloCommand('led', { color:color }));
+  logLine('log.led', [color], 'ok');
+  if (color !== 'off') flight.ledUsed = true;
+  updateLEDVisual(); updateTelemetry();
+}
+
+function cmdLedRGB(r, g, b){
+  r = clamp(r, 0, 255); g = clamp(g, 0, 255); b = clamp(b, 0, 255);
+  sim.led = 'rgb'; sim.ledRGBv = [r, g, b];
+  pushCmd(telloCommand('led_rgb', { r:r, g:g, b:b }));
+  logLine('log.ledrgb', [Math.round(r), Math.round(g), Math.round(b)], 'ok');
+  if (r + g + b > 0) flight.ledUsed = true;
+  updateLEDVisual(); updateTelemetry();
+}
+
+async function cmdWaitUntil(block){
+  logLine('log.waitUntil', null, 'sys');
+  sim.statusKey = 'status.waiting';
+  var t0 = performance.now(), budget = 20000/runState.rate;
+  while (!runState.abort){
+    if (evalValue(block.getInputTargetBlock('COND'), false)) break;
+    if (performance.now() - t0 > budget){ logLine('log.waitTimeout', null, 'warn'); break; }
+    useBattery(0.016);
+    sampleFlight(); updateTelemetry();
+    await tick();
+  }
+  sim.statusKey = 'status.hover';
+}
+
+/* ---------------- การอ่านค่าเซ็นเซอร์ ---------------- */
+function sensorValue(name){
+  switch(name){
+    case 'height':    return Math.round(sim.y);
+    case 'battery':   return Math.round(sim.battery);
+    case 'time':      return Math.round(sim.flightTime);
+    case 'temp':      return Math.round(25 + (100 - sim.battery)*0.15);
+    case 'tof':       return Math.round(sim.y + 10);
+    case 'yaw':       return Math.round(normDeg(sim.yaw));
+    case 'pitch':     return Math.round(sim.pitch*180/Math.PI);
+    case 'roll':      return Math.round(sim.roll*180/Math.PI);
+    case 'speed':     return Math.round(sim.speed);
+    case 'pos_x':     return Math.round(sim.x);
+    case 'pos_y':     return Math.round(sim.y);
+    case 'pos_z':     return Math.round(sim.z);
+    case 'dist_home': return Math.round(distXZ(sim.x, sim.z));
+    case 'front':     return Math.round(frontDistance());
+    default:          return 0;
+  }
+}
+
+/* ---------------- การประเมินค่าในบล็อกนิพจน์ ---------------- */
+function varNameOf(b){
+  var f = b.getField('VAR');
+  if (!f) return 'item';
+  if (f.getVariable){ var v = f.getVariable(); if (v && v.name) return v.name; }
+  if (f.getText) return f.getText();
+  return String(b.getFieldValue('VAR'));
+}
+
+function numOf(v, def){ var n = Number(v); return isNaN(n) ? (def || 0) : n; }
+
+function evalValue(b, def){
+  if (!b) return def;
+  var a, c;
+  switch(b.type){
+    case 'math_number': return numOf(b.getFieldValue('NUM'), 0);
+    case 'math_arithmetic': {
+      a = numOf(evalValue(b.getInputTargetBlock('A'), 0), 0);
+      c = numOf(evalValue(b.getInputTargetBlock('B'), 0), 0);
+      switch(b.getFieldValue('OP')){
+        case 'ADD': return a + c;
+        case 'MINUS': return a - c;
+        case 'MULTIPLY': return a * c;
+        case 'DIVIDE': return c === 0 ? 0 : a / c;
+        case 'POWER': return Math.pow(a, c);
+      }
+      return 0;
+    }
+    case 'math_single': {
+      a = numOf(evalValue(b.getInputTargetBlock('NUM'), 0), 0);
+      switch(b.getFieldValue('OP')){
+        case 'ROOT': return Math.sqrt(Math.abs(a));
+        case 'ABS': return Math.abs(a);
+        case 'NEG': return -a;
+        case 'LN': return a > 0 ? Math.log(a) : 0;
+        case 'LOG10': return a > 0 ? Math.log(a)/Math.LN10 : 0;
+        case 'EXP': return Math.exp(a);
+        case 'POW10': return Math.pow(10, a);
+      }
+      return a;
+    }
+    case 'math_round': {
+      a = numOf(evalValue(b.getInputTargetBlock('NUM'), 0), 0);
+      var op = b.getFieldValue('OP');
+      return op === 'ROUNDUP' ? Math.ceil(a) : (op === 'ROUNDDOWN' ? Math.floor(a) : Math.round(a));
+    }
+    case 'math_modulo': {
+      a = numOf(evalValue(b.getInputTargetBlock('DIVIDEND'), 0), 0);
+      c = numOf(evalValue(b.getInputTargetBlock('DIVISOR'), 1), 1);
+      return c === 0 ? 0 : a % c;
+    }
+    case 'math_random_int': {
+      a = Math.round(numOf(evalValue(b.getInputTargetBlock('FROM'), 0), 0));
+      c = Math.round(numOf(evalValue(b.getInputTargetBlock('TO'), 1), 1));
+      if (a > c){ var tmp = a; a = c; c = tmp; }
+      return a + Math.floor(Math.random()*(c - a + 1));
+    }
+    case 'logic_boolean': return b.getFieldValue('BOOL') === 'TRUE';
+    case 'logic_negate':  return !evalValue(b.getInputTargetBlock('BOOL'), false);
+    case 'logic_operation': {
+      var la = evalValue(b.getInputTargetBlock('A'), false);
+      var lb = evalValue(b.getInputTargetBlock('B'), false);
+      return b.getFieldValue('OP') === 'AND' ? (!!la && !!lb) : (!!la || !!lb);
+    }
+    case 'logic_compare': {
+      a = evalValue(b.getInputTargetBlock('A'), 0);
+      c = evalValue(b.getInputTargetBlock('B'), 0);
+      switch(b.getFieldValue('OP')){
+        case 'EQ':  return a === c || Number(a) === Number(c);
+        case 'NEQ': return !(a === c || Number(a) === Number(c));
+        case 'LT':  return Number(a) < Number(c);
+        case 'LTE': return Number(a) <= Number(c);
+        case 'GT':  return Number(a) > Number(c);
+        case 'GTE': return Number(a) >= Number(c);
+      }
+      return false;
+    }
+    case 'text': return b.getFieldValue('TEXT');
+    case 'text_join': {
+      var out = '', i = 0;
+      while (b.getInput('ADD' + i)){ out += String(evalValue(b.getInputTargetBlock('ADD' + i), '')); i++; }
+      return out;
+    }
+    case 'variables_get': {
+      var vn = varNameOf(b);
+      return (vn in vars) ? vars[vn] : 0;
+    }
+    case 'drone_get': return sensorValue(b.getFieldValue('SENSOR'));
+    case 'drone_is_flying': return !!sim.flying;
+    case 'drone_obstacle_ahead': {
+      var lim = numOf(evalValue(b.getInputTargetBlock('DIST'), 100), 100);
+      return frontDistance() < lim;
+    }
+    case 'drone_battery_low': return sim.battery < 20;
+    case 'procedures_callreturn': {
+      var pd = findProcDef(b.getFieldValue('NAME'));
+      if (!pd) return def;
+      var pnames = pd.getVars ? pd.getVars() : [];
+      for (var pi=0; pi<pnames.length; pi++){
+        if (b.getInput('ARG' + pi)) vars[pnames[pi]] = evalValue(b.getInputTargetBlock('ARG' + pi), 0);
+      }
+      return evalValue(pd.getInputTargetBlock('RETURN'), def);
+    }
+    default:
+      return def;
+  }
+}
+
+/* ---------------- การทำงานของบล็อกคำสั่ง ---------------- */
+async function runLoopBody(inner){
+  try { await execChain(inner); }
+  catch(e){
+    if (e instanceof FlowSignal) return e.kind;
+    throw e;
+  }
+  return 'OK';
+}
+
+async function execBlock(b, depth){
+  if (runState.abort || !b) return;
+  if (b.isEnabled && !b.isEnabled()) return;
+  if (++runState.commands > CMD_LIMIT){ logLine('log.limit', [CMD_LIMIT], 'warn'); runState.abort = true; return; }
+  curBlock = b;
+  try { workspace.highlightBlock(b.id); } catch(e){}
+  flight.blocks.push(b.type);
+  var i, n, inner, res;
+
+  switch(b.type){
+    case 'drone_takeoff':   await cmdTakeoff(); break;
+    case 'drone_land':      await cmdLand(); break;
+    case 'drone_emergency': await cmdEmergency(); break;
+    case 'drone_stop':      await cmdStop(); break;
+    case 'drone_hover':     await cmdHover(numOf(b.getFieldValue('SEC'), 2)); break;
+    case 'drone_speed':     cmdSpeed(numOf(b.getFieldValue('VALUE'), 50)); break;
+    case 'drone_move':      await cmdMove(b.getFieldValue('DIR'), numOf(b.getFieldValue('DIST'), 100)); break;
+    case 'drone_move_by':   await cmdMove(b.getFieldValue('DIR'), numOf(evalValue(b.getInputTargetBlock('DISTANCE'), 50), 50)); break;
+    case 'drone_goto':      await cmdGoto(numOf(b.getFieldValue('X'), 0), numOf(b.getFieldValue('Y'), 100), numOf(b.getFieldValue('Z'), 0), numOf(b.getFieldValue('SPEED'), 60)); break;
+    case 'drone_curve':     await cmdCurve(numOf(b.getFieldValue('X1'),0), numOf(b.getFieldValue('Y1'),100), numOf(b.getFieldValue('Z1'),0),
+                                           numOf(b.getFieldValue('X2'),0), numOf(b.getFieldValue('Y2'),100), numOf(b.getFieldValue('Z2'),0),
+                                           numOf(b.getFieldValue('SPEED'),60)); break;
+    case 'drone_rotate':    await cmdRotate(b.getFieldValue('WAY'), numOf(b.getFieldValue('DEG'), 90)); break;
+    case 'drone_rotate_by': await cmdRotate(b.getFieldValue('WAY'), numOf(evalValue(b.getInputTargetBlock('DEGREES'), 90), 90)); break;
+    case 'drone_flip':      await cmdFlip(b.getFieldValue('WAY')); break;
+    case 'drone_flip_random': {
+      var flipWays = ['f','b','l','r'];
+      await cmdFlip(flipWays[Math.floor(Math.random()*flipWays.length)]);
+      break;
+    }
+    case 'drone_go_home':   await cmdGoHome(); break;
+    case 'drone_led':       cmdLed(b.getFieldValue('COLOR')); break;
+    case 'drone_led_blink': await cmdLedBlink(b.getFieldValue('COLOR'), numOf(b.getFieldValue('TIMES'), 3)); break;
+    case 'drone_led_rgb':   cmdLedRGB(numOf(evalValue(b.getInputTargetBlock('R'), 0), 0),
+                                      numOf(evalValue(b.getInputTargetBlock('G'), 0), 0),
+                                      numOf(evalValue(b.getInputTargetBlock('B'), 0), 0)); break;
+    case 'drone_print':     logLine('log.print', [String(evalValue(b.getInputTargetBlock('TEXT'), ''))], 'sys'); break;
+    case 'drone_wait_until': await cmdWaitUntil(b); break;
+
+    case 'controls_if': {
+      n = 0;
+      var done = false;
+      while (b.getInput('IF' + n)){
+        if (evalValue(b.getInputTargetBlock('IF' + n), false)){
+          await execChain(b.getInputTargetBlock('DO' + n), depth);
+          done = true;
+          break;
+        }
+        n++;
+      }
+      if (!done && b.getInput('ELSE')) await execChain(b.getInputTargetBlock('ELSE'), depth);
+      break;
+    }
+
+    case 'controls_repeat_ext': {
+      n = clamp(Math.floor(numOf(evalValue(b.getInputTargetBlock('TIMES'), 1), 1)), 0, LOOP_LIMIT);
+      inner = b.getInputTargetBlock('DO');
+      if (!inner){ logLine('log.loopEmpty', null, 'warn'); break; }
+      logLine('log.loop', [n], 'sys');
+      for (i=0;i<n;i++){
+        if (runState.abort) return;
+        res = await runLoopBody(inner);
+        if (res === 'BREAK') break;
+        await tick();
+      }
+      break;
+    }
+
+    case 'controls_whileUntil': {
+      var untilMode = b.getFieldValue('MODE') === 'UNTIL';
+      inner = b.getInputTargetBlock('DO');
+      var guard = 0;
+      while (!runState.abort){
+        var cond = !!evalValue(b.getInputTargetBlock('BOOL'), false);
+        if (untilMode) cond = !cond;
+        if (!cond) break;
+        if (++guard > LOOP_LIMIT){ logLine('log.limit', [LOOP_LIMIT], 'warn'); break; }
+        res = await runLoopBody(inner);
+        if (res === 'BREAK') break;
+        await tick();
+      }
+      break;
+    }
+
+    case 'controls_for': {
+      var vname = varNameOf(b);
+      var from = numOf(evalValue(b.getInputTargetBlock('FROM'), 1), 1);
+      var to   = numOf(evalValue(b.getInputTargetBlock('TO'), 1), 1);
+      var by   = Math.abs(numOf(evalValue(b.getInputTargetBlock('BY'), 1), 1)) || 1;
+      inner = b.getInputTargetBlock('DO');
+      var count = 0, x;
+      if (from <= to){
+        for (x = from; x <= to; x += by){
+          if (runState.abort || ++count > LOOP_LIMIT) break;
+          vars[vname] = x;
+          res = await runLoopBody(inner);
+          if (res === 'BREAK') break;
+          await tick();
+        }
+      } else {
+        for (x = from; x >= to; x -= by){
+          if (runState.abort || ++count > LOOP_LIMIT) break;
+          vars[vname] = x;
+          res = await runLoopBody(inner);
+          if (res === 'BREAK') break;
+          await tick();
+        }
+      }
+      break;
+    }
+
+    case 'controls_flow_statements':
+      throw new FlowSignal(b.getFieldValue('FLOW') === 'CONTINUE' ? 'CONTINUE' : 'BREAK');
+
+    case 'variables_set': {
+      var sn = varNameOf(b);
+      vars[sn] = evalValue(b.getInputTargetBlock('VALUE'), 0);
+      logLine('log.varSet', [sn, String(vars[sn])], 'sys');
+      break;
+    }
+
+    case 'math_change': {
+      var cn = varNameOf(b);
+      vars[cn] = numOf(vars[cn], 0) + numOf(evalValue(b.getInputTargetBlock('DELTA'), 1), 1);
+      logLine('log.varSet', [cn, String(vars[cn])], 'sys');
+      break;
+    }
+
+    case 'procedures_callnoreturn': {
+      var pname = b.getFieldValue('NAME');
+      var def = findProcDef(pname);
+      if (!def){ logLine('log.procMissing', [pname], 'warn'); break; }
+      if ((depth || 0) >= PROC_DEPTH) break;
+      var argNames = def.getVars ? def.getVars() : [];
+      for (i=0;i<argNames.length;i++){
+        var av = b.getInput('ARG' + i);
+        if (av) vars[argNames[i]] = evalValue(b.getInputTargetBlock('ARG' + i), 0);
+      }
+      logLine('log.callProc', [pname], 'sys');
+      await execChain(def.getInputTargetBlock('STACK'), (depth || 0) + 1);
+      break;
+    }
+
+    case 'procedures_defnoreturn':
+    case 'procedures_defreturn':
+      break;
+
+    default:
+      logLine('log.unknown', [b.type], 'warn');
+  }
+}
+
+async function execChain(block, depth){
+  while (block){
+    if (runState.abort) return;
+    await execBlock(block, depth || 0);
+    block = block.getNextBlock();
+  }
+}
+
+function findProcDef(name){
+  var tops = workspace.getTopBlocks(false);
+  for (var i=0;i<tops.length;i++){
+    if ((tops[i].type === 'procedures_defnoreturn' || tops[i].type === 'procedures_defreturn') &&
+        tops[i].getFieldValue('NAME') === name) return tops[i];
+  }
+  return null;
+}
+
+/* =====================================================================
+   ส่วนที่ 5 : ตัวสร้างโค้ด Python (djitellopy)
+   ===================================================================== */
+
+function pyIndent(n){ var s = ''; for (var i=0;i<n;i++) s += '    '; return s; }
+function pyStr(v){ return '"' + String(v).replace(/"/g, '\\"') + '"'; }
+
+function pyValue(b){
+  if (!b) return '0';
+  var a, c;
+  switch(b.type){
+    case 'math_number': return String(numOf(b.getFieldValue('NUM'), 0));
+    case 'math_arithmetic': {
+      a = pyValue(b.getInputTargetBlock('A')); c = pyValue(b.getInputTargetBlock('B'));
+      var ops = { ADD:'+', MINUS:'-', MULTIPLY:'*', DIVIDE:'/', POWER:'**' };
+      return '(' + a + ' ' + (ops[b.getFieldValue('OP')] || '+') + ' ' + c + ')';
+    }
+    case 'math_single': {
+      a = pyValue(b.getInputTargetBlock('NUM'));
+      switch(b.getFieldValue('OP')){
+        case 'ROOT': return 'math.sqrt(' + a + ')';
+        case 'ABS': return 'abs(' + a + ')';
+        case 'NEG': return '(-' + a + ')';
+        case 'LN': return 'math.log(' + a + ')';
+        case 'LOG10': return 'math.log10(' + a + ')';
+        case 'EXP': return 'math.exp(' + a + ')';
+        case 'POW10': return '(10 ** ' + a + ')';
+      }
+      return a;
+    }
+    case 'math_round': {
+      a = pyValue(b.getInputTargetBlock('NUM'));
+      var op = b.getFieldValue('OP');
+      return op === 'ROUNDUP' ? 'math.ceil(' + a + ')' : (op === 'ROUNDDOWN' ? 'math.floor(' + a + ')' : 'round(' + a + ')');
+    }
+    case 'math_modulo': return '(' + pyValue(b.getInputTargetBlock('DIVIDEND')) + ' % ' + pyValue(b.getInputTargetBlock('DIVISOR')) + ')';
+    case 'math_random_int': return 'random.randint(' + pyValue(b.getInputTargetBlock('FROM')) + ', ' + pyValue(b.getInputTargetBlock('TO')) + ')';
+    case 'logic_boolean': return b.getFieldValue('BOOL') === 'TRUE' ? 'True' : 'False';
+    case 'logic_negate': return 'not (' + pyValue(b.getInputTargetBlock('BOOL')) + ')';
+    case 'logic_operation': return '(' + pyValue(b.getInputTargetBlock('A')) + (b.getFieldValue('OP') === 'AND' ? ' and ' : ' or ') + pyValue(b.getInputTargetBlock('B')) + ')';
+    case 'logic_compare': {
+      var cops = { EQ:'==', NEQ:'!=', LT:'<', LTE:'<=', GT:'>', GTE:'>=' };
+      return '(' + pyValue(b.getInputTargetBlock('A')) + ' ' + (cops[b.getFieldValue('OP')] || '==') + ' ' + pyValue(b.getInputTargetBlock('B')) + ')';
+    }
+    case 'text': return pyStr(b.getFieldValue('TEXT'));
+    case 'text_join': {
+      var parts = [], i = 0;
+      while (b.getInput('ADD' + i)){ parts.push('str(' + pyValue(b.getInputTargetBlock('ADD' + i)) + ')'); i++; }
+      return parts.length ? parts.join(' + ') : pyStr('');
+    }
+    case 'variables_get': return varNameOf(b);
+    case 'drone_get': return PY_SENSOR[b.getFieldValue('SENSOR')] || '0';
+    case 'drone_is_flying': return 'tello.is_flying';
+    case 'drone_obstacle_ahead': return '(front_distance() < ' + pyValue(b.getInputTargetBlock('DIST')) + ')';
+    case 'drone_battery_low': return '(tello.get_battery() < 20)';
+    case 'procedures_callreturn': {
+      var cargs = [], ci = 0;
+      while (b.getInput('ARG' + ci)){ cargs.push(pyValue(b.getInputTargetBlock('ARG' + ci))); ci++; }
+      return safePyName(b.getFieldValue('NAME')) + '(' + cargs.join(', ') + ')';
+    }
+    default: return '0';
+  }
+}
+
+function pyStatement(b, ind){
+  var L = [], p = pyIndent(ind), i, n;
+  switch(b.type){
+    case 'drone_takeoff':   L.push(p + pyCommand('takeoff')); break;
+    case 'drone_land':      L.push(p + pyCommand('land')); break;
+    case 'drone_emergency': L.push(p + pyCommand('emergency')); break;
+    case 'drone_stop':      L.push(p + pyCommand('stop')); break;
+    case 'drone_hover':     L.push(p + pyCommand('hover', { sec:numOf(b.getFieldValue('SEC'), 2) })); break;
+    case 'drone_speed':     L.push(p + pyCommand('speed', { value:numOf(b.getFieldValue('VALUE'), 50) })); break;
+    case 'drone_move':      L.push(p + pyCommand('move', { dir:b.getFieldValue('DIR'), dist:numOf(b.getFieldValue('DIST'), 100) })); break;
+    case 'drone_move_by':   L.push(p + 'tello.move_' + b.getFieldValue('DIR') + '(int(' + pyValue(b.getInputTargetBlock('DISTANCE')) + '))'); break;
+    case 'drone_goto':      L.push(p + pyCommand('goto', { x:numOf(b.getFieldValue('X'),0), y:numOf(b.getFieldValue('Y'),100), z:numOf(b.getFieldValue('Z'),0), speed:numOf(b.getFieldValue('SPEED'),60) })); break;
+    case 'drone_curve':     L.push(p + pyCommand('curve', { x1:numOf(b.getFieldValue('X1'),0), y1:numOf(b.getFieldValue('Y1'),0), z1:numOf(b.getFieldValue('Z1'),0),
+                                                            x2:numOf(b.getFieldValue('X2'),0), y2:numOf(b.getFieldValue('Y2'),0), z2:numOf(b.getFieldValue('Z2'),0),
+                                                            speed:numOf(b.getFieldValue('SPEED'),60) })); break;
+    case 'drone_rotate':    L.push(p + pyCommand('rotate', { way:b.getFieldValue('WAY'), deg:numOf(b.getFieldValue('DEG'), 90) })); break;
+    case 'drone_rotate_by': L.push(p + 'tello.rotate_' + (b.getFieldValue('WAY') === 'cw' ? 'clockwise' : 'counter_clockwise') + '(int(' + pyValue(b.getInputTargetBlock('DEGREES')) + '))'); break;
+    case 'drone_flip':      L.push(p + pyCommand('flip', { way:b.getFieldValue('WAY') })); break;
+    case 'drone_flip_random':
+      L.push(p + 'getattr(tello, "flip_" + random.choice(["forward","back","left","right"]))()');
+      break;
+    case 'drone_go_home':
+      L.push(p + 'tello.go_xyz_speed(-position_x, 0, -position_z, 60)');
+      break;
+    case 'drone_led':       L.push(p + pyCommand('led', { color:b.getFieldValue('COLOR') })); break;
+    case 'drone_led_blink': {
+      var blinkN = numOf(b.getFieldValue('TIMES'), 3);
+      var blinkColor = b.getFieldValue('COLOR');
+      L.push(p + 'for _ in range(' + blinkN + '):');
+      L.push(pyIndent(ind+1) + pyCommand('led', { color:blinkColor }));
+      L.push(pyIndent(ind+1) + 'time.sleep(0.18)');
+      L.push(pyIndent(ind+1) + pyCommand('led', { color:'off' }));
+      L.push(pyIndent(ind+1) + 'time.sleep(0.14)');
+      break;
+    }
+    case 'drone_led_rgb':   L.push(p + 'tello.send_expansion_command("led %d %d %d" % (' + pyValue(b.getInputTargetBlock('R')) + ', ' + pyValue(b.getInputTargetBlock('G')) + ', ' + pyValue(b.getInputTargetBlock('B')) + '))'); break;
+    case 'drone_print':     L.push(p + 'print(' + pyValue(b.getInputTargetBlock('TEXT')) + ')'); break;
+    case 'drone_wait_until':
+      L.push(p + 'while not (' + pyValue(b.getInputTargetBlock('COND')) + '):');
+      L.push(pyIndent(ind+1) + 'time.sleep(0.1)');
+      break;
+
+    case 'controls_if': {
+      n = 0;
+      while (b.getInput('IF' + n)){
+        L.push(p + (n === 0 ? 'if ' : 'elif ') + pyValue(b.getInputTargetBlock('IF' + n)) + ':');
+        L = L.concat(pyChain(b.getInputTargetBlock('DO' + n), ind + 1, true));
+        n++;
+      }
+      if (b.getInput('ELSE')){
+        L.push(p + 'else:');
+        L = L.concat(pyChain(b.getInputTargetBlock('ELSE'), ind + 1, true));
+      }
+      break;
+    }
+    case 'controls_repeat_ext':
+      L.push(p + 'for _ in range(int(' + pyValue(b.getInputTargetBlock('TIMES')) + ')):');
+      L = L.concat(pyChain(b.getInputTargetBlock('DO'), ind + 1, true));
+      break;
+    case 'controls_whileUntil':
+      L.push(p + 'while ' + (b.getFieldValue('MODE') === 'UNTIL' ? 'not (' + pyValue(b.getInputTargetBlock('BOOL')) + ')' : pyValue(b.getInputTargetBlock('BOOL'))) + ':');
+      L = L.concat(pyChain(b.getInputTargetBlock('DO'), ind + 1, true));
+      break;
+    case 'controls_for':
+      L.push(p + 'for ' + varNameOf(b) + ' in range(int(' + pyValue(b.getInputTargetBlock('FROM')) + '), int(' + pyValue(b.getInputTargetBlock('TO')) + ') + 1, int(' + pyValue(b.getInputTargetBlock('BY')) + ')):');
+      L = L.concat(pyChain(b.getInputTargetBlock('DO'), ind + 1, true));
+      break;
+    case 'controls_flow_statements':
+      L.push(p + (b.getFieldValue('FLOW') === 'CONTINUE' ? 'continue' : 'break'));
+      break;
+    case 'variables_set':
+      L.push(p + varNameOf(b) + ' = ' + pyValue(b.getInputTargetBlock('VALUE')));
+      break;
+    case 'math_change':
+      L.push(p + varNameOf(b) + ' = ' + varNameOf(b) + ' + ' + pyValue(b.getInputTargetBlock('DELTA')));
+      break;
+    case 'procedures_callnoreturn': {
+      var args = [], k = 0;
+      while (b.getInput('ARG' + k)){ args.push(pyValue(b.getInputTargetBlock('ARG' + k))); k++; }
+      L.push(p + safePyName(b.getFieldValue('NAME')) + '(' + args.join(', ') + ')');
+      break;
+    }
+    default:
+      L.push(p + '# ' + b.type);
+  }
+  return L;
+}
+
+function safePyName(name){
+  var s = String(name || 'my_function').trim().replace(/[^A-Za-z0-9_]/g, '_');
+  if (!/^[A-Za-z_]/.test(s)) s = 'f_' + s;
+  return s.toLowerCase();
+}
+
+function pyChain(block, ind, allowPass){
+  var L = [];
+  while (block){
+    if (!block.isEnabled || block.isEnabled()) L = L.concat(pyStatement(block, ind));
+    block = block.getNextBlock();
+  }
+  if (!L.length && allowPass) L.push(pyIndent(ind) + 'pass');
+  return L;
+}
+
+function genPython(){
+  var L = ['# DroneCode Lab - generated Python for djitellopy',
+           '# ' + (LANG === 'th' ? 'ภารกิจ' : 'mission') + ': ' + currentMission.name.en,
+           'from djitellopy import Tello',
+           'import time, math, random',
+           '',
+           'tello = Tello()',
+           'tello.connect()',
+           'print("battery:", tello.get_battery())',
+           ''];
+  if (!workspace) return L;
+
+  var tops = workspace.getTopBlocks(true), i;
+  for (i=0;i<tops.length;i++){
+    if (tops[i].type === 'procedures_defnoreturn' || tops[i].type === 'procedures_defreturn'){
+      var argNames = (tops[i].getVars ? tops[i].getVars() : []).map(safePyName);
+      L.push('def ' + safePyName(tops[i].getFieldValue('NAME')) + '(' + argNames.join(', ') + '):');
+      var body = pyChain(tops[i].getInputTargetBlock('STACK'), 1, false);
+      if (tops[i].type === 'procedures_defreturn'){
+        body.push(pyIndent(1) + 'return ' + pyValue(tops[i].getInputTargetBlock('RETURN')));
+      }
+      if (!body.length) body.push(pyIndent(1) + 'pass');
+      L = L.concat(body);
+      L.push('');
+    }
+  }
+
+  var start = findStartBlock();
+  var first = start ? start.getNextBlock() : null;
+  if (!first){
+    L.push('# ' + (LANG === 'th' ? 'ยังไม่มีคำสั่งในบล็อก when program starts' : 'no blocks under "when program starts" yet'));
+  } else {
+    L = L.concat(pyChain(first, 0, false));
+  }
+  L.push('');
+  L.push('tello.end()');
+  return L;
+}
+
+var pyTimer = null;
+function refreshPython(){
+  clearTimeout(pyTimer);
+  pyTimer = setTimeout(function(){
+    pyLines = genPython();
+    if (activeTab === 'py') renderConsole();
+  }, 120);
+}
+
+/* =====================================================================
+   ส่วนที่ 6 : การเชื่อมหน้าเว็บ ภาษา และการเริ่มระบบ
+   ===================================================================== */
+
+function initBlockly(){
+  var M = Blockly.Msg;
+  M['CONTROLS_REPEAT_TITLE'] = 'repeat %1 times';
+  M['CONTROLS_REPEAT_INPUT_DO'] = 'do';
+  Blockly.defineBlocksWithJsonArray(BLOCK_DEFS);
+
+  var theme = null;
+  try {
+    theme = Blockly.Theme.defineTheme('dronecode', {
+      base: Blockly.Themes.Classic,
+      componentStyles:{
+        workspaceBackgroundColour:'#ffffff', toolboxBackgroundColour:'#fbfbfd',
+        toolboxForegroundColour:'#1d1d1f', flyoutBackgroundColour:'#f5f5f7',
+        flyoutForegroundColour:'#6e6e73', flyoutOpacity:1,
+        scrollbarColour:'#c7c7cc', scrollbarOpacity:0.8,
+        insertionMarkerColour:'#0071e3', insertionMarkerOpacity:0.5,
+        markerColour:'#0071e3', cursorColour:'#0071e3'
+      },
+      fontStyle:{ family:"-apple-system,'SF Pro Text','Sukhumvit Set','Thonburi','Noto Sans Thai',Arial,sans-serif", weight:'500', size:12 }
+    });
+  } catch(e){ theme = null; }
+
+  var opts = {
+    toolbox: TOOLBOX, renderer:'zelos', sounds:false, trashcan:true,
+    grid:{ spacing:24, length:2, colour:'#ececf0', snap:true },
+    zoom:{ controls:true, wheel:true, startScale:0.78, minScale:0.3, maxScale:1.7, pinch:true },
+    move:{ scrollbars:true, drag:true, wheel:false }
+  };
+  if (theme) opts.theme = theme;
+
+  try { workspace = Blockly.inject('blocklyDiv', opts); }
+  catch(e){ delete opts.renderer; workspace = Blockly.inject('blocklyDiv', opts); }
+
+  seedStart();
+  workspace.addChangeListener(function(){
+    if (!workspace) return;
+    $('blockCount').textContent = t('editor.blocks', [workspace.getAllBlocks(false).length]);
+    refreshPython();
+  });
+  workspace.addChangeListener(function(e){
+    if (suppressBlockSound || !e || !e.type) return;
+    if (e.type === 'create') UISound.blockPickUp();
+    else if (e.type === 'delete') UISound.blockDelete();
+    else if (e.type === 'move' && e.reason && e.reason.indexOf('connect') !== -1) UISound.blockDrop();
+  });
+  setTimeout(function(){ Blockly.svgResize(workspace); }, 60);
+  window.addEventListener('resize', function(){ if (workspace) Blockly.svgResize(workspace); });
+}
+
+function seedStart(){
+  try{
+    var b = workspace.newBlock('drone_start');
+    if (b.initSvg) b.initSvg();
+    if (b.render) b.render();
+    b.moveBy(26, 22);
+    b.setDeletable(false);
+    workspace.render();
+  }catch(e){}
+}
+
+function findStartBlock(){
+  if (!workspace) return null;
+  var tops = workspace.getTopBlocks(true);
+  for (var i=0;i<tops.length;i++) if (tops[i].type === 'drone_start') return tops[i];
+  return null;
+}
+
+function updateTelemetry(){
+  $('tX').textContent = Math.round(sim.x);
+  $('tY').textContent = Math.round(sim.y);
+  $('tZ').textContent = Math.round(sim.z);
+  $('tSpeed').textContent = Math.round(sim.speed);
+  $('tLed').textContent = sim.led;
+  $('tBat').textContent = Math.round(sim.battery) + '%';
+  $('tTime').textContent = Math.round(sim.flightTime) + 's';
+  $('hudAlt').textContent = Math.round(sim.y) + ' cm';
+  $('hudYaw').textContent = Math.round(normDeg(sim.yaw)) + ' deg';
+  $('hudStatus').textContent = t(sim.statusKey);
+  $('hudFront').textContent = currentMission.obstacles.length ? (Math.round(frontDistance()) + ' cm') : '--';
+  var got = flight.rings.filter(function(v){ return v; }).length;
+  $('hudRings').textContent = got + '/' + currentMission.rings.length;
+  $('sheetPeek').textContent = Math.round(sim.y) + ' cm  ' + Math.round(sim.battery) + '%';
+}
+
+function setRunUI(running){
+  $('btnRun').disabled = running;
+  $('btnStop').disabled = !running;
+  $('btnPause').disabled = !running;
+  $('btnReset').disabled = running;
+  $('missionSelect').disabled = running;
+  $('btnExample').disabled = running;
+  $('pauseLabel').textContent = t(runState.paused ? 'btn.resume' : 'btn.pause');
+}
+
+function resetDrone(quiet){
+  sim.x = 0; sim.y = 0; sim.z = 0; sim.yaw = 0; sim.speed = 50;
+  sim.led = 'off'; sim.ledRGBv = [0,0,0]; sim.flying = false;
+  sim.battery = 100; sim.flightTime = 0;
+  sim.pitch = 0; sim.roll = 0; sim.flipPitch = 0; sim.flipRoll = 0;
+  sim.moving = false; sim.statusKey = 'status.ready';
+  flight = newFlightLog();
+  vars = {};
+  lastTrail = { x:0, y:0, z:0 };
+  clearTrail(); resetRingVisual(); updateLEDVisual(); updateDroneTransform(0); updateTelemetry();
+  if (!quiet) logLine('log.reset', null, 'sys');
+}
+
+async function onRun(){
+  if (runState.running || !workspace) return;
+  var start = findStartBlock();
+  var first = start ? start.getNextBlock() : null;
+  if (!first){ toast(t('toast.noProgram'), 'bad'); return; }
+
+  resetDrone(true);
+  clearWarnings();
+  cmdLines = [];
+  runState.running = true; runState.abort = false; runState.paused = false; runState.commands = 0;
+  runState.rate = Number($('speedSelect').value) || 1;
+  setRunUI(true);
+  setBadge('badge.flying', '');
+  logLine('log.start', [currentMission.name[LANG] || currentMission.name.en], 'sys');
+
+  try { await execChain(first, 0); }
+  catch(err){
+    if (!(err instanceof FlowSignal)) logLine('log.unknown', [String(err && err.message || err)], 'err');
+  }
+
+  try { workspace.highlightBlock(null); } catch(e){}
+  curBlock = null;
+  runState.running = false; runState.paused = false;
+  setRunUI(false);
+  if (flight.errors > 0) logLine('log.blockWarn', null, 'warn');
+
+  if (runState.abort){
+    sim.statusKey = 'status.stopped';
+    updateTelemetry();
+    logLine('log.aborted', null, 'warn');
+    setBadge('badge.notyet', '');
+    return;
+  }
+  logLine('log.done', null, 'sys');
+  evaluateMission();
+}
+
+function setBadge(key, cls){
+  var el = $('lessonBadge');
+  el.className = 'badge' + (cls ? ' ' + cls : '');
+  el.textContent = t(key);
+  el.setAttribute('data-badge-key', key);
+  el.setAttribute('data-badge-cls', cls || '');
+}
+
+function evaluateMission(){
+  flight.endDist = distXZ(sim.x, sim.z);
+  var res = currentMission.check(flight);
+  if (res.ok){
+    setBadge('badge.pass', 'pass');
+    logLine(res.key, res.args || null, 'sys');
+    toast(t('badge.pass') + ' - ' + t(res.key, res.args || null), 'good');
+  } else {
+    setBadge('badge.fail', 'fail');
+    logLine(res.key, res.args || null, 'warn');
+    toast(t(res.key, res.args || null), 'bad');
+  }
+}
+
+function renderLesson(){
+  var m = currentMission;
+  $('lessonBody').innerHTML = (m.brief[LANG] || m.brief.en) +
+    '<div class="chipline"><span class="chip">' + escapeHTML(t('lesson.goal', [m.goal[LANG] || m.goal.en])) + '</span>' +
+    (m.rings.length ? '<span class="chip">' + escapeHTML(t('lesson.rings', [m.rings.length])) + '</span>' : '') +
+    (m.obstacles.length ? '<span class="chip">' + escapeHTML(t('lesson.obstacles', [m.obstacles.length])) + '</span>' : '') +
+    '</div><div class="note">' + escapeHTML(t('lesson.tip')) + '</div>';
+}
+
+function applyMission(id){
+  currentMission = findMission(id);
+  renderLesson();
+  setBadge('badge.notyet', '');
+  setRings(currentMission.rings);
+  setObstacles(currentMission.obstacles);
+  resetDrone(true);
+  updateTelemetry();
+  refreshPython();
+}
+
+function buildMissionSelect(){
+  var sel = $('missionSelect'), html = '';
+  for (var i=0;i<MISSIONS.length;i++){
+    html += '<option value="' + MISSIONS[i].id + '">' + escapeHTML(MISSIONS[i].name[LANG] || MISSIONS[i].name.en) + '</option>';
+  }
+  sel.innerHTML = html;
+  sel.value = currentMission.id;
+}
+
+function applyLang(){
+  document.documentElement.lang = LANG;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var i=0;i<nodes.length;i++) nodes[i].textContent = t(nodes[i].getAttribute('data-i18n'));
+  var segs = document.querySelectorAll('#langSeg button');
+  for (var j=0;j<segs.length;j++) segs[j].classList.toggle('on', segs[j].getAttribute('data-lang') === LANG);
+  buildMissionSelect();
+  renderLesson();
+  var badge = $('lessonBadge');
+  setBadge(badge.getAttribute('data-badge-key') || 'badge.notyet', badge.getAttribute('data-badge-cls') || '');
+  if (workspace) $('blockCount').textContent = t('editor.blocks', [workspace.getAllBlocks(false).length]);
+  updateTelemetry();
+  renderConsole();
+  renderReference();
+  updateLandscapeButton();
+  $('hudToggle').title = t('hud.toggle');
+  $('pauseLabel').textContent = t(runState.paused ? 'btn.resume' : 'btn.pause');
+  refreshPython();
+}
+
+var landscapeOn = false, rotatedMode = false, currentView = 'code';
+
+function refit(){
+  var run = function(){
+    if (workspace){ try { Blockly.svgResize(workspace); } catch(e){} }
+    onResize();
+  };
+  run(); setTimeout(run, 120); setTimeout(run, 320); setTimeout(run, 650);
+}
+
+function screenWidth(){ return rotatedMode ? window.innerHeight : window.innerWidth; }
+
+/* ---------------- ตัวลากปรับขนาดแผง คิดจากจุดเริ่มลากเสมอ ไม่สะสมส่วนต่างจนกระตุก ---------------- */
+function bindSplitHandles(){
+  var layout = $('layout');
+  var lessonHandle = document.querySelector('[data-handle="lesson-code"]');
+  var codeHandle = document.querySelector('[data-handle="code-arena"]');
+  if (!lessonHandle || !codeHandle) return;
+
+  function px(v){ return Math.round(v) + 'px'; }
+
+  function bind(handle, onMove){
+    var dragging = false, startX = 0, startVal = null;
+    function down(x){
+      dragging = true; startX = x; handle.classList.add('active');
+      var cs = getComputedStyle(layout);
+      startVal = { lessonW: parseFloat(cs.getPropertyValue('--lesson-w')) || 320,
+                   codeFr: parseFloat(cs.getPropertyValue('--code-fr')) || 0.5,
+                   layoutW: layout.getBoundingClientRect().width };
+    }
+    function move(x){
+      if (!dragging) return;
+      onMove(x - startX, startVal);
+    }
+    function up(){
+      if (!dragging) return;
+      dragging = false; handle.classList.remove('active');
+      refit();
+    }
+    handle.addEventListener('mousedown', function(e){ down(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e){ move(e.clientX); });
+    window.addEventListener('mouseup', up);
+    handle.addEventListener('touchstart', function(e){ down(e.touches[0].clientX); }, { passive:true });
+    handle.addEventListener('touchmove', function(e){ move(e.touches[0].clientX); e.preventDefault(); }, { passive:false });
+    handle.addEventListener('touchend', up, { passive:true });
+  }
+
+  bind(lessonHandle, function(dx, start){
+    var minW = 230, maxW = Math.max(231, start.layoutW * 0.42);
+    var next = clamp(start.lessonW + dx, minW, maxW);
+    layout.style.setProperty('--lesson-w', px(next));
+  });
+
+  bind(codeHandle, function(dx, start){
+    var lessonW = document.body.classList.contains('mode-wide') ? start.lessonW : 0;
+    var handles = document.body.classList.contains('mode-wide') ? 28 : 14;
+    var rest = start.layoutW - lessonW - handles;
+    var startCodePx = rest * start.codeFr;
+    var nextPx = clamp(startCodePx + dx, rest * 0.25, rest * 0.75);
+    var frac = rest > 0 ? nextPx / rest : 0.5;
+    layout.style.setProperty('--code-fr', frac + 'fr');
+    layout.style.setProperty('--arena-fr', (1 - frac) + 'fr');
+  });
+}
+
+function applyResponsive(){
+  var w = screenWidth();
+  var mode = w >= 1180 ? 'wide' : (w >= 760 ? 'split' : 'single');
+  var b = document.body;
+  b.classList.toggle('mode-wide', mode === 'wide');
+  b.classList.toggle('mode-split', mode === 'split');
+  b.classList.toggle('mode-single', mode === 'single');
+  if (mode !== 'split') b.classList.remove('sheet-open');
+  refit();
+}
+
+function setView(v){
+  currentView = v;
+  var b = document.body;
+  b.classList.remove('view-lesson', 'view-code', 'view-flight');
+  b.classList.add('view-' + v);
+  var tabs = document.querySelectorAll('[data-view]');
+  for (var i=0;i<tabs.length;i++) tabs[i].classList.toggle('on', tabs[i].getAttribute('data-view') === v);
+  refit();
+}
+
+function viewDelta(dx, dy){ return rotatedMode ? { x:dy, y:-dx } : { x:dx, y:dy }; }
+
+function updateLandscapeButton(){
+  var btn = $('btnLandscape');
+  btn.classList.toggle('on', landscapeOn);
+  btn.title = t(landscapeOn ? 'btn.portrait' : 'btn.landscape');
+}
+
+async function toggleLandscape(){
+  if (landscapeOn){ exitLandscape(); return; }
+  landscapeOn = true;
+  var locked = false;
+  try {
+    if (!document.fullscreenElement && document.documentElement.requestFullscreen){
+      await document.documentElement.requestFullscreen();
+    }
+    if (window.screen && screen.orientation && screen.orientation.lock){
+      await screen.orientation.lock('landscape');
+      locked = true;
+    }
+  } catch(e){ locked = false; }
+  if (!locked && window.innerWidth < window.innerHeight){
+    rotatedMode = true;
+    document.body.classList.add('rotated');
+    toast(t('toast.landscapeCss'));
+  } else {
+    toast(t('toast.landscapeOn'), 'good');
+  }
+  updateLandscapeButton();
+  applyResponsive();
+}
+
+function exitLandscape(){
+  landscapeOn = false;
+  rotatedMode = false;
+  document.body.classList.remove('rotated');
+  try { if (window.screen && screen.orientation && screen.orientation.unlock) screen.orientation.unlock(); } catch(e){}
+  try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen(); } catch(e){}
+  toast(t('toast.landscapeOff'));
+  updateLandscapeButton();
+  applyResponsive();
+}
+
+/* ---------- แผงข้อมูลด้านล่างของสนามบิน เลื่อนขึ้นลงได้ ---------- */
+var sheetState = 'closed';
+
+function setSheet(state){
+  sheetState = state;
+  var el = $('dataSheet');
+  el.style.transition = '';
+  el.style.transform = '';
+  el.setAttribute('data-state', state);
+  $('sheetChevron').style.transform = (state === 'open') ? 'rotate(180deg)' : '';
+}
+
+function cycleSheet(){
+  setSheet(sheetState === 'closed' ? 'peek' : (sheetState === 'peek' ? 'open' : 'closed'));
+}
+
+function sheetOffsetOf(state, h){
+  if (state === 'open') return 0;
+  if (state === 'peek') return Math.max(0, h - 158);
+  return Math.max(0, h - 46);
+}
+
+function sheetAxis(x, y){ return rotatedMode ? -x : y; }
+
+function bindSheet(){
+  var el = $('dataSheet'), handle = $('sheetHandle');
+  var dragging = false, startPos = 0, startOff = 0, moved = 0, height = 0, lastOff = 0;
+
+  function down(pos){
+    dragging = true; moved = 0; startPos = pos;
+    height = el.offsetHeight || 240;
+    startOff = sheetOffsetOf(sheetState, height);
+    lastOff = startOff;
+    el.style.transition = 'none';
+  }
+  function move(pos){
+    if (!dragging) return;
+    var d = pos - startPos;
+    if (Math.abs(d) > moved) moved = Math.abs(d);
+    lastOff = clamp(startOff + d, 0, sheetOffsetOf('closed', height));
+    el.style.transform = 'translateY(' + lastOff + 'px)';
+  }
+  function up(){
+    if (!dragging) return;
+    dragging = false;
+    el.style.transition = '';
+    if (moved < 6){ cycleSheet(); return; }
+    var states = ['open','peek','closed'], best = states[0], bestD = Infinity;
+    for (var i=0;i<states.length;i++){
+      var d = Math.abs(sheetOffsetOf(states[i], height) - lastOff);
+      if (d < bestD){ bestD = d; best = states[i]; }
+    }
+    setSheet(best);
+  }
+
+  handle.addEventListener('mousedown', function(e){ down(sheetAxis(e.clientX, e.clientY)); e.preventDefault(); });
+  window.addEventListener('mousemove', function(e){ move(sheetAxis(e.clientX, e.clientY)); });
+  window.addEventListener('mouseup', function(){ up(); });
+  handle.addEventListener('touchstart', function(e){ down(sheetAxis(e.touches[0].clientX, e.touches[0].clientY)); }, { passive:true });
+  handle.addEventListener('touchmove', function(e){ move(sheetAxis(e.touches[0].clientX, e.touches[0].clientY)); e.preventDefault(); }, { passive:false });
+  handle.addEventListener('touchend', function(){ up(); }, { passive:true });
+}
+
+function toggleHud(){
+  var hud = $('hud'), btn = $('hudToggle');
+  var willOpen = hud.classList.contains('collapsed');
+  hud.classList.toggle('collapsed', !willOpen);
+  btn.classList.toggle('on', willOpen);
+}
+
+function togglePause(){
+  if (!runState.running) return;
+  runState.paused = !runState.paused;
+  $('pauseLabel').textContent = t(runState.paused ? 'btn.resume' : 'btn.pause');
+  logLine(runState.paused ? 'log.paused' : 'log.resumed', null, 'sys');
+}
+
+function clearWarnings(){
+  if (!workspace) return;
+  try {
+    var all = workspace.getAllBlocks(false);
+    for (var i=0;i<all.length;i++) if (all[i].setWarningText) all[i].setWarningText(null);
+  } catch(e){}
+}
+
+function flagCurrent(msg){
+  try { if (curBlock && curBlock.setWarningText) curBlock.setWarningText(msg); } catch(e){}
+}
+
+/* ---------- คู่มือคำสั่ง ---------- */
+var REF_SAMPLES = {
+  drone_takeoff:['takeoff', 'tello.takeoff()'],
+  drone_land:['land', 'tello.land()'],
+  drone_hover:['delay 2', 'time.sleep(2)'],
+  drone_stop:['stop', 'tello.send_control_command("stop")'],
+  drone_speed:['speed 50', 'tello.set_speed(50)'],
+  drone_emergency:['emergency', 'tello.emergency()'],
+  drone_move:['forward 100', 'tello.move_forward(100)'],
+  drone_move_by:['forward 50', 'tello.move_forward(int(x))'],
+  drone_goto:['go 100 100 -100 60', 'tello.go_xyz_speed(100, 100, -100, 60)'],
+  drone_curve:['curve 80 120 -80 0 120 -160 60', 'tello.curve_xyz_speed(...)'],
+  drone_rotate:['cw 90', 'tello.rotate_clockwise(90)'],
+  drone_rotate_by:['cw 45', 'tello.rotate_clockwise(int(x))'],
+  drone_flip:['flip f', 'tello.flip_forward()'],
+  drone_led:['EXT led 255 0 0', 'tello.send_expansion_command("led 255 0 0")'],
+  drone_led_rgb:['EXT led r g b', 'tello.send_expansion_command("led %d %d %d")'],
+  drone_print:['', 'print(value)'],
+  drone_wait_until:['', 'while not cond: time.sleep(0.1)'],
+  drone_get:['height?', 'tello.get_height()'],
+  drone_is_flying:['', 'tello.is_flying'],
+  drone_obstacle_ahead:['', 'front_distance() < n'],
+  drone_flip_random:['flip <f/b/l/r>', 'getattr(tello, "flip_"+random.choice([...]))()'],
+  drone_go_home:['go 0 0 dy 60', 'tello.go_xyz_speed(-position_x, 0, -position_z, 60)'],
+  drone_led_blink:['EXT led ... (repeated)', 'for _ in range(n): ...'],
+  drone_battery_low:['', 'tello.get_battery() < 20']
+};
+
+var REF_EXTRA = [
+  ['if / else if / else', 'if cond: ... else: ...'],
+  ['repeat N times', 'for _ in range(N):'],
+  ['repeat while / until', 'while cond:'],
+  ['count with i from a to b', 'for i in range(a, b + 1):'],
+  ['break out / continue', 'break / continue'],
+  ['set item to / change item by', 'item = value'],
+  ['define function', 'def my_function():']
+];
+
+function refGroupOf(d){
+  if (d.colour === C_MOVE) return 'ref.move';
+  if (d.colour === C_TURN) return 'ref.turn';
+  if (d.colour === C_LIGHT) return 'ref.light';
+  if (d.colour === C_SENSE) return 'ref.sense';
+  return 'ref.flight';
+}
+
+function refLabel(d){
+  var s = d.message0;
+  var args = d.args0 || [];
+  for (var i=0;i<args.length;i++){
+    var a = args[i], v;
+    if (a.type === 'field_number') v = a.value;
+    else if (a.type === 'field_dropdown') v = a.options[0][0];
+    else v = (a.name || 'value').toLowerCase();
+    s = s.replace('%' + (i+1), v);
+  }
+  return s;
+}
+
+function renderReference(){
+  var groups = ['ref.flight','ref.move','ref.turn','ref.light','ref.sense'];
+  var html = '<div class="note">' + escapeHTML(t('ref.intro')) + '</div>';
+  for (var g=0; g<groups.length; g++){
+    html += '<div class="ref-group">' + escapeHTML(t(groups[g])) + '</div>';
+    for (var i=0;i<BLOCK_DEFS.length;i++){
+      var d = BLOCK_DEFS[i];
+      if (d.type === 'drone_start' || refGroupOf(d) !== groups[g]) continue;
+      var s = REF_SAMPLES[d.type] || ['',''];
+      html += '<div class="ref-item"><div class="ref-name"><span class="ref-dot" style="background:' + d.colour + '"></span>' +
+              escapeHTML(refLabel(d)) + '</div>' +
+              '<div class="ref-desc">' + escapeHTML(d.tooltip || '') + '</div><div class="ref-cmd">' +
+              (s[0] ? '<span>' + escapeHTML(s[0]) + '</span>' : '') +
+              (s[1] ? '<span>' + escapeHTML(s[1]) + '</span>' : '') + '</div></div>';
+    }
+  }
+  html += '<div class="ref-group">' + escapeHTML(t('ref.logic')) + '</div>';
+  for (var k=0;k<REF_EXTRA.length;k++){
+    html += '<div class="ref-item"><div class="ref-name"><span class="ref-dot" style="background:#636366"></span>' +
+            escapeHTML(REF_EXTRA[k][0]) + '</div><div class="ref-cmd"><span>' + escapeHTML(REF_EXTRA[k][1]) + '</span></div></div>';
+  }
+  $('referenceBody').innerHTML = html;
+}
+
+function setLessonTab(which){
+  $('lessonBody').style.display = (which === 'lesson') ? 'block' : 'none';
+  $('referenceBody').style.display = (which === 'reference') ? 'block' : 'none';
+  var tabs = document.querySelectorAll('[data-lpanel]');
+  for (var i=0;i<tabs.length;i++) tabs[i].classList.toggle('on', tabs[i].getAttribute('data-lpanel') === which);
+}
+
+function download(filename, text, mime){
+  var blob = new Blob([text], { type: mime || 'text/plain;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+}
+
+function saveProject(){
+  try{
+    var data;
+    if (Blockly.serialization && Blockly.serialization.workspaces) data = Blockly.serialization.workspaces.save(workspace);
+    else data = { xml: Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace)) };
+    download('dronecode-' + currentMission.id + '.json', JSON.stringify({ mission:currentMission.id, workspace:data }, null, 2), 'application/json');
+    toast(t('toast.saved'), 'good');
+  }catch(e){ toast(t('toast.saveErr', [e.message]), 'bad'); }
+}
+
+function loadProject(file){
+  var reader = new FileReader();
+  reader.onload = function(){
+    try{
+      suppressBlockSound = true;
+      var obj = JSON.parse(reader.result);
+      if (obj.mission){ $('missionSelect').value = obj.mission; applyMission(obj.mission); }
+      workspace.clear();
+      if (obj.workspace && obj.workspace.xml){
+        var toDom = (Blockly.utils && Blockly.utils.xml && Blockly.utils.xml.textToDom) ? Blockly.utils.xml.textToDom : Blockly.Xml.textToDom;
+        Blockly.Xml.domToWorkspace(toDom(obj.workspace.xml), workspace);
+      } else {
+        Blockly.serialization.workspaces.load(obj.workspace, workspace);
+      }
+      if (!findStartBlock()) seedStart();
+      var sb = findStartBlock();
+      if (sb) sb.setDeletable(false);
+      suppressBlockSound = false;
+      refreshPython();
+      toast(t('toast.loaded'), 'good');
+    }catch(e){ suppressBlockSound = false; toast(t('toast.loadErr', [e.message]), 'bad'); }
+  };
+  reader.readAsText(file);
+}
+
+function wireUI(){
+  $('btnRun').addEventListener('click', function(){ UISound.controlTap(); onRun(); });
+  $('btnStop').addEventListener('click', function(){ UISound.controlTap(); if (runState.running) runState.abort = true; });
+  $('btnReset').addEventListener('click', function(){
+    UISound.controlTap();
+    if (runState.running) return;
+    resetDrone(false);
+    setBadge('badge.notyet', '');
+  });
+  $('speedSelect').addEventListener('change', function(){ UISound.controlTap(); runState.rate = Number(this.value) || 1; });
+  $('missionSelect').addEventListener('change', function(){
+    UISound.controlTap();
+    applyMission(this.value);
+    logLine('log.mission', [currentMission.name[LANG] || currentMission.name.en], 'sys');
+  });
+  $('btnExample').addEventListener('click', loadExample);
+  $('btnTidy').addEventListener('click', function(){ if (workspace) workspace.cleanUp(); });
+  $('btnClear').addEventListener('click', function(){
+    if (runState.running || !workspace) return;
+    suppressBlockSound = true;
+    workspace.clear(); seedStart(); refreshPython();
+    suppressBlockSound = false;
+    toast(t('toast.cleared'));
+  });
+  $('btnSave').addEventListener('click', saveProject);
+  $('btnLoad').addEventListener('click', function(){ $('fileInput').click(); });
+  $('fileInput').addEventListener('change', function(){
+    if (this.files && this.files[0]) loadProject(this.files[0]);
+    this.value = '';
+  });
+  $('btnExportCmd').addEventListener('click', function(){
+    if (!cmdLines.length){ toast(t('toast.noCmd'), 'bad'); return; }
+    download('tello-commands.txt', '# DroneCode Lab - Tello SDK 2.0\ncommand\n' + cmdLines.join('\n') + '\n');
+    toast(t('toast.exported'), 'good');
+  });
+  $('btnExportPy').addEventListener('click', function(){
+    pyLines = genPython();
+    download('dronecode-' + currentMission.id + '.py', pyLines.join('\n') + '\n', 'text/x-python');
+    toast(t('toast.exported'), 'good');
+  });
+  $('btnPause').addEventListener('click', function(){ UISound.controlTap(); togglePause(); });
+  $('hudToggle').addEventListener('click', function(){ UISound.cameraTap(); toggleHud(); });
+  bindSheet();
+  $('btnLandscape').addEventListener('click', function(){ UISound.navTap(); toggleLandscape(); });
+  $('btnLesson').addEventListener('click', function(){
+    UISound.navTap();
+    document.body.classList.toggle('sheet-open');
+    refit();
+  });
+  $('sheetBackdrop').addEventListener('click', function(){ document.body.classList.remove('sheet-open'); });
+
+  var views = document.querySelectorAll('[data-view]');
+  for (var q=0;q<views.length;q++){
+    views[q].addEventListener('click', function(){ UISound.navTap(); setView(this.getAttribute('data-view')); });
+  }
+  var lpanels = document.querySelectorAll('[data-lpanel]');
+  for (var r=0;r<lpanels.length;r++){
+    lpanels[r].addEventListener('click', function(){ UISound.navTap(); setLessonTab(this.getAttribute('data-lpanel')); });
+  }
+  window.addEventListener('resize', applyResponsive);
+  window.addEventListener('orientationchange', function(){ setTimeout(applyResponsive, 220); });
+  document.addEventListener('fullscreenchange', function(){
+    if (!document.fullscreenElement && landscapeOn && !rotatedMode){
+      landscapeOn = false;
+      updateLandscapeButton();
+      applyResponsive();
+    }
+  });
+
+  var tabs = document.querySelectorAll('[data-tab]');
+  for (var i=0;i<tabs.length;i++){
+    tabs[i].addEventListener('click', function(){
+      activeTab = this.getAttribute('data-tab');
+      for (var j=0;j<tabs.length;j++) tabs[j].classList.toggle('on', tabs[j] === this);
+      if (activeTab === 'py') pyLines = genPython();
+      renderConsole();
+    });
+  }
+  var cams = document.querySelectorAll('[data-cam]');
+  for (var k=0;k<cams.length;k++){
+    cams[k].addEventListener('click', function(){
+      UISound.cameraTap();
+      setCameraMode(this.getAttribute('data-cam'));
+      for (var m=0;m<cams.length;m++) cams[m].classList.toggle('on', cams[m] === this);
+    });
+  }
+  var langs = document.querySelectorAll('#langSeg button');
+  for (var n=0;n<langs.length;n++){
+    langs[n].addEventListener('click', function(){
+      UISound.navTap();
+      LANG = this.getAttribute('data-lang') === 'en' ? 'en' : 'th';
+      applyLang();
+    });
+  }
+  $('overlayRetry').addEventListener('click', function(){ location.reload(); });
+}
+
+function showViewFallback(){
+  var el = $('viewFallback');
+  el.style.display = 'grid';
+  el.textContent = t('fallback.3d');
+}
+
+function setOverlay(key, subKey){
+  $('overlayText').textContent = t(key);
+  $('overlaySub').textContent = subKey ? t(subKey) : '';
+}
+
+function overlayError(key, subKey){
+  var sp = document.querySelector('.spinner');
+  if (sp) sp.style.display = 'none';
+  setOverlay(key, subKey);
+  $('overlayRetry').style.display = 'inline-flex';
+}
+
+function hideOverlay(){ $('overlay').style.display = 'none'; }
+
+async function boot(){
+  applyLang();
+  renderConsole();
+
+  setOverlay('overlay.blockly', 'overlay.blockly.sub');
+  try { await loadScript(BLOCKLY_URLS, function(){ return !!window.Blockly; }); }
+  catch(e){ overlayError('overlay.errBlockly', 'overlay.errOffline'); return; }
+
+  setOverlay('overlay.three', 'overlay.three.sub');
+  try {
+    await loadScript(THREE_URLS, function(){ return !!window.THREE; });
+    THREE_OK = initThree();
+  } catch(e){ THREE_OK = false; }
+  if (!THREE_OK) showViewFallback();
+
+  setOverlay('overlay.setup', null);
+  try { initBlockly(); }
+  catch(e){ overlayError('overlay.errInject', null); return; }
+
+  wireUI();
+  bindSplitHandles();
+  applyResponsive();
+  setSheet('closed');
+  if (screenWidth() >= 1180) toggleHud();
+  setView(currentView);
+  setLessonTab('lesson');
+  applyMission(MISSIONS[0].id);
+  applyLang();
+  logLine('log.ready', null, 'sys');
+  hideOverlay();
+}
+
+/* ---------- เส้นนำสายตาบนพื้น เพื่อให้เห็นชัดว่าโดรนอยู่ตรงไหนและหันไปทางใด ---------- */
+var groundMarker, dropLine, dropPos;
+
+function buildGroundGuides(){
+  groundMarker = new THREE.Group();
+  var ring = new THREE.Mesh(
+    new THREE.RingGeometry(0.15, 0.185, 40),
+    new THREE.MeshBasicMaterial({ color:0x0071e3, transparent:true, opacity:0.6, side:THREE.DoubleSide })
+  );
+  ring.rotation.x = -Math.PI/2;
+  groundMarker.add(ring);
+  var arrow = new THREE.Mesh(
+    new THREE.ConeGeometry(0.07, 0.15, 3),
+    new THREE.MeshBasicMaterial({ color:0xff3b30, transparent:true, opacity:0.85 })
+  );
+  arrow.rotation.x = -Math.PI/2;
+  arrow.position.set(0, 0, -0.3);
+  groundMarker.add(arrow);
+  groundMarker.position.y = 0.012;
+  scene.add(groundMarker);
+
+  var g = new THREE.BufferGeometry();
+  dropPos = new Float32Array(6);
+  g.setAttribute('position', new THREE.BufferAttribute(dropPos, 3));
+  dropLine = new THREE.Line(g, new THREE.LineDashedMaterial({
+    color:0x0071e3, transparent:true, opacity:0.45, dashSize:0.06, gapSize:0.05
+  }));
+  dropLine.frustumCulled = false;
+  scene.add(dropLine);
+
+  for (var r=1;r<=4;r++){
+    var c = new THREE.Mesh(
+      new THREE.RingGeometry(r - 0.007, r + 0.007, 96),
+      new THREE.MeshBasicMaterial({ color:0xc2c2c9, transparent:true, opacity:0.7, side:THREE.DoubleSide })
+    );
+    c.rotation.x = -Math.PI/2;
+    c.position.y = 0.006;
+    scene.add(c);
+  }
+}
+
+function updateGroundGuides(){
+  if (!groundMarker || !dropLine) return;
+  var show = sim.y > 4;
+  groundMarker.visible = show;
+  dropLine.visible = show;
+  groundMarker.position.set(sim.x*CM, 0.012, sim.z*CM);
+  groundMarker.rotation.y = sim.yaw * Math.PI/180;
+  dropPos[0] = sim.x*CM; dropPos[1] = 0.012; dropPos[2] = sim.z*CM;
+  dropPos[3] = sim.x*CM; dropPos[4] = sim.y*CM; dropPos[5] = sim.z*CM;
+  dropLine.geometry.attributes.position.needsUpdate = true;
+  dropLine.computeLineDistances();
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+else boot();
+</script>
+</body>
+</html>
