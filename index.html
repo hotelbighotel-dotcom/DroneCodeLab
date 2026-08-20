@@ -261,11 +261,101 @@ body.rotated #sheetBackdrop{display:none!important}
 #toast.bad{background:rgba(120,32,26,.94)}
 
 @media (max-width:760px){
-  #topbar{padding:0 12px}
-  #controlbar{padding:8px 12px; gap:8px}
-  #layout{padding:10px; gap:10px}
-  .panel-body{padding:15px}
-  #dataSheet{height:80%}
+    #topbar{padding:0 12px}
+    #controlbar{padding:8px 12px; gap:8px}
+    #layout{padding:10px; gap:10px}
+    .panel-body{padding:15px}
+    #dataSheet{height:80%}
+  }
+
+  /* Add this right here to hide the flyout scrollbar */
+  .blocklyFlyoutScrollbar {
+    display: none !important;
+  }
+
+  /* Scratch-style rounded Flyout Flyout background */
+.blocklyFlyoutBackground {
+  fill: #f5f5f7 !important;
+  fill-opacity: 0.95 !important;
+  rx: 16px !important;
+  ry: 16px !important;
+  stroke: none !important;
+}
+
+/* Remove ugly SVG lines & borders */
+.blocklyFlyoutLine {
+  display: none !important;
+}
+
+/* Redesign scrollbars to be thin, subtle rounded bars (Scratch-style) */
+.blocklyScrollbarHandle {
+  fill: #d1d1d6 !important;
+  rx: 4px !important;
+  ry: 4px !important;
+  opacity: 0.7 !important;
+  transition: opacity 0.2s ease, fill 0.2s ease;
+}
+
+.blocklyScrollbarHandle:hover {
+  fill: #a1a1a6 !important;
+  opacity: 1 !important;
+}
+
+.blocklyScrollbarBackground {
+  display: none !important;
+}
+
+/* Fix alignment & Micro:bit category tab styling */
+.blocklyTreeRow {
+  display: flex !important;
+  align-items: center !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  margin: 3px 0 !important;
+  padding: 0 12px !important;
+  border-radius: 0 18px 18px 0 !important; /* Full span pill shape */
+  border-left: 6px solid transparent !important; /* Color bar on left edge */
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Color bar container spacing fix */
+.blocklyTreeIcon {
+  display: none !important; /* Removes default Blockly icon spacing misalignment */
+}
+
+/* Label styling: Matches category color by default */
+.blocklyTreeLabel {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding-left: 8px !important;
+  vertical-align: middle !important;
+}
+
+/* Selected state (Micro:bit style): Full row background color with white text */
+.blocklyTreeRow.blocklyTreeSelected {
+  background-color: var(--category-color, #0071e3) !important;
+}
+
+.blocklyTreeRow.blocklyTreeSelected .blocklyTreeLabel {
+  color: #ffffff !important;
+}
+
+/* Hover state when unselected */
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Control Bar Fix: Force 1 line on iPad / Portrait screens */
+#controlbar {
+  flex-wrap: nowrap !important; /* Prevents controls from dropping to line 2 */
+  overflow-x: auto !important; /* Enables smooth horizontal scroll if tight */
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#controlbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar track on iPad for clean look */
 }
 </style>
 </head>
@@ -523,8 +613,8 @@ var I18N = {
   'speed.fast':         { th:'2x เร็ว', en:'2x fast' },
   'speed.vfast':        { th:'4x เร็วมาก', en:'4x fastest' },
   'panel.lesson':       { th:'บทเรียนและภารกิจ', en:'Lesson and mission' },
-  'panel.editor':       { th:'พื้นที่เขียนโปรแกรม', en:'Block editor' },
-  'panel.stage':        { th:'สนามบินจำลอง 3 มิติ', en:'3D flight arena' },
+  'panel.editor':       { th:'โค้ด', en:'Code' },
+  'panel.stage':        { th:'สนามบินจำลอง', en:'flight' },
   'editor.example':     { th:'ตัวอย่างเฉลย', en:'Example' },
   'editor.tidy':        { th:'จัดเรียง', en:'Tidy' },
   'editor.clear':       { th:'ล้าง', en:'Clear' },
@@ -2624,21 +2714,36 @@ function initBlockly(){
   M['CONTROLS_REPEAT_INPUT_DO'] = 'do';
   Blockly.defineBlocksWithJsonArray(BLOCK_DEFS);
 
-  var theme = null;
-  try {
-    theme = Blockly.Theme.defineTheme('dronecode', {
-      base: Blockly.Themes.Classic,
-      componentStyles:{
-        workspaceBackgroundColour:'#ffffff', toolboxBackgroundColour:'#fbfbfd',
-        toolboxForegroundColour:'#1d1d1f', flyoutBackgroundColour:'#f5f5f7',
-        flyoutForegroundColour:'#6e6e73', flyoutOpacity:1,
-        scrollbarColour:'#c7c7cc', scrollbarOpacity:0.8,
-        insertionMarkerColour:'#0071e3', insertionMarkerOpacity:0.5,
-        markerColour:'#0071e3', cursorColour:'#0071e3'
-      },
-      fontStyle:{ family:"-apple-system,'SF Pro Text','Sukhumvit Set','Thonburi','Noto Sans Thai',Arial,sans-serif", weight:'500', size:12 }
-    });
-  } catch(e){ theme = null; }
+var theme = null;
+try {
+  theme = Blockly.Theme.defineTheme('dronecode', {
+    base: Blockly.Themes.Classic,
+    categoryStyles: {
+      'flight_category': { 'colour': '#34c759' },    /* Green */
+      'movement_category': { 'colour': '#0071e3' },  /* Blue */
+      'rotation_category': { 'colour': '#5856d6' },  /* Purple */
+      'lights_category': { 'colour': '#ff9500' },    /* Orange */
+      'sensors_category': { 'colour': '#30b0c7' },   /* Teal */
+      'logic_category': { 'colour': '#64d2ff' },     /* Light Blue */
+      'loops_category': { 'colour': '#af52de' },     /* Violet */
+      'math_category': { 'colour': '#ff2d55' },      /* Pink/Red */
+      'text_category': { 'colour': '#a2845e' },      /* Brown */
+      'variables_category': { 'colour': '#5ac8fa' }, /* Cyan */
+      'functions_category': { 'colour': '#8e8e93' }  /* Grey */
+    },
+    componentStyles: {
+      workspaceBackgroundColour: '#ffffff',
+      toolboxBackgroundColour: '#fafafc',
+      toolboxForegroundColour: '#1d1d1f',
+      flyoutBackgroundColour: '#f5f5f7',
+      flyoutForegroundColour: '#1d1d1f',
+      scrollbarColour: '#d1d1d6',
+      scrollbarOpacity: 0.6,
+      insertionMarkerColour: '#0071e3',
+      insertionMarkerOpacity: 0.4
+    }
+  });
+} catch(e){ theme = null; }
 
   var opts = {
     toolbox: TOOLBOX, renderer:'zelos', sounds:false, trashcan:true,
