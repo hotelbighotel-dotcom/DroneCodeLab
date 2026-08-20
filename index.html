@@ -273,89 +273,95 @@ body.rotated #sheetBackdrop{display:none!important}
     display: none !important;
   }
 
-  /* Scratch-style rounded Flyout Flyout background */
+/* =========================================================
+   BLOCKLY MICRO:BIT & SCRATCH TOOLBOX STYLING
+   ========================================================= */
+
+/* Remove default flyout border and give flyout rounded corners */
 .blocklyFlyoutBackground {
   fill: #f5f5f7 !important;
-  fill-opacity: 0.95 !important;
+  fill-opacity: 0.96 !important;
   rx: 16px !important;
   ry: 16px !important;
   stroke: none !important;
 }
 
-/* Remove ugly SVG lines & borders */
 .blocklyFlyoutLine {
   display: none !important;
 }
 
-/* Redesign scrollbars to be thin, subtle rounded bars (Scratch-style) */
+/* Modern thin scrollbar */
 .blocklyScrollbarHandle {
-  fill: #d1d1d6 !important;
+  fill: #c7c7cc !important;
   rx: 4px !important;
   ry: 4px !important;
-  opacity: 0.7 !important;
-  transition: opacity 0.2s ease, fill 0.2s ease;
-}
-
-.blocklyScrollbarHandle:hover {
-  fill: #a1a1a6 !important;
-  opacity: 1 !important;
+  opacity: 0.6 !important;
 }
 
 .blocklyScrollbarBackground {
   display: none !important;
 }
 
-/* Fix alignment & Micro:bit category tab styling */
+/* Toolbox base setup */
+.blocklyToolboxDiv {
+  width: 145px !important;
+  background-color: #fafafc !important;
+  padding-top: 6px !important;
+  user-select: none;
+}
+
+.blocklyTreeRoot {
+  padding: 0 !important;
+}
+
+/* Force category rows into clean flexbox alignment */
 .blocklyTreeRow {
   display: flex !important;
   align-items: center !important;
+  justify-content: flex-start !important;
   height: 36px !important;
-  line-height: 36px !important;
-  margin: 3px 0 !important;
+  margin: 3px 6px 3px 0 !important;
   padding: 0 12px !important;
-  border-radius: 0 18px 18px 0 !important; /* Full span pill shape */
-  border-left: 6px solid transparent !important; /* Color bar on left edge */
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  border-radius: 0 18px 18px 0 !important;
+  border-left: 5px solid var(--cat-color, #0071e3) !important;
+  background-color: transparent !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-/* Color bar container spacing fix */
-.blocklyTreeIcon {
-  display: none !important; /* Removes default Blockly icon spacing misalignment */
+/* Remove default Blockly icons to fix text alignment */
+.blocklyTreeIcon, 
+.blocklyTreeSeparator {
+  display: none !important;
+  width: 0 !important;
+  margin: 0 !important;
 }
 
-/* Label styling: Matches category color by default */
+/* Micro:bit label styling (default: colored text) */
 .blocklyTreeLabel {
-  font-size: 14px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
+  font-size: 13.5px !important;
   font-weight: 600 !important;
-  padding-left: 8px !important;
-  vertical-align: middle !important;
+  color: var(--cat-color, #1d1d1f) !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
 }
 
-/* Selected state (Micro:bit style): Full row background color with white text */
+/* Selected state: Full colored background span with white text */
 .blocklyTreeRow.blocklyTreeSelected {
-  background-color: var(--category-color, #0071e3) !important;
+  background-color: var(--cat-color, #0071e3) !important;
 }
 
 .blocklyTreeRow.blocklyTreeSelected .blocklyTreeLabel {
   color: #ffffff !important;
 }
 
-/* Hover state when unselected */
+/* Hover state on unselected rows */
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
   background-color: rgba(0, 0, 0, 0.05) !important;
-}
-
-/* Control Bar Fix: Force 1 line on iPad / Portrait screens */
-#controlbar {
-  flex-wrap: nowrap !important; /* Prevents controls from dropping to line 2 */
-  overflow-x: auto !important; /* Enables smooth horizontal scroll if tight */
-  white-space: nowrap !important;
-  -webkit-overflow-scrolling: touch;
-}
-
-#controlbar::-webkit-scrollbar {
-  display: none; /* Hide scrollbar track on iPad for clean look */
 }
 </style>
 </head>
