@@ -1705,12 +1705,82 @@ var BLOCK_DEFS = [
 /* BLOCK-DEFS-END */
 function shadowNum(n){ return { shadow:{ type:'math_number', fields:{ NUM:n } } }; }
 
-<xml id="toolbox" style="display: none">
-  <category name="Flight" categorystyle="flight_category">...</category>
-  <category name="Movement" categorystyle="movement_category">...</category>
-  <category name="Rotation" categorystyle="rotation_category">...</category>
-  <!-- and so on -->
-</xml>
+var TOOLBOX = {
+  kind:'categoryToolbox',
+  contents:[
+    { kind:'category', name:'Flight', colour:C_FLIGHT, contents:[
+      { kind:'block', type:'drone_takeoff' },
+      { kind:'block', type:'drone_land' },
+      { kind:'block', type:'drone_hover' },
+      { kind:'block', type:'drone_stop' },
+      { kind:'block', type:'drone_speed' },
+      { kind:'block', type:'drone_emergency' },
+      { kind:'block', type:'drone_start' }
+    ]},
+    { kind:'category', name:'Movement', colour:C_MOVE, contents:[
+      { kind:'block', type:'drone_move' },
+      { kind:'block', type:'drone_move', fields:{ DIR:'back', DIST:100 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'left', DIST:80 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'right', DIST:80 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'up', DIST:50 } },
+      { kind:'block', type:'drone_move', fields:{ DIR:'down', DIST:50 } },
+      { kind:'block', type:'drone_move_by', inputs:{ DISTANCE:shadowNum(50) } },
+      { kind:'block', type:'drone_goto' },
+      { kind:'block', type:'drone_curve' },
+      { kind:'block', type:'drone_go_home' }
+    ]},
+    { kind:'category', name:'Rotation', colour:C_TURN, contents:[
+      { kind:'block', type:'drone_rotate' },
+      { kind:'block', type:'drone_rotate', fields:{ WAY:'ccw', DEG:90 } },
+      { kind:'block', type:'drone_rotate_by', inputs:{ DEGREES:shadowNum(45) } },
+      { kind:'block', type:'drone_flip' },
+      { kind:'block', type:'drone_flip_random' }
+    ]},
+    { kind:'category', name:'Lights', colour:C_LIGHT, contents:[
+      { kind:'block', type:'drone_led' },
+      { kind:'block', type:'drone_led_rgb', inputs:{ R:shadowNum(255), G:shadowNum(120), B:shadowNum(0) } },
+      { kind:'block', type:'drone_led_blink' }
+    ]},
+    { kind:'category', name:'Sensors', colour:C_SENSE, contents:[
+      { kind:'block', type:'drone_get' },
+      { kind:'block', type:'drone_get', fields:{ SENSOR:'battery' } },
+      { kind:'block', type:'drone_get', fields:{ SENSOR:'front' } },
+      { kind:'block', type:'drone_is_flying' },
+      { kind:'block', type:'drone_battery_low' },
+      { kind:'block', type:'drone_obstacle_ahead', inputs:{ DIST:shadowNum(100) } },
+      { kind:'block', type:'drone_wait_until' },
+      { kind:'block', type:'drone_print', inputs:{ TEXT:{ shadow:{ type:'text', fields:{ TEXT:'hello' } } } } }
+    ]},
+    { kind:'category', name:'Logic', colour:'#636366', contents:[
+      { kind:'block', type:'controls_if' },
+      { kind:'block', type:'controls_if', extraState:{ elseIfCount:0, hasElse:true } },
+      { kind:'block', type:'logic_compare' },
+      { kind:'block', type:'logic_operation' },
+      { kind:'block', type:'logic_negate' },
+      { kind:'block', type:'logic_boolean' }
+    ]},
+    { kind:'category', name:'Loops', colour:'#af52de', contents:[
+      { kind:'block', type:'controls_repeat_ext', inputs:{ TIMES:shadowNum(4) } },
+      { kind:'block', type:'controls_whileUntil' },
+      { kind:'block', type:'controls_for', inputs:{ FROM:shadowNum(1), TO:shadowNum(4), BY:shadowNum(1) } },
+      { kind:'block', type:'controls_flow_statements' }
+    ]},
+    { kind:'category', name:'Math', colour:'#ff2d55', contents:[
+      { kind:'block', type:'math_number', fields:{ NUM:100 } },
+      { kind:'block', type:'math_arithmetic', inputs:{ A:shadowNum(1), B:shadowNum(1) } },
+      { kind:'block', type:'math_single', inputs:{ NUM:shadowNum(9) } },
+      { kind:'block', type:'math_round', inputs:{ NUM:shadowNum(3.1) } },
+      { kind:'block', type:'math_modulo', inputs:{ DIVIDEND:shadowNum(64), DIVISOR:shadowNum(10) } },
+      { kind:'block', type:'math_random_int', inputs:{ FROM:shadowNum(20), TO:shadowNum(100) } }
+    ]},
+    { kind:'category', name:'Text', colour:'#a2845e', contents:[
+      { kind:'block', type:'text' },
+      { kind:'block', type:'text_join' }
+    ]},
+    { kind:'category', name:'Variables', colour:'#5ac8fa', custom:'VARIABLE' },
+    { kind:'category', name:'Functions', colour:'#8e8e93', custom:'PROCEDURE' }
+  ]
+};
 
 /* -------- ตัวสร้างโปรแกรมตัวอย่างจากสเปก -------- */
 function buildBlockFromSpec(spec){
