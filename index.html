@@ -186,6 +186,11 @@ body.mode-split [data-handle="lesson-code"]{ display:none }
 
 /* Base Category Row Styling */
 /* Base Tree Row Layout */
+/* =========================================================
+   BLOCKLY CATEGORY STYLING & COLOR MAP
+   ========================================================= */
+
+/* Base Tree Row Layout */
 .blocklyTreeRow {
   display: flex !important;
   align-items: center !important;
@@ -200,13 +205,13 @@ body.mode-split [data-handle="lesson-code"]{ display:none }
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-/* Hide redundant default icons */
+/* Hide default icons */
 .blocklyTreeIcon, 
 .blocklyTreeSeparator {
   display: none !important;
 }
 
-/* Default label color (unselected state) */
+/* Label text color inherits category color */
 .blocklyTreeLabel {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
   font-size: 13.5px !important;
@@ -217,7 +222,7 @@ body.mode-split [data-handle="lesson-code"]{ display:none }
   color: var(--cat-color, #1d1d1f) !important;
 }
 
-/* Selected State: Full row background fill with white text */
+/* Selected State: Fills row with category color & white text */
 .blocklyTreeRow.blocklyTreeSelected {
   background-color: var(--cat-color, #0071e3) !important;
 }
@@ -231,75 +236,63 @@ body.mode-split [data-handle="lesson-code"]{ display:none }
 }
 
 /* =========================================================
-   CATEGORY COLOR MAP (ORDER + ATTRIBUTE MATCHING)
+   CATEGORY COLOR MAP (UNIVERSAL DOM MATCHING)
    ========================================================= */
 
 /* 1. Flight - Green */
-.blocklyTreeRoot > div:nth-child(1) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="flight" i], .blocklyTreeRow[id*="flight" i], .blocklyTreeRow[class*="flight" i] {
-  --cat-color: #34c759 !important;
-}
+.blocklyToolboxContents > *:nth-child(1),
+.blocklyToolboxDiv div:nth-child(1) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(1) { --cat-color: #34c759 !important; }
 
 /* 2. Movement - Blue */
-.blocklyTreeRoot > div:nth-child(2) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="movement" i], .blocklyTreeRow[id*="movement" i], .blocklyTreeRow[class*="movement" i] {
-  --cat-color: #0071e3 !important;
-}
+.blocklyToolboxContents > *:nth-child(2),
+.blocklyToolboxDiv div:nth-child(2) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(2) { --cat-color: #0071e3 !important; }
 
 /* 3. Rotation - Purple */
-.blocklyTreeRoot > div:nth-child(3) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="rotation" i], .blocklyTreeRow[id*="rotation" i], .blocklyTreeRow[class*="rotation" i] {
-  --cat-color: #5856d6 !important;
-}
+.blocklyToolboxContents > *:nth-child(3),
+.blocklyToolboxDiv div:nth-child(3) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(3) { --cat-color: #5856d6 !important; }
 
 /* 4. Lights - Orange */
-.blocklyTreeRoot > div:nth-child(4) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="lights" i], .blocklyTreeRow[id*="lights" i], .blocklyTreeRow[class*="lights" i] {
-  --cat-color: #ff9500 !important;
-}
+.blocklyToolboxContents > *:nth-child(4),
+.blocklyToolboxDiv div:nth-child(4) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(4) { --cat-color: #ff9500 !important; }
 
 /* 5. Sensors - Teal */
-.blocklyTreeRoot > div:nth-child(5) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="sensors" i], .blocklyTreeRow[id*="sensors" i], .blocklyTreeRow[class*="sensors" i] {
-  --cat-color: #30b0c7 !important;
-}
+.blocklyToolboxContents > *:nth-child(5),
+.blocklyToolboxDiv div:nth-child(5) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(5) { --cat-color: #30b0c7 !important; }
 
-/* 6. Logic - Dark Blue */
-.blocklyTreeRoot > div:nth-child(6) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="logic" i], .blocklyTreeRow[id*="logic" i], .blocklyTreeRow[class*="logic" i] {
-  --cat-color: #4A90E2 !important;
-}
+/* 6. Logic - Sky Blue */
+.blocklyToolboxContents > *:nth-child(6),
+.blocklyToolboxDiv div:nth-child(6) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(6) { --cat-color: #4a90e2 !important; }
 
 /* 7. Loops - Violet */
-.blocklyTreeRoot > div:nth-child(7) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="loops" i], .blocklyTreeRow[id*="loops" i], .blocklyTreeRow[class*="loops" i] {
-  --cat-color: #af52de !important;
-}
+.blocklyToolboxContents > *:nth-child(7),
+.blocklyToolboxDiv div:nth-child(7) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(7) { --cat-color: #af52de !important; }
 
-/* 8. Math - Pink/Red */
-.blocklyTreeRoot > div:nth-child(8) .blocklyTreeRoot,
-.blocklyTreeRoot > div:nth-child(8) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="math" i], .blocklyTreeRow[id*="math" i], .blocklyTreeRow[class*="math" i] {
-  --cat-color: #ff2d55 !important;
-}
+/* 8. Math - Pink */
+.blocklyToolboxContents > *:nth-child(8),
+.blocklyToolboxDiv div:nth-child(8) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(8) { --cat-color: #ff2d55 !important; }
 
 /* 9. Text - Brown */
-.blocklyTreeRoot > div:nth-child(9) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="text" i], .blocklyTreeRow[id*="text" i], .blocklyTreeRow[class*="text" i] {
-  --cat-color: #a2845e !important;
-}
+.blocklyToolboxContents > *:nth-child(9),
+.blocklyToolboxDiv div:nth-child(9) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(9) { --cat-color: #a2845e !important; }
 
 /* 10. Variables - Light Blue */
-.blocklyTreeRoot > div:nth-child(10) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="variables" i], .blocklyTreeRow[id*="variables" i], .blocklyTreeRow[class*="variables" i] {
-  --cat-color: #5ac8fa !important;
-}
+.blocklyToolboxContents > *:nth-child(10),
+.blocklyToolboxDiv div:nth-child(10) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(10) { --cat-color: #5ac8fa !important; }
 
 /* 11. Functions - Grey */
-.blocklyTreeRoot > div:nth-child(11) .blocklyTreeRow,
-.blocklyTreeRow[aria-label*="functions" i], .blocklyTreeRow[id*="functions" i], .blocklyTreeRow[class*="functions" i] {
-  --cat-color: #8e8e93 !important;
-}
+.blocklyToolboxContents > *:nth-child(11),
+.blocklyToolboxDiv div:nth-child(11) > .blocklyTreeRow,
+.blocklyTreeRow:nth-of-type(11) { --cat-color: #8e8e93 !important; }
 </style>
 </head>
 <body class="mode-wide view-code">
