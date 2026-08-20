@@ -315,6 +315,7 @@ body.rotated #sheetBackdrop{display:none!important}
 }
 
 /* Force category rows into clean flexbox alignment */
+/* Base Flexbox Layout to fix alignment */
 .blocklyTreeRow {
   display: flex !important;
   align-items: center !important;
@@ -330,15 +331,13 @@ body.rotated #sheetBackdrop{display:none!important}
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-/* Remove default Blockly icons to fix text alignment */
+/* Hide default icons to align text straight with the bar */
 .blocklyTreeIcon, 
 .blocklyTreeSeparator {
   display: none !important;
-  width: 0 !important;
-  margin: 0 !important;
 }
 
-/* Micro:bit label styling (default: colored text) */
+/* Text style (Default: Matches category color) */
 .blocklyTreeLabel {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
   font-size: 13.5px !important;
@@ -347,10 +346,9 @@ body.rotated #sheetBackdrop{display:none!important}
   line-height: 1 !important;
   padding: 0 !important;
   margin: 0 !important;
-  white-space: nowrap !important;
 }
 
-/* Selected state: Full colored background span with white text */
+/* Selected State: Full row background with white text */
 .blocklyTreeRow.blocklyTreeSelected {
   background-color: var(--cat-color, #0071e3) !important;
 }
@@ -359,10 +357,22 @@ body.rotated #sheetBackdrop{display:none!important}
   color: #ffffff !important;
 }
 
-/* Hover state on unselected rows */
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
+
+/* Map individual colors in order of your menu */
+.blocklyTreeRow:nth-child(1)  { --cat-color: #34c759; } /* Flight - Green */
+.blocklyTreeRow:nth-child(2)  { --cat-color: #0071e3; } /* Movement - Blue */
+.blocklyTreeRow:nth-child(3)  { --cat-color: #5856d6; } /* Rotation - Purple */
+.blocklyTreeRow:nth-child(4)  { --cat-color: #ff9500; } /* Lights - Orange */
+.blocklyTreeRow:nth-child(5)  { --cat-color: #30b0c7; } /* Sensors - Teal */
+.blocklyTreeRow:nth-child(6)  { --cat-color: #555555; } /* Logic - Dark Grey */
+.blocklyTreeRow:nth-child(7)  { --cat-color: #af52de; } /* Loops - Violet */
+.blocklyTreeRow:nth-child(8)  { --cat-color: #ff2d55; } /* Math - Pink/Red */
+.blocklyTreeRow:nth-child(9)  { --cat-color: #a2845e; } /* Text - Brown */
+.blocklyTreeRow:nth-child(10) { --cat-color: #5ac8fa; } /* Variables - Light Blue */
+.blocklyTreeRow:nth-child(11) { --cat-color: #8e8e93; } /* Functions - Grey */
 </style>
 </head>
 <body class="mode-wide view-code">
