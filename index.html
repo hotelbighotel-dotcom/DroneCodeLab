@@ -316,6 +316,7 @@ body.rotated #sheetBackdrop{display:none!important}
 
 /* Force category rows into clean flexbox alignment */
 /* Base Flexbox Layout to fix alignment */
+/* Base row flex layout & border setup */
 .blocklyTreeRow {
   display: flex !important;
   align-items: center !important;
@@ -331,13 +332,13 @@ body.rotated #sheetBackdrop{display:none!important}
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-/* Hide default icons to align text straight with the bar */
+/* Remove default icons */
 .blocklyTreeIcon, 
 .blocklyTreeSeparator {
   display: none !important;
 }
 
-/* Text style (Default: Matches category color) */
+/* Category Label (Default: Colored text) */
 .blocklyTreeLabel {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
   font-size: 13.5px !important;
@@ -348,7 +349,7 @@ body.rotated #sheetBackdrop{display:none!important}
   margin: 0 !important;
 }
 
-/* Selected State: Full row background with white text */
+/* Selected state: Full background span + white text */
 .blocklyTreeRow.blocklyTreeSelected {
   background-color: var(--cat-color, #0071e3) !important;
 }
@@ -361,19 +362,39 @@ body.rotated #sheetBackdrop{display:none!important}
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Map individual colors in order of your menu */
-/* Target categories by parent container sequence */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(1)  .blocklyTreeRow { --cat-color: #34c759; } /* Flight - Green */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(2)  .blocklyTreeRow { --cat-color: #0071e3; } /* Movement - Blue */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(3)  .blocklyTreeRow { --cat-color: #5856d6; } /* Rotation - Purple */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(4)  .blocklyTreeRow { --cat-color: #ff9500; } /* Lights - Orange */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(5)  .blocklyTreeRow { --cat-color: #30b0c7; } /* Sensors - Teal */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(6)  .blocklyTreeRow { --cat-color: #0071e3; } /* Logic - Blue */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(7)  .blocklyTreeRow { --cat-color: #af52de; } /* Loops - Violet */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(8)  .blocklyTreeRow { --cat-color: #ff2d55; } /* Math - Pink/Red */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(9)  .blocklyTreeRow { --cat-color: #a2845e; } /* Text - Brown */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(10) .blocklyTreeRow { --cat-color: #5ac8fa; } /* Variables - Light Blue */
-.blocklyToolboxDiv .blocklyTreeRoot > div:nth-child(11) .blocklyTreeRow { --cat-color: #8e8e93; } /* Functions - Grey */
+/* Direct attribute targeting based on category text */
+.blocklyTreeRow[aria-label*="Flight" i],
+.blocklyTreeRow[id*="flight" i]     { --cat-color: #34c759 !important; }
+
+.blocklyTreeRow[aria-label*="Movement" i],
+.blocklyTreeRow[id*="movement" i]   { --cat-color: #0071e3 !important; }
+
+.blocklyTreeRow[aria-label*="Rotation" i],
+.blocklyTreeRow[id*="rotation" i]   { --cat-color: #5856d6 !important; }
+
+.blocklyTreeRow[aria-label*="Lights" i],
+.blocklyTreeRow[id*="lights" i]     { --cat-color: #ff9500 !important; }
+
+.blocklyTreeRow[aria-label*="Sensors" i],
+.blocklyTreeRow[id*="sensors" i]    { --cat-color: #30b0c7 !important; }
+
+.blocklyTreeRow[aria-label*="Logic" i],
+.blocklyTreeRow[id*="logic" i]      { --cat-color: #4A90E2 !important; }
+
+.blocklyTreeRow[aria-label*="Loops" i],
+.blocklyTreeRow[id*="loops" i]      { --cat-color: #af52de !important; }
+
+.blocklyTreeRow[aria-label*="Math" i],
+.blocklyTreeRow[id*="math" i]       { --cat-color: #ff2d55 !important; }
+
+.blocklyTreeRow[aria-label*="Text" i],
+.blocklyTreeRow[id*="text" i]       { --cat-color: #a2845e !important; }
+
+.blocklyTreeRow[aria-label*="Variables" i],
+.blocklyTreeRow[id*="variables" i]  { --cat-color: #5ac8fa !important; }
+
+.blocklyTreeRow[aria-label*="Functions" i],
+.blocklyTreeRow[id*="functions" i]  { --cat-color: #8e8e93 !important; }
 </style>
 </head>
 <body class="mode-wide view-code">
